@@ -2,11 +2,11 @@
 **shogunfolio** is a Python library for portfolio optimization built on top of shogun machine learning library.
 It offers a unified interface and tools compatible with shogun to build,fine-tune, and cross-validate portfolio models.
 ## Key Concepts
-Since the development of modern portfolio theory by Markowitz, mean-variance
-optimization (MVO) has received considerable attention.
+Since the development of modern portfolio theory, mean-variance
+optimization has received considerable attention.
 
 Unfortunately, it faces a number of shortcomings, including high sensitivity to the
-input parameters (expected returns and covariance), weight concentration, high turnover,
+input parameters, weight concentration, high turnover,
 and poor out-of-sample performance.
 
 Numerous approaches have been developed to alleviate these shortcomings (shrinkage,
