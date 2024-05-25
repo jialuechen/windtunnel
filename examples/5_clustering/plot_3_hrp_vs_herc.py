@@ -27,7 +27,7 @@ analyze the stability and distribution of both models.
 # We load the FTSE 100 :ref:`dataset <datasets>` composed of the daily prices of 64
 # assets from the FTSE 100 Index composition starting from 2000-01-04 up to 2023-05-31:
 from plotly.io import show
-from sklearn.model_selection import GridSearchCV, train_test_split
+from shogun.model_selection import GridSearchCV, train_test_split
 
 from shogunfolio import Population, RatioMeasure, RiskMeasure
 from shogunfolio.cluster import HierarchicalClustering, LinkageMethod

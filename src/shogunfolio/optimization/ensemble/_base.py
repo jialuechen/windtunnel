@@ -1,5 +1,5 @@
 """Base Composition estimator.
-Follow same implementation as Base composition from sklearn
+Follow same implementation as Base composition from shogun
 """
 
 # Copyright (c) 2023
@@ -12,7 +12,7 @@ Follow same implementation as Base composition from sklearn
 from abc import ABC, abstractmethod
 from contextlib import suppress
 
-import sklearn.base as skb
+import shogun.base as skb
 
 
 class BaseComposition(skb.BaseEstimator, ABC):

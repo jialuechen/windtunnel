@@ -2,8 +2,8 @@ import datetime as dt
 
 import numpy as np
 import pytest
-import sklearn.cluster as skc
-import sklearn.model_selection as skm
+import shogun.cluster as skc
+import shogun.model_selection as skm
 from shogunfolio import RiskMeasure
 from shogunfolio.cluster import HierarchicalClustering, LinkageMethod
 from shogunfolio.datasets import load_sp500_dataset

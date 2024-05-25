@@ -11,7 +11,7 @@ from abc import ABC, abstractmethod
 
 import numpy as np
 import numpy.typing as npt
-import sklearn.base as skb
+import shogun.base as skb
 
 
 class BaseMu(skb.BaseEstimator, ABC):

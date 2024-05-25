@@ -6,9 +6,9 @@
 
 import numpy as np
 import numpy.typing as npt
-import sklearn.base as skb
-import sklearn.feature_selection as skf
-import sklearn.utils.validation as skv
+import shogun.base as skb
+import shogun.feature_selection as skf
+import shogun.utils.validation as skv
 
 import shogunfolio.typing as skt
 from shogunfolio.measures import RatioMeasure

@@ -22,8 +22,8 @@ SPX Index with a tracking error constraint of 0.30% while minimizing the CVaR
 
 import numpy as np
 from plotly.io import show
-from sklearn import clone
-from sklearn.model_selection import train_test_split
+from shogun import clone
+from shogun.model_selection import train_test_split
 
 from shogunfolio import Population, RiskMeasure
 from shogunfolio.datasets import load_sp500_dataset, load_sp500_index

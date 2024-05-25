@@ -16,7 +16,7 @@ distribution analysis with `CombinatorialPurgedCV`.
 # We load the S&P 500 :ref:`dataset <datasets>` composed of the daily prices of 20
 # assets from the S&P 500 Index composition starting from 2015-01-02 up to 2022-12-28:
 from plotly.io import show
-from sklearn.model_selection import GridSearchCV, train_test_split
+from shogun.model_selection import GridSearchCV, train_test_split
 
 from shogunfolio import Population, RatioMeasure, RiskMeasure
 from shogunfolio.cluster import HierarchicalClustering, LinkageMethod

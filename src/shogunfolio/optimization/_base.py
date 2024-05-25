@@ -7,8 +7,8 @@ from abc import ABC, abstractmethod
 
 import numpy as np
 import numpy.typing as npt
-import sklearn.base as skb
-from sklearn.utils.validation import check_is_fitted
+import shogun.base as skb
+from shogun.utils.validation import check_is_fitted
 
 from shogunfolio.measures import RatioMeasure
 from shogunfolio.population import Population

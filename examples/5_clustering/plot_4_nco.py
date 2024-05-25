@@ -21,7 +21,7 @@ inner-weights and outer-weights.
 
     The original paper uses KMeans as the clustering algorithm, minimum Variance for
     the inner-estimator and equal-weight for the outer-estimator. Here we generalize
-    it to all `sklearn` and `shogunfolio` clustering algorithm (Hierarchical Tree
+    it to all `shogun` and `shogunfolio` clustering algorithm (Hierarchical Tree
     Clustering, KMeans, etc.), all portfolio optimizations (Mean-Variance, HRP, etc.)
     and risk measures (variance, CVaR, etc.).
     To avoid data leakage at the outer-estimator, we use out-of-sample estimates to
@@ -34,8 +34,8 @@ inner-weights and outer-weights.
 # We load the S&P 500 :ref:`dataset <datasets>` composed of the daily prices of 20
 # assets from the S&P 500 Index composition starting from 1990-01-02 up to 2022-12-28:
 from plotly.io import show
-from sklearn.cluster import KMeans
-from sklearn.model_selection import train_test_split
+from shogun.cluster import KMeans
+from shogun.model_selection import train_test_split
 
 from shogunfolio import Population, RiskMeasure
 from shogunfolio.cluster import HierarchicalClustering, LinkageMethod
@@ -143,9 +143,9 @@ model3.clustering_estimator_.plot_dendrogram(heatmap=True)
 # Clustering Estimator
 # ====================
 # The above models used the default :class:`~shogunfolio.cluster.HierarchicalClustering`
-# estimator. This can be replaced by any `sklearn` or `shogunfolio` clustering estimators.
+# estimator. This can be replaced by any `shogun` or `shogunfolio` clustering estimators.
 #
-# For example, let's create a new model with `sklearn.cluster.KMeans`:
+# For example, let's create a new model with `shogun.cluster.KMeans`:
 model4 = NestedClustersOptimization(
     inner_estimator=inner_estimator,
     outer_estimator=outer_estimator,

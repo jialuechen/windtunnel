@@ -13,9 +13,9 @@ from typing import Any
 
 import numpy as np
 import numpy.typing as npt
-import sklearn.base as skb
-import sklearn.linear_model as skl
-import sklearn.multioutput as skm
+import shogun.base as skb
+import shogun.linear_model as skl
+import shogun.multioutput as skm
 
 from shogunfolio.prior._base import BasePrior, PriorModel
 from shogunfolio.prior._empirical import EmpiricalPrior
@@ -71,7 +71,7 @@ class LoadingMatrixRegression(BaseLoadingMatrix):
         The intercepts.
 
     multi_output_regressor_: MultiOutputRegressor
-        Fitted `sklearn.multioutput.MultiOutputRegressor`
+        Fitted `shogun.multioutput.MultiOutputRegressor`
     """
 
     multi_output_regressor_: skm.MultiOutputRegressor

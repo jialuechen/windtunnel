@@ -15,7 +15,7 @@ ensemble of portfolios belonging to the Mean-Variance-CDaR efficient frontier.
 
 import numpy as np
 from plotly.io import show
-from sklearn.model_selection import train_test_split
+from shogun.model_selection import train_test_split
 
 from shogunfolio import PerfMeasure, RatioMeasure, RiskMeasure
 from shogunfolio.datasets import load_sp500_dataset

@@ -11,8 +11,8 @@ import numpy.typing as npt
 import plotly.graph_objects as go
 import scipy.cluster.hierarchy as sch
 import scipy.spatial.distance as scd
-import sklearn.base as skb
-import sklearn.utils.validation as skv
+import shogun.base as skb
+import shogun.utils.validation as skv
 
 from shogunfolio.utils.fixes import create_dendrogram
 from shogunfolio.utils.stats import assert_is_distance, compute_optimal_n_clusters

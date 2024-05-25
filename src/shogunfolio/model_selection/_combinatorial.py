@@ -18,8 +18,8 @@ import numpy as np
 import numpy.typing as npt
 import pandas as pd
 import plotly.graph_objects as go
-import sklearn.model_selection as skm
-import sklearn.utils as sku
+import shogun.model_selection as skm
+import shogun.utils as sku
 
 import shogunfolio.typing as skt
 
@@ -72,7 +72,7 @@ class CombinatorialPurgedCV(BaseCombinatorialCV):
 
     n_test_folds : int, default=8
         Number of test folds. Must be at least 2.
-        For only one test fold, use `sklearn.model_validation.KFold`.
+        For only one test fold, use `shogun.model_validation.KFold`.
 
     purged_size : int, default=0
         Number of observations to exclude from the start of each train set that are

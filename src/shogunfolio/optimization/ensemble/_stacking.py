@@ -11,11 +11,11 @@ from copy import deepcopy
 
 import numpy as np
 import numpy.typing as npt
-import sklearn as sk
-import sklearn.model_selection as skm
-import sklearn.utils as sku
-import sklearn.utils.parallel as skp
-import sklearn.utils.validation as skv
+import shogun as sk
+import shogun.model_selection as skm
+import shogun.utils as sku
+import shogun.utils.parallel as skp
+import shogun.utils.validation as skv
 
 import shogunfolio.typing as skt
 from shogunfolio.measures import RatioMeasure
@@ -160,7 +160,7 @@ class StackingOptimization(BaseOptimization, BaseComposition):
 
         Returns
         -------
-        :class:`~sklearn.utils.Bunch`
+        :class:`~shogun.utils.Bunch`
         """
         return sku.Bunch(**dict(self.estimators))
 

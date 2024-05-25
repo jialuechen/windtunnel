@@ -13,10 +13,10 @@ from copy import deepcopy
 import numpy as np
 import numpy.typing as npt
 import pandas as pd
-import sklearn as sk
-import sklearn.base as skb
-import sklearn.model_selection as skm
-import sklearn.utils.parallel as skp
+import shogun as sk
+import shogun.base as skb
+import shogun.model_selection as skm
+import shogun.utils.parallel as skp
 
 import shogunfolio.typing as skt
 from shogunfolio.cluster import HierarchicalClustering
@@ -46,7 +46,7 @@ class NestedClustersOptimization(BaseOptimization):
 
         The original paper uses KMeans as the clustering algorithm, minimum Variance for
         the inner-estimator and equal-weighted for the outer-estimator. Here we
-        generalize it to all `sklearn` and `shogunfolio` clustering algorithms
+        generalize it to all `shogun` and `shogunfolio` clustering algorithms
         (HierarchicalClustering, KMeans, etc.), all portfolio optimizations
         (Mean-Variance, HRP, etc.) and risk measures (Variance, CVaR, etc.).
         To avoid data leakage at the outer-estimator, we use out-of-sample estimates to
@@ -78,8 +78,8 @@ class NestedClustersOptimization(BaseOptimization):
 
         .. note ::
 
-            Clustering estimators from `sklearn` are also supported. For example:
-            `sklearn.cluster.KMeans`.
+            Clustering estimators from `shogun` are also supported. For example:
+            `shogun.cluster.KMeans`.
 
     cv : BaseCrossValidator | BaseCombinatorialCV | int | "ignore", optional
         Determines the cross-validation splitting strategy.
@@ -89,7 +89,7 @@ class NestedClustersOptimization(BaseOptimization):
         Possible inputs for `cv` are:
 
             * "ignore": no cross-validation is used (note that it will likely lead to data leakage with a high risk of overfitting)
-            * Integer, to specify the number of folds in a :class:`sklearn.model_selection.KFold`
+            * Integer, to specify the number of folds in a :class:`shogun.model_selection.KFold`
             * An object to be used as a cross-validation generator
             * An iterable yielding train, test splits
             * A :class:`~shogunfolio.model_selection.CombinatorialPurgedCV`

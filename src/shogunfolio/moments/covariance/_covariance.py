@@ -11,8 +11,8 @@ import numpy as np
 import numpy.typing as npt
 import pandas as pd
 import scipy.optimize as sco
-import sklearn.covariance as skc
-import sklearn.neighbors as skn
+import shogun.covariance as skc
+import shogun.neighbors as skn
 
 from shogunfolio.moments.covariance._base import BaseCovariance
 from shogunfolio.utils.stats import corr_to_cov, cov_to_corr
@@ -620,7 +620,7 @@ class LedoitWolf(BaseCovariance, skc.LedoitWolf):
     described in [1]_.
 
     Read more in `scikit-learn
-    <https://scikit-learn.org/stable/modules/generated/sklearn.covariance.ShrunkCovariance.html>`_.
+    <https://scikit-learn.org/stable/modules/generated/shogun.covariance.ShrunkCovariance.html>`_.
 
     Parameters
     ----------
@@ -743,7 +743,7 @@ class OAS(BaseCovariance, skc.OAS):
     """Oracle Approximating Shrinkage Estimator as proposed in [1]_.
 
     Read more in `scikit-learn
-    <https://scikit-learn.org/stable/modules/generated/sklearn.covariance.ShrunkCovariance.html>`_.
+    <https://scikit-learn.org/stable/modules/generated/shogun.covariance.ShrunkCovariance.html>`_.
 
     Parameters
     ----------
@@ -845,7 +845,7 @@ class ShrunkCovariance(BaseCovariance, skc.ShrunkCovariance):
     """Covariance estimator with shrinkage.
 
     Read more in `scikit-learn
-    <https://scikit-learn.org/stable/modules/generated/sklearn.covariance.ShrunkCovariance.html>`_.
+    <https://scikit-learn.org/stable/modules/generated/shogun.covariance.ShrunkCovariance.html>`_.
 
     Parameters
     ----------

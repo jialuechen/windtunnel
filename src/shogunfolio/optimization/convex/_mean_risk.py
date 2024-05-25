@@ -10,7 +10,7 @@ import cvxpy as cp
 import numpy as np
 import numpy.typing as npt
 import pandas as pd
-import sklearn as sk
+import shogun as sk
 
 import shogunfolio.typing as skt
 from shogunfolio.measures import RiskMeasure

@@ -12,8 +12,8 @@ from collections.abc import Iterator
 
 import numpy as np
 import numpy.typing as npt
-import sklearn.model_selection as skm
-import sklearn.utils as sku
+import shogun.model_selection as skm
+import shogun.utils as sku
 
 
 class WalkForward(skm.BaseCrossValidator):
@@ -25,7 +25,7 @@ class WalkForward(skm.BaseCrossValidator):
     In each split, test indices must be higher than before, and thus shuffling
     in cross validator is inappropriate.
 
-    Compared to `sklearn.model_selection.TimeSeriesSplit`, you control the train/test
+    Compared to `shogun.model_selection.TimeSeriesSplit`, you control the train/test
     folds by providing a number of training and test samples instead of a number of
     split making it more suitable for portfolio cross-validation.
 

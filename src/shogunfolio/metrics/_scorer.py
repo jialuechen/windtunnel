@@ -66,8 +66,8 @@ def make_scorer(
     functionalities with `Portfolio` objects.
 
     This factory function wraps scoring functions for use in
-    `sklearn.model_selection.GridSearchCV` and
-    `sklearn.model_selection.cross_val_score`.
+    `shogun.model_selection.GridSearchCV` and
+    `shogun.model_selection.cross_val_score`.
 
     Parameters
     ----------

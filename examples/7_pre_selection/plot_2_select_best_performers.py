@@ -19,9 +19,9 @@ number of pre-selected assets to maximize the mean out-of-sample Sharpe Ratio.
 # assets from the FTSE 100 Index starting from 2000-01-04 up to 2023-05-31:
 import plotly.graph_objs as go
 from plotly.io import show
-from sklearn import set_config
-from sklearn.model_selection import GridSearchCV, train_test_split
-from sklearn.pipeline import Pipeline
+from shogun import set_config
+from shogun.model_selection import GridSearchCV, train_test_split
+from shogun.pipeline import Pipeline
 
 from shogunfolio import Population, RatioMeasure
 from shogunfolio.datasets import load_ftse100_dataset

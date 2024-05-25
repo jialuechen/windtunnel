@@ -2,7 +2,7 @@ import datetime as dt
 
 import numpy as np
 import pytest
-import sklearn.model_selection as skm
+import shogun.model_selection as skm
 
 from shogunfolio import MultiPeriodPortfolio, Population
 from shogunfolio.datasets import load_sp500_dataset

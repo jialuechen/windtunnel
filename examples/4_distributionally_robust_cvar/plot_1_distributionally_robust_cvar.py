@@ -31,7 +31,7 @@ distribution, bringing the weights closer to the equal weighted portfolio.
 # We load the S&P 500 :ref:`dataset <datasets>` composed of the daily prices of 20
 # assets from the S&P 500 Index composition starting from 2020-01-02 up to 2022-12-28:
 from plotly.io import show
-from sklearn.model_selection import train_test_split
+from shogun.model_selection import train_test_split
 
 from shogunfolio import Population
 from shogunfolio.datasets import load_sp500_dataset

@@ -10,11 +10,11 @@
 
 import numpy as np
 import numpy.typing as npt
-import sklearn as sk
-import sklearn.base as skb
-import sklearn.model_selection as skm
-import sklearn.utils as sku
-import sklearn.utils.parallel as skp
+import shogun as sk
+import shogun.base as skb
+import shogun.model_selection as skm
+import shogun.utils as sku
+import shogun.utils.parallel as skp
 
 from shogunfolio.model_selection._combinatorial import BaseCombinatorialCV
 from shogunfolio.population import Population

@@ -27,7 +27,7 @@ To avoid data leakage, out-of-sample estimates are used to fit the outer optimiz
 # We load the FTSE 100 dataset. This dataset is composed of the daily prices of 64
 # assets from the FTSE 100 Index composition starting from 2000-01-04 up to 2023-05-31:
 from plotly.io import show
-from sklearn.model_selection import GridSearchCV, train_test_split
+from shogun.model_selection import GridSearchCV, train_test_split
 
 from shogunfolio import Population, RatioMeasure, RiskMeasure
 from shogunfolio.datasets import load_ftse100_dataset

@@ -2,7 +2,7 @@ import datetime as dt
 
 import numpy as np
 import pytest
-from sklearn.linear_model import LassoCV
+from shogun.linear_model import LassoCV
 
 from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
 from shogunfolio.preprocessing import prices_to_returns

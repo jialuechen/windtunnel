@@ -19,9 +19,9 @@ pre-selection.
 # We load the FTSE 100 :ref:`dataset <datasets>` composed of the daily prices of 64
 # assets from the FTSE 100 Index composition starting from 2000-01-04 up to 2023-05-31:
 from plotly.io import show
-from sklearn import set_config
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
+from shogun import set_config
+from shogun.model_selection import train_test_split
+from shogun.pipeline import Pipeline
 
 from shogunfolio import Population, RatioMeasure
 from shogunfolio.datasets import load_ftse100_dataset

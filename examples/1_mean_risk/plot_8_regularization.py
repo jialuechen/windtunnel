@@ -43,8 +43,8 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.io import show
 from scipy.stats import loguniform
-from sklearn import clone
-from sklearn.model_selection import GridSearchCV, RandomizedSearchCV, train_test_split
+from shogun import clone
+from shogun.model_selection import GridSearchCV, RandomizedSearchCV, train_test_split
 
 from shogunfolio import PerfMeasure, Population, RatioMeasure, RiskMeasure
 from shogunfolio.datasets import load_ftse100_dataset

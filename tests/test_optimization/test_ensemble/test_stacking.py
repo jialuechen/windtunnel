@@ -2,7 +2,7 @@ import datetime as dt
 
 import numpy as np
 import pytest
-import sklearn.model_selection as skm
+import shogun.model_selection as skm
 from shogunfolio import RiskMeasure
 from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
 from shogunfolio.model_selection import CombinatorialPurgedCV

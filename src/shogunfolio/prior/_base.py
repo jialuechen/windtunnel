@@ -9,7 +9,7 @@ from dataclasses import dataclass
 
 import numpy as np
 import numpy.typing as npt
-import sklearn.base as skb
+import shogun.base as skb
 
 
 # frozen=True with eq=False will lead to an id-based hashing which is needed for

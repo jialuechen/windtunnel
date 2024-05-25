@@ -37,7 +37,7 @@ In this example, we will use the CVaR risk measure.
 # assets from the SPX Index composition and the Factors dataset composed of the daily
 # prices of 5 ETF representing common factors:
 from plotly.io import show
-from sklearn.model_selection import train_test_split
+from shogun.model_selection import train_test_split
 
 from shogunfolio import Population, RiskMeasure
 from shogunfolio.cluster import HierarchicalClustering, LinkageMethod

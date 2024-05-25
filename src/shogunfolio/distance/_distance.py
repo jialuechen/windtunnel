@@ -9,7 +9,7 @@ import numpy.typing as npt
 import pandas as pd
 import scipy.spatial.distance as scd
 import scipy.stats as sct
-import sklearn.metrics as skm
+import shogun.metrics as skm
 
 from shogunfolio.distance._base import BaseDistance
 from shogunfolio.moments import BaseCovariance, GerberCovariance

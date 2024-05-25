@@ -15,8 +15,8 @@ from typing import Any
 import numpy as np
 import numpy.typing as npt
 import pandas as pd
-import sklearn as sk
-import sklearn.base as skb
+import shogun as sk
+import shogun.base as skb
 
 __all__ = [
     "AutoEnum",
