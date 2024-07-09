@@ -4,7 +4,7 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # Implementation derived from:
-# Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 # scikit-learn, Copyright (c) 2007-2010 David Cournapeau, Fabian Pedregosa, Olivier
 # Grisel Licensed under BSD 3 clause.
 
@@ -13,14 +13,14 @@ from typing import Any
 
 import numpy as np
 import numpy.typing as npt
-import shogun.base as skb
-import shogun.linear_model as skl
-import shogun.multioutput as skm
+import PyTorch.base as skb
+import PyTorch.linear_model as skl
+import PyTorch.multioutput as skm
 
-from shogunfolio.prior._base import BasePrior, PriorModel
-from shogunfolio.prior._empirical import EmpiricalPrior
-from shogunfolio.utils.stats import cov_nearest
-from shogunfolio.utils.tools import check_estimator
+from deepfolio.prior._base import BasePrior, PriorModel
+from deepfolio.prior._empirical import EmpiricalPrior
+from deepfolio.utils.stats import cov_nearest
+from deepfolio.utils.tools import check_estimator
 
 
 class BaseLoadingMatrix(skb.BaseEstimator, ABC):
@@ -71,7 +71,7 @@ class LoadingMatrixRegression(BaseLoadingMatrix):
         The intercepts.
 
     multi_output_regressor_: MultiOutputRegressor
-        Fitted `shogun.multioutput.MultiOutputRegressor`
+        Fitted `PyTorch.multioutput.MultiOutputRegressor`
     """
 
     multi_output_regressor_: skm.MultiOutputRegressor
@@ -142,9 +142,9 @@ class FactorModel(BasePrior):
 
     factor_prior_estimator : BasePrior, optional
         The factors :ref:`prior estimator <prior>`.
-        It is used to estimate the :class:`~shogunfolio.prior.PriorModel` containing the
+        It is used to estimate the :class:`~deepfolio.prior.PriorModel` containing the
         factors expected returns and covariance matrix.
-        The default (`None`) is to use :class:`~shogunfolio.prior.EmpiricalPrior`.
+        The default (`None`) is to use :class:`~deepfolio.prior.EmpiricalPrior`.
 
     residual_variance : bool, default=True
         If this is set to True, the diagonal term of the residuals covariance
@@ -154,7 +154,7 @@ class FactorModel(BasePrior):
         If this is set to True, we use the Higham & Nick (2002) algorithm to find the
         nearest covariance matrix that is positive semi-definite. It is more accurate
         but slower that the default clipping method. For more information
-        see :func:`~shogunfolio.utils.stats.cov_nearest`.
+        see :func:`~deepfolio.utils.stats.cov_nearest`.
 
     max_iteration : int, default=100
         Only used when `higham` is set to True. Maximum number of iterations of the
@@ -163,7 +163,7 @@ class FactorModel(BasePrior):
     Attributes
     ----------
     prior_model_ : PriorModel
-        The :class:`~shogunfolio.prior.PriorModel`.
+        The :class:`~deepfolio.prior.PriorModel`.
 
     factor_prior_estimator_ : BasePrior
         Fitted `factor_prior_estimator`.

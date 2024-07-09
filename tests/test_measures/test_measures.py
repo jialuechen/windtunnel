@@ -1,9 +1,9 @@
 import numpy as np
 import pytest
 
-import shogunfolio.measures as skm
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.preprocessing import prices_to_returns
+import deepfolio.measures as skm
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.preprocessing import prices_to_returns
 
 
 @pytest.fixture(scope="module")

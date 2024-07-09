@@ -3,7 +3,7 @@
 Maximum Diversification
 =======================
 
-This tutorial uses the :class:`~shogunfolio.optimization.MaximumDiversification`
+This tutorial uses the :class:`~deepfolio.optimization.MaximumDiversification`
 optimization to find the portfolio that maximizes the diversification ratio, which is
 the ratio of the weighted volatilities over the total volatility.
 """
@@ -14,12 +14,12 @@ the ratio of the weighted volatilities over the total volatility.
 # We load the S&P 500 :ref:`dataset <datasets>` composed of the daily prices of 20
 # assets from the S&P 500 Index composition starting from 1990-01-02 up to 2022-12-28:
 from plotly.io import show
-from shogun.model_selection import train_test_split
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import Population
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.optimization import EqualWeighted, MaximumDiversification
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio import Population
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.optimization import EqualWeighted, MaximumDiversification
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 X = prices_to_returns(prices)
@@ -36,7 +36,7 @@ model.weights_
 
 # %%
 # To compare this model, we use an equal weighted benchmark using
-# the :class:`~shogunfolio.optimization.EqualWeighted` estimator:
+# the :class:`~deepfolio.optimization.EqualWeighted` estimator:
 bench = EqualWeighted()
 bench.fit(X_train)
 bench.weights_
@@ -63,7 +63,7 @@ ptf_bench_test = bench.predict(X_test)
 # Analysis
 # ========
 # For improved analysis, it's possible to load both predicted portfolios into a
-# :class:`~shogunfolio.population.Population`:
+# :class:`~deepfolio.population.Population`:
 population = Population([ptf_model_test, ptf_bench_test])
 
 # %%

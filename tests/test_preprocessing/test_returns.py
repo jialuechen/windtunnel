@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio.datasets import load_factors_dataset, load_sp500_dataset
+from deepfolio.preprocessing import prices_to_returns
 
 
 @pytest.fixture(scope="module")

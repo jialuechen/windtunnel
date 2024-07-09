@@ -4,7 +4,7 @@ Transaction Costs
 =================
 
 This tutorial shows how to incorporate transaction costs (TC) into the
-:class:`~shogunfolio.optimization.MeanRisk` optimization.
+:class:`~deepfolio.optimization.MeanRisk` optimization.
 
 TC are fixed costs incurred when buying or selling an asset.
 
@@ -70,11 +70,11 @@ expected investment duration.
 import numpy as np
 from plotly.io import show
 
-from shogunfolio import MultiPeriodPortfolio, Population, Portfolio
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.model_selection import WalkForward, cross_val_predict
-from shogunfolio.optimization import MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio import MultiPeriodPortfolio, Population, Portfolio
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.model_selection import WalkForward, cross_val_predict
+from deepfolio.optimization import MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 prices = prices[["AAPL", "GE", "JPM"]]

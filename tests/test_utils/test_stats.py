@@ -3,11 +3,11 @@ import pytest
 import scipy.cluster.hierarchy as sch
 import scipy.spatial.distance as scd
 
-from shogunfolio.cluster import LinkageMethod
-from shogunfolio.datasets import load_nasdaq_dataset, load_sp500_dataset
-from shogunfolio.distance import PearsonDistance
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.utils.stats import (
+from deepfolio.cluster import LinkageMethod
+from deepfolio.datasets import load_nasdaq_dataset, load_sp500_dataset
+from deepfolio.distance import PearsonDistance
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.utils.stats import (
     assert_is_distance,
     assert_is_square,
     assert_is_symmetric,

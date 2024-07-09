@@ -4,7 +4,7 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # Implementation derived from:
-# Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 # scikit-learn, Copyright (c) 2007-2010 David Cournapeau, Fabian Pedregosa, Olivier
 # Grisel Licensed under BSD 3 clause.
 
@@ -12,14 +12,14 @@ import numpy as np
 import numpy.typing as npt
 import scipy.stats as st
 
-from shogunfolio.prior import BasePrior, EmpiricalPrior
-from shogunfolio.uncertainty_set._base import (
+from deepfolio.prior import BasePrior, EmpiricalPrior
+from deepfolio.uncertainty_set._base import (
     BaseCovarianceUncertaintySet,
     BaseMuUncertaintySet,
     UncertaintySet,
 )
-from shogunfolio.utils.stats import commutation_matrix
-from shogunfolio.utils.tools import check_estimator
+from deepfolio.utils.stats import commutation_matrix
+from deepfolio.utils.tools import check_estimator
 
 
 class EmpiricalMuUncertaintySet(BaseMuUncertaintySet):
@@ -52,7 +52,7 @@ class EmpiricalMuUncertaintySet(BaseMuUncertaintySet):
     ----------
     prior_estimator : BasePrior, optional
         The :ref:`prior estimator <prior>` used to estimate the assets covariance
-        matrix. The default (`None`) is to use :class:`~shogunfolio.prior.EmpiricalPrior`.
+        matrix. The default (`None`) is to use :class:`~deepfolio.prior.EmpiricalPrior`.
 
     confidence_level : float , default=0.95
         Confidence level :math:`\beta` of the inverse cumulative distribution function
@@ -65,7 +65,7 @@ class EmpiricalMuUncertaintySet(BaseMuUncertaintySet):
     Attributes
     ----------
     uncertainty_set_ : UncertaintySet
-        Mu Uncertainty set :class:`~shogunfolio.uncertainty_set.UncertaintySet`.
+        Mu Uncertainty set :class:`~deepfolio.uncertainty_set.UncertaintySet`.
 
     prior_estimator_ : BasePrior
         Fitted `prior_estimator`.
@@ -160,7 +160,7 @@ class EmpiricalCovarianceUncertaintySet(BaseCovarianceUncertaintySet):
     ----------
     prior_estimator : BasePrior, optional
         The :ref:`prior estimator <prior>` used to estimate the assets covariance
-        matrix. The default (`None`) is to use :class:`~shogunfolio.prior.EmpiricalPrior`.
+        matrix. The default (`None`) is to use :class:`~deepfolio.prior.EmpiricalPrior`.
 
     confidence_level : float , default=0.95
         Confidence level :math:`\beta` of the inverse cumulative distribution function
@@ -173,7 +173,7 @@ class EmpiricalCovarianceUncertaintySet(BaseCovarianceUncertaintySet):
     Attributes
     ----------
     uncertainty_set_ : UncertaintySet
-        Covariance Uncertainty set :class:`~shogunfolio.uncertainty_set.UncertaintySet`.
+        Covariance Uncertainty set :class:`~deepfolio.uncertainty_set.UncertaintySet`.
 
     prior_estimator_ : BasePrior
         Fitted `prior_estimator`.

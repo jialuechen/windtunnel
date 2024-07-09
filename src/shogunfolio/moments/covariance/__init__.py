@@ -1,9 +1,9 @@
 """Covariance module."""
 
-from shogunfolio.moments.covariance._base import (
+from deepfolio.moments.covariance._base import (
     BaseCovariance,
 )
-from shogunfolio.moments.covariance._covariance import (
+from deepfolio.moments.covariance._covariance import (
     OAS,
     DenoiseCovariance,
     DetoneCovariance,

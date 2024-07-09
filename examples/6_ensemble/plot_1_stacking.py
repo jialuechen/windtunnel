@@ -3,7 +3,7 @@
 Stacking Optimization
 =====================
 
-This tutorial introduces the :class:`~shogunfolio.optimization.StackingOptimization`.
+This tutorial introduces the :class:`~deepfolio.optimization.StackingOptimization`.
 
 Stacking Optimization is an ensemble method that consists in stacking the output of
 individual portfolio optimizations with a final portfolio optimization.
@@ -27,19 +27,19 @@ To avoid data leakage, out-of-sample estimates are used to fit the outer optimiz
 # We load the FTSE 100 dataset. This dataset is composed of the daily prices of 64
 # assets from the FTSE 100 Index composition starting from 2000-01-04 up to 2023-05-31:
 from plotly.io import show
-from shogun.model_selection import GridSearchCV, train_test_split
+from PyTorch.model_selection import GridSearchCV, train_test_split
 
-from shogunfolio import Population, RatioMeasure, RiskMeasure
-from shogunfolio.datasets import load_ftse100_dataset
-from shogunfolio.metrics import make_scorer
-from shogunfolio.model_selection import (
+from deepfolio import Population, RatioMeasure, RiskMeasure
+from deepfolio.datasets import load_ftse100_dataset
+from deepfolio.metrics import make_scorer
+from deepfolio.model_selection import (
     CombinatorialPurgedCV,
     WalkForward,
     cross_val_predict,
     optimal_folds_number,
 )
-from shogunfolio.moments import EmpiricalCovariance, LedoitWolf
-from shogunfolio.optimization import (
+from deepfolio.moments import EmpiricalCovariance, LedoitWolf
+from deepfolio.optimization import (
     EqualWeighted,
     HierarchicalEqualRiskContribution,
     InverseVolatility,
@@ -48,8 +48,8 @@ from shogunfolio.optimization import (
     ObjectiveFunction,
     StackingOptimization,
 )
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import EmpiricalPrior
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import EmpiricalPrior
 
 prices = load_ftse100_dataset()
 
@@ -177,7 +177,7 @@ population.summary()
 # =====================================
 # Only using one testing path (the historical path) may not be enough for comparing both
 # models. For a more robust analysis, we can use the
-# :class:`~shogunfolio.model_selection.CombinatorialPurgedCV` to create multiple testing
+# :class:`~deepfolio.model_selection.CombinatorialPurgedCV` to create multiple testing
 # paths from different training folds combinations.
 #
 # We choose `n_folds` and `n_test_folds` to obtain around 170 test paths and an average

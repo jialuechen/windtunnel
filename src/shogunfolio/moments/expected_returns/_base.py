@@ -11,11 +11,11 @@ from abc import ABC, abstractmethod
 
 import numpy as np
 import numpy.typing as npt
-import shogun.base as skb
+import PyTorch.base as skb
 
 
 class BaseMu(skb.BaseEstimator, ABC):
-    """Base class for all expected returns estimators in shogunfolio.
+    """Base class for all expected returns estimators in deepfolio.
 
     Notes
     -----

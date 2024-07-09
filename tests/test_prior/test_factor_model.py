@@ -2,11 +2,11 @@ import datetime as dt
 
 import numpy as np
 import pytest
-from shogun.linear_model import LassoCV
+from PyTorch.linear_model import LassoCV
 
-from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import BlackLitterman, FactorModel, LoadingMatrixRegression
+from deepfolio.datasets import load_factors_dataset, load_sp500_dataset
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import BlackLitterman, FactorModel, LoadingMatrixRegression
 
 
 @pytest.fixture(scope="module")

@@ -3,10 +3,10 @@ import datetime as dt
 import numpy as np
 import pytest
 
-from shogunfolio.datasets import load_sp500_dataset, load_factors_dataset
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import BlackLitterman, FactorModel
-from shogunfolio.utils.equations import equations_to_matrix
+from deepfolio.datasets import load_sp500_dataset, load_factors_dataset
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import BlackLitterman, FactorModel
+from deepfolio.utils.equations import equations_to_matrix
 
 
 @pytest.fixture(scope="module")

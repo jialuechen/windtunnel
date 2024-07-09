@@ -3,8 +3,8 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 
-from shogunfolio.distance._base import BaseDistance
-from shogunfolio.distance._distance import (
+from deepfolio.distance._base import BaseDistance
+from deepfolio.distance._distance import (
     CovarianceDistance,
     DistanceCorrelation,
     KendallDistance,

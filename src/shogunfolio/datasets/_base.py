@@ -18,19 +18,19 @@ from pathlib import Path
 import joblib
 import pandas as pd
 
-DATA_MODULE = "shogunfolio.datasets.data"
+DATA_MODULE = "deepfolio.datasets.data"
 
 
 def get_data_home(data_home: str | Path | None = None) -> str:
-    """Return the path of the shogunfolio data directory.
+    """Return the path of the deepfolio data directory.
 
     This folder is used by some large dataset loaders to avoid downloading the
     data several times.
 
-    By default, the data directory is set to a folder named 'shogunfolio_data' in the
+    By default, the data directory is set to a folder named 'deepfolio_data' in the
     user home folder.
 
-    Alternatively, it can be set by the 'shogunfolio_DATA' environment
+    Alternatively, it can be set by the 'deepfolio_DATA' environment
     variable or programmatically by giving an explicit folder path. The '~'
     symbol is expanded to the user home folder.
 
@@ -39,16 +39,16 @@ def get_data_home(data_home: str | Path | None = None) -> str:
     Parameters
     ----------
     data_home : str, optional
-        The path to shogunfolio data directory. If `None`, the default path
-        is `~/shogunfolio_data`.
+        The path to deepfolio data directory. If `None`, the default path
+        is `~/deepfolio_data`.
 
     Returns
     -------
     data_home: str or path-like, optional
-        The path to shogunfolio data directory.
+        The path to deepfolio data directory.
     """
     if data_home is None:
-        data_home = os.environ.get("shogunfolio_DATA", os.path.join("~", "shogunfolio_data"))
+        data_home = os.environ.get("deepfolio_DATA", os.path.join("~", "deepfolio_data"))
     data_home = os.path.expanduser(data_home)
     os.makedirs(data_home, exist_ok=True)
     return data_home
@@ -61,7 +61,7 @@ def clear_data_home(data_home: str | Path | None = None) -> None:
     ----------
     data_home : str or path-like, optional
         The path to scikit-learn data directory. If `None`, the default path
-        is `~/shogunfolio_data`.
+        is `~/deepfolio_data`.
     """
     data_home = get_data_home(data_home)
     shutil.rmtree(data_home)
@@ -85,8 +85,8 @@ def load_gzip_compressed_csv_data(
         Name of gzip-compressed csv file  (`'*.csv.gz'`) to be loaded from
         `data_module/data_file_name`. For example `'SPX500.csv.gz'`.
 
-    data_module : str or module, default='shogunfolio.datasets.data'
-        Module where data lives. The default is `'shogunfolio.datasets.data'`.
+    data_module : str or module, default='deepfolio.datasets.data'
+        Module where data lives. The default is `'deepfolio.datasets.data'`.
 
     encoding : str, default="utf-8"
         Name of the encoding that the gzip-decompressed file will be
@@ -127,7 +127,7 @@ def download_dataset(
 
     data_home : str or path-like, optional
         Specify another download and cache folder for the datasets. By default,
-        all shogunfolio data is stored in `~/shogunfolio_data` sub-folders.
+        all deepfolio data is stored in `~/deepfolio_data` sub-folders.
 
     download_if_missing : bool, default=True
         If False, raise an OSError if the data is not locally available
@@ -141,7 +141,7 @@ def download_dataset(
         representing the asset price of a given observation.
     """
     url = (
-        f"https://github.com/shogunfolio/shogunfolio-datasets/raw/main/"
+        f"https://github.com/deepfolio/deepfolio-datasets/raw/main/"
         f"datasets/{data_filename}.csv.gz"
     )
 
@@ -186,7 +186,7 @@ def load_sp500_dataset() -> pd.DataFrame:
 
     Examples
     --------
-    >>> from shogunfolio.datasets import load_sp500_dataset
+    >>> from deepfolio.datasets import load_sp500_dataset
     >>> prices = load_sp500_dataset()
     >>> prices.head()
                     AAPL     AMD       BAC  ...       UNH       WMT      XOM
@@ -225,7 +225,7 @@ def load_sp500_index() -> pd.DataFrame:
 
     Examples
     --------
-    >>> from shogunfolio.datasets import load_sp500_index
+    >>> from deepfolio.datasets import load_sp500_index
     >>> prices = load_sp500_index()
     >>> prices.head()
                  SP500
@@ -273,7 +273,7 @@ def load_factors_dataset() -> pd.DataFrame:
 
     Examples
     --------
-    >>> from shogunfolio.datasets import load_factors_dataset
+    >>> from deepfolio.datasets import load_factors_dataset
     >>> prices = load_factors_dataset()
     >>> prices.head()
                   MTUM    QUAL    SIZE    USMV    VLUE
@@ -311,7 +311,7 @@ def load_ftse100_dataset(data_home=None, download_if_missing=True) -> pd.DataFra
     ----------
     data_home : str, optional
         Specify another download and cache folder for the datasets.
-        By default, all shogunfolio data is stored in `~/shogunfolio_data` subfolders.
+        By default, all deepfolio data is stored in `~/deepfolio_data` subfolders.
 
     download_if_missing : bool, default=True
         If False, raise an OSError if the data is not locally available
@@ -324,7 +324,7 @@ def load_ftse100_dataset(data_home=None, download_if_missing=True) -> pd.DataFra
 
     Examples
     --------
-    >>> from shogunfolio.datasets import load_ftse100_dataset
+    >>> from deepfolio.datasets import load_ftse100_dataset
     >>> prices = load_ftse100_dataset()
     >>> prices.head()
                   AAL.L    ABF.L   AHT.L  ANTO.L  ...   VOD.L   WEIR.L    WPP.L    WTB.L
@@ -363,7 +363,7 @@ def load_nasdaq_dataset(data_home=None, download_if_missing=True) -> pd.DataFram
     ----------
     data_home : str, optional
         Specify another download and cache folder for the datasets.
-        By default, all shogunfolio data is stored in `~/shogunfolio_data` subfolders.
+        By default, all deepfolio data is stored in `~/deepfolio_data` subfolders.
 
     download_if_missing : bool, default=True
         If False, raise an OSError if the data is not locally available
@@ -376,7 +376,7 @@ def load_nasdaq_dataset(data_home=None, download_if_missing=True) -> pd.DataFram
 
     Examples
     --------
-    >>> from shogunfolio.datasets import load_nasdaq_dataset
+    >>> from deepfolio.datasets import load_nasdaq_dataset
     >>> prices = load_nasdaq_dataset()
     >>> prices.head()
                    AAL   AAOI    AAON    AAPL  ...  ZVRA   ZYME    ZYNE   ZYXI

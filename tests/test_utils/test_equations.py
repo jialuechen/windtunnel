@@ -1,7 +1,7 @@
 import numpy as np
 
-from shogunfolio.exceptions import EquationToMatrixError
-from shogunfolio.utils.equations import _string_to_equation, equations_to_matrix
+from deepfolio.exceptions import EquationToMatrixError
+from deepfolio.utils.equations import _string_to_equation, equations_to_matrix
 
 
 def test_string_to_equation():

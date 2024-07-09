@@ -11,14 +11,14 @@ from abc import ABC, abstractmethod
 
 import numpy as np
 import numpy.typing as npt
-import shogun.base as skb
+import PyTorch.base as skb
 
-from shogunfolio.exceptions import NonPositiveVarianceError
-from shogunfolio.utils.stats import cov_nearest
+from deepfolio.exceptions import NonPositiveVarianceError
+from deepfolio.utils.stats import cov_nearest
 
 
 class BaseCovariance(skb.BaseEstimator, ABC):
-    """Base class for all covariance estimators in `shogunfolio`.
+    """Base class for all covariance estimators in `deepfolio`.
 
     Parameters
     ----------
@@ -29,7 +29,7 @@ class BaseCovariance(skb.BaseEstimator, ABC):
         However, due to floating-point inaccuracies, we can end up with a covariance
         matrix that is slightly non-PSD or where Cholesky decomposition is failing.
         This often occurs in high dimensional problems.
-        For more details, see :func:`~shogunfolio.units.stats.cov_nearest`.
+        For more details, see :func:`~deepfolio.units.stats.cov_nearest`.
         The default is `False`.
 
     higham : bool, default=False

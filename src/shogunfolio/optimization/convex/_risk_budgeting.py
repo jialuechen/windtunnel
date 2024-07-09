@@ -4,17 +4,17 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # The optimization features are derived
-# from Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# from Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 
 import cvxpy as cp
 import numpy as np
 import numpy.typing as npt
 
-import shogunfolio.typing as skt
-from shogunfolio.measures import RiskMeasure
-from shogunfolio.optimization.convex._base import ConvexOptimization
-from shogunfolio.prior import BasePrior, EmpiricalPrior
-from shogunfolio.utils.tools import args_names, check_estimator
+import deepfolio.typing as skt
+from deepfolio.measures import RiskMeasure
+from deepfolio.optimization.convex._base import ConvexOptimization
+from deepfolio.prior import BasePrior, EmpiricalPrior
+from deepfolio.utils.tools import args_names, check_estimator
 
 
 class RiskBudgeting(ConvexOptimization):
@@ -63,7 +63,7 @@ class RiskBudgeting(ConvexOptimization):
     Parameters
     ----------
     risk_measure : RiskMeasure, default=RiskMeasure.VARIANCE
-        :class:`~shogunfolio.meta.RiskMeasure` of the optimization.
+        :class:`~deepfolio.meta.RiskMeasure` of the optimization.
         Can be any of:
 
             * VARIANCE
@@ -94,10 +94,10 @@ class RiskBudgeting(ConvexOptimization):
 
     prior_estimator : BasePrior, optional
         :ref:`Prior estimator <prior>`.
-        The prior estimator is used to estimate the :class:`~shogunfolio.prior.PriorModel`
+        The prior estimator is used to estimate the :class:`~deepfolio.prior.PriorModel`
         containing the estimation of assets expected returns, covariance matrix,
         returns and Cholesky decomposition of the covariance.
-        The default (`None`) is to use :class:`~shogunfolio.prior.EmpiricalPrior`.
+        The default (`None`) is to use :class:`~deepfolio.prior.EmpiricalPrior`.
 
     min_weights : float | dict[str, float] | array-like of shape (n_assets, ) | None, default=0.0
         Minimum assets weights (weights lower bounds).

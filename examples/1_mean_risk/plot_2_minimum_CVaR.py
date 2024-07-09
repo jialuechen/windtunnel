@@ -3,7 +3,7 @@
 Minimum CVaR
 ============
 
-This tutorial uses the :class:`~shogunfolio.optimization.MeanRisk` optimization to find the
+This tutorial uses the :class:`~deepfolio.optimization.MeanRisk` optimization to find the
 minimum CVaR (Conditional Value at Risk) portfolio.
 """
 
@@ -18,12 +18,12 @@ minimum CVaR (Conditional Value at Risk) portfolio.
 
 import numpy as np
 from plotly.io import show
-from shogun.model_selection import train_test_split
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import Population, RiskMeasure
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.optimization import EqualWeighted, MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio import Population, RiskMeasure
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.optimization import EqualWeighted, MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 
@@ -36,7 +36,7 @@ print(X_train.head())
 # Model
 # =====
 # We create a Minimum CVaR model and then fit it on the training set.
-# `portfolio_params` are parameters passed to the :class:`~shogunfolio.portfolio.Portfolio`
+# `portfolio_params` are parameters passed to the :class:`~deepfolio.portfolio.Portfolio`
 # returned by the `predict` method. It can be
 # omitted, here we use it to give a name to our minimum CVaR portfolio:
 model = MeanRisk(
@@ -49,7 +49,7 @@ model.weights_
 
 # %%
 # To compare this model, we use an equal-weighted benchmark using
-# :class:`~shogunfolio.optimization.EqualWeighted`:
+# :class:`~deepfolio.optimization.EqualWeighted`:
 benchmark = EqualWeighted(portfolio_params=dict(name="Equal Weighted"))
 # Even if `X` has no impact (as it is equal weighted), we still need to call `fit` for
 # API consistency.
@@ -64,15 +64,15 @@ pred_model = model.predict(X_test)
 pred_bench = benchmark.predict(X_test)
 
 # %%
-# The `predict` method returns a :class:`~shogunfolio.portfolio.Portfolio` object.
+# The `predict` method returns a :class:`~deepfolio.portfolio.Portfolio` object.
 #
-# :class:`~shogunfolio.portfolio.Portfolio` is an array-container making it compatible
+# :class:`~deepfolio.portfolio.Portfolio` is an array-container making it compatible
 # with `scikit-learn` tools: calling `np.asarray(pred_model)` gives the portfolio
 # returns (same as `pred_model.returns`):
 np.asarray(pred_model)
 
 # %%
-# The :class:`~shogunfolio.portfolio.Portfolio` class contains a vast number of properties
+# The :class:`~deepfolio.portfolio.Portfolio` class contains a vast number of properties
 # and methods used for analysis.
 #
 # | For example:
@@ -87,18 +87,18 @@ print(pred_bench.cvar)
 # Analysis
 # ========
 # For improved analysis, we load both predicted portfolios into a
-# :class:`~shogunfolio.population.Population`:
+# :class:`~deepfolio.population.Population`:
 population = Population([pred_model, pred_bench])
 
 # %%
-# The :class:`~shogunfolio.population.Population` class also contains a
+# The :class:`~deepfolio.population.Population` class also contains a
 # vast number of properties and methods used for analysis.
 # Let's plot each portfolio composition:
 population.plot_composition()
 
 # %%
 # .. note::
-#       Every `plot` methods in `shogunfolio` returns a `plotly` figure.
+#       Every `plot` methods in `deepfolio` returns a `plotly` figure.
 #       To display a plotly figure, you may need to call `show()` and change the
 #       default renderer: https://plotly.com/python/renderers/
 #

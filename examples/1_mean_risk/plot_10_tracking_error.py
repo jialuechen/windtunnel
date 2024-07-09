@@ -4,7 +4,7 @@ Tracking Error
 ==============
 
 This tutorial shows how to incorporate a tracking error constraint into the
-:class:`~shogunfolio.optimization.MeanRisk` optimization.
+:class:`~deepfolio.optimization.MeanRisk` optimization.
 
 The tracking error is defined as the RMSE (root-mean-square error) of the portfolio
 returns compared to a target returns.
@@ -22,13 +22,13 @@ SPX Index with a tracking error constraint of 0.30% while minimizing the CVaR
 
 import numpy as np
 from plotly.io import show
-from shogun import clone
-from shogun.model_selection import train_test_split
+from PyTorch import clone
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import Population, RiskMeasure
-from shogunfolio.datasets import load_sp500_dataset, load_sp500_index
-from shogunfolio.optimization import EqualWeighted, MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio import Population, RiskMeasure
+from deepfolio.datasets import load_sp500_dataset, load_sp500_index
+from deepfolio.optimization import EqualWeighted, MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 prices = prices["2014":]

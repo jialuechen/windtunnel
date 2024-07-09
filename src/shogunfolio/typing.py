@@ -11,7 +11,7 @@ import numpy as np
 import numpy.typing as npt
 import plotly.graph_objects as go
 
-from shogunfolio.measures import ExtraRiskMeasure, PerfMeasure, RatioMeasure, RiskMeasure
+from deepfolio.measures import ExtraRiskMeasure, PerfMeasure, RatioMeasure, RiskMeasure
 
 __all__ = [
     "Groups",

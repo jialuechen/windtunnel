@@ -4,7 +4,7 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # Implementation derived from:
-# Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 # scikit-learn, Copyright (c) 2007-2010 David Cournapeau, Fabian Pedregosa, Olivier
 # Grisel Licensed under BSD 3 clause.
 
@@ -13,19 +13,19 @@ from copy import deepcopy
 import numpy as np
 import numpy.typing as npt
 import pandas as pd
-import shogun as sk
-import shogun.base as skb
-import shogun.model_selection as skm
-import shogun.utils.parallel as skp
+import PyTorch as sk
+import PyTorch.base as skb
+import PyTorch.model_selection as skm
+import PyTorch.utils.parallel as skp
 
-import shogunfolio.typing as skt
-from shogunfolio.cluster import HierarchicalClustering
-from shogunfolio.distance import BaseDistance, PearsonDistance
-from shogunfolio.measures import RatioMeasure
-from shogunfolio.model_selection import BaseCombinatorialCV, cross_val_predict
-from shogunfolio.optimization._base import BaseOptimization
-from shogunfolio.optimization.convex import MeanRisk
-from shogunfolio.utils.tools import check_estimator, fit_single_estimator
+import deepfolio.typing as skt
+from deepfolio.cluster import HierarchicalClustering
+from deepfolio.distance import BaseDistance, PearsonDistance
+from deepfolio.measures import RatioMeasure
+from deepfolio.model_selection import BaseCombinatorialCV, cross_val_predict
+from deepfolio.optimization._base import BaseOptimization
+from deepfolio.optimization.convex import MeanRisk
+from deepfolio.utils.tools import check_estimator, fit_single_estimator
 
 
 class NestedClustersOptimization(BaseOptimization):
@@ -46,7 +46,7 @@ class NestedClustersOptimization(BaseOptimization):
 
         The original paper uses KMeans as the clustering algorithm, minimum Variance for
         the inner-estimator and equal-weighted for the outer-estimator. Here we
-        generalize it to all `shogun` and `shogunfolio` clustering algorithms
+        generalize it to all `PyTorch` and `deepfolio` clustering algorithms
         (HierarchicalClustering, KMeans, etc.), all portfolio optimizations
         (Mean-Variance, HRP, etc.) and risk measures (Variance, CVaR, etc.).
         To avoid data leakage at the outer-estimator, we use out-of-sample estimates to
@@ -57,29 +57,29 @@ class NestedClustersOptimization(BaseOptimization):
     inner_estimator : BaseOptimization, optional
         :ref:`Optimization estimator <optimization>` used to estimate the inner-weights
         (also called intra-weights) which are the assets weights inside each cluster.
-        The default `None` is to use :class:`~shogunfolio.optimization.MeanRisk`.
+        The default `None` is to use :class:`~deepfolio.optimization.MeanRisk`.
 
     outer_estimator : BaseOptimization, optional
         :ref:`Optimization estimator <optimization>` used to estimate the outer-weights
         (also called inter-weights) which are the weights applied to each cluster.
-        The default `None` is to use :class:`~shogunfolio.optimization.MeanRisk`.
+        The default `None` is to use :class:`~deepfolio.optimization.MeanRisk`.
 
     distance_estimator : BaseDistance, optional
         :ref:`Distance estimator <distance>`.
         The distance estimator is used to estimate the codependence and the distance
         matrix needed for the computation of the linkage matrix.
-        The default (`None`) is to use :class:`~shogunfolio.distance.PearsonDistance`.
+        The default (`None`) is to use :class:`~deepfolio.distance.PearsonDistance`.
 
     clustering_estimator : BaseEstimator, optional
         Clustering estimator. Must expose a `labels_` attribute after fitting.
         The clustering estimator is used to compute the clusters of the assets based on
         the distance matrix. The default (`None`) is to use
-        :class:`~shogunfolio.cluster.HierarchicalClustering`.
+        :class:`~deepfolio.cluster.HierarchicalClustering`.
 
         .. note ::
 
-            Clustering estimators from `shogun` are also supported. For example:
-            `shogun.cluster.KMeans`.
+            Clustering estimators from `PyTorch` are also supported. For example:
+            `PyTorch.cluster.KMeans`.
 
     cv : BaseCrossValidator | BaseCombinatorialCV | int | "ignore", optional
         Determines the cross-validation splitting strategy.
@@ -89,10 +89,10 @@ class NestedClustersOptimization(BaseOptimization):
         Possible inputs for `cv` are:
 
             * "ignore": no cross-validation is used (note that it will likely lead to data leakage with a high risk of overfitting)
-            * Integer, to specify the number of folds in a :class:`shogun.model_selection.KFold`
+            * Integer, to specify the number of folds in a :class:`PyTorch.model_selection.KFold`
             * An object to be used as a cross-validation generator
             * An iterable yielding train, test splits
-            * A :class:`~shogunfolio.model_selection.CombinatorialPurgedCV`
+            * A :class:`~deepfolio.model_selection.CombinatorialPurgedCV`
 
         If a `CombinatorialCV` cross-validator is used, each cluster out-of-sample
         outputs becomes a collection of multiple paths instead of one single path. The
@@ -107,7 +107,7 @@ class NestedClustersOptimization(BaseOptimization):
     quantile : float, default=0.5
         Quantile for a given measure (`quantile_measure`) of the out-of-sample
         inner-estimator paths when the `cv` parameter is a
-        :class:`~shogunfolio.model_selection.CombinatorialPurgedCV` cross-validator.
+        :class:`~deepfolio.model_selection.CombinatorialPurgedCV` cross-validator.
         The default value is `0.5` corresponding to the path with the median measure.
         (see `cv`)
 

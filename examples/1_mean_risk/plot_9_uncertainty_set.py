@@ -4,7 +4,7 @@ Uncertainty Set
 ===============
 
 This tutorial shows how to incorporate expected returns uncertainty sets into the
-:class:`~shogunfolio.optimization.MeanRisk` optimization.
+:class:`~deepfolio.optimization.MeanRisk` optimization.
 
 By using the :ref:`Mu Uncertainty set estimator <uncertainty_set_estimator>`,
 the assets expected returns are modelled with an ellipsoidal uncertainty set.
@@ -20,10 +20,10 @@ with :math:`\kappa` the size of the ellipsoid (confidence region) and :math:`S` 
 shape.
 
 In this example, we will use a Mean-CVaR model with an
-:class:`~shogunfolio.uncertainty_set.EmpiricalMuUncertaintySet` estimator.
+:class:`~deepfolio.uncertainty_set.EmpiricalMuUncertaintySet` estimator.
 
 Note that other uncertainty set can be used, for example:
-:class:`~shogunfolio.uncertainty_set.BootstrapMuUncertaintySet`.
+:class:`~deepfolio.uncertainty_set.BootstrapMuUncertaintySet`.
 """
 
 # %%
@@ -35,16 +35,16 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.io import show
 from scipy.stats import uniform
-from shogun import clone
-from shogun.model_selection import GridSearchCV, RandomizedSearchCV, train_test_split
+from PyTorch import clone
+from PyTorch.model_selection import GridSearchCV, RandomizedSearchCV, train_test_split
 
-from shogunfolio import PerfMeasure, Population, RatioMeasure, RiskMeasure
-from shogunfolio.datasets import load_ftse100_dataset
-from shogunfolio.metrics import make_scorer
-from shogunfolio.model_selection import WalkForward, cross_val_predict
-from shogunfolio.optimization import MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.uncertainty_set import EmpiricalMuUncertaintySet
+from deepfolio import PerfMeasure, Population, RatioMeasure, RiskMeasure
+from deepfolio.datasets import load_ftse100_dataset
+from deepfolio.metrics import make_scorer
+from deepfolio.model_selection import WalkForward, cross_val_predict
+from deepfolio.optimization import MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.uncertainty_set import EmpiricalMuUncertaintySet
 
 prices = load_ftse100_dataset()
 
@@ -105,7 +105,7 @@ population_train.plot_measures(
 #
 #   * `max_cvar`: CVaR target (upper constraint)
 #   * `cvar_beta`: CVaR confidence level
-#   * `confidence_level`: Mu uncertainty set confidence level of the :class:`~shogunfolio.uncertainty_set.EmpiricalMuUncertaintySet`
+#   * `confidence_level`: Mu uncertainty set confidence level of the :class:`~deepfolio.uncertainty_set.EmpiricalMuUncertaintySet`
 #
 # For embedded parameters in the `GridSearchCV`, you need to use a double underscore:
 # `mu_uncertainty_set_estimator__confidence_level`
@@ -140,7 +140,7 @@ print(best_model)
 
 # %%
 # The optimal parameters among the above 2x3x3 grid are the `max_cvar=3%`,
-# `cvar_beta=90%` and :class:`~shogunfolio.uncertainty_set.EmpiricalMuUncertaintySet`
+# `cvar_beta=90%` and :class:`~deepfolio.uncertainty_set.EmpiricalMuUncertaintySet`
 # `confidence_level=80%`. These parameters are the ones that achieved the highest mean
 # out-of-sample Mean/CVaR ratio.
 #

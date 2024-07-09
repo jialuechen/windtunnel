@@ -4,7 +4,7 @@ NCO - Combinatorial Purged CV
 =============================
 
 The previous tutorial introduced the
-:class:`~shogunfolio.optimization.NestedClustersOptimization`.
+:class:`~deepfolio.optimization.NestedClustersOptimization`.
 
 In this tutorial, we will perform hyperparameter search using `GridSearch` and
 distribution analysis with `CombinatorialPurgedCV`.
@@ -16,25 +16,25 @@ distribution analysis with `CombinatorialPurgedCV`.
 # We load the S&P 500 :ref:`dataset <datasets>` composed of the daily prices of 20
 # assets from the S&P 500 Index composition starting from 2015-01-02 up to 2022-12-28:
 from plotly.io import show
-from shogun.model_selection import GridSearchCV, train_test_split
+from PyTorch.model_selection import GridSearchCV, train_test_split
 
-from shogunfolio import Population, RatioMeasure, RiskMeasure
-from shogunfolio.cluster import HierarchicalClustering, LinkageMethod
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.distance import KendallDistance, PearsonDistance
-from shogunfolio.model_selection import (
+from deepfolio import Population, RatioMeasure, RiskMeasure
+from deepfolio.cluster import HierarchicalClustering, LinkageMethod
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.distance import KendallDistance, PearsonDistance
+from deepfolio.model_selection import (
     CombinatorialPurgedCV,
     WalkForward,
     cross_val_predict,
     optimal_folds_number,
 )
-from shogunfolio.optimization import (
+from deepfolio.optimization import (
     EqualWeighted,
     MeanRisk,
     NestedClustersOptimization,
     RiskBudgeting,
 )
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 prices = prices["2015":]
@@ -132,7 +132,7 @@ for ptf in population:
 # =====================================
 # Only using one testing path (the historical path) may not be enough for comparing both
 # models. For a more robust analysis, we can use
-# :class:`~shogunfolio.model_selection.CombinatorialPurgedCV` to create multiple testing
+# :class:`~deepfolio.model_selection.CombinatorialPurgedCV` to create multiple testing
 # paths from different training folds combinations.
 #
 # We choose `n_folds` and `n_test_folds` to obtain around 30 test paths and an average

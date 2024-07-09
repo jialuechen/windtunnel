@@ -2,17 +2,17 @@ import datetime as dt
 
 import numpy as np
 import pytest
-import shogun.model_selection as skm
+import PyTorch.model_selection as skm
 
-from shogunfolio import MultiPeriodPortfolio, Population
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.model_selection import (
+from deepfolio import MultiPeriodPortfolio, Population
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.model_selection import (
     CombinatorialPurgedCV,
     WalkForward,
     cross_val_predict,
 )
-from shogunfolio.optimization import MeanRisk
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio.optimization import MeanRisk
+from deepfolio.preprocessing import prices_to_returns
 
 
 @pytest.fixture(scope="module")

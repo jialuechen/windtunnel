@@ -3,5 +3,5 @@
 Maximum Diversification
 -----------------------
 
-Examples concerning the :class:`~shogunfolio.optimization.MaximumDiversification` optimization.
+Examples concerning the :class:`~deepfolio.optimization.MaximumDiversification` optimization.
 

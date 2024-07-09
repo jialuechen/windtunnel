@@ -15,10 +15,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 import scipy.interpolate as sci
 
-import shogunfolio.typing as skt
-from shogunfolio.portfolio import BasePortfolio, MultiPeriodPortfolio
-from shogunfolio.utils.sorting import non_denominated_sort
-from shogunfolio.utils.tools import deduplicate_names
+import deepfolio.typing as skt
+from deepfolio.portfolio import BasePortfolio, MultiPeriodPortfolio
+from deepfolio.utils.sorting import non_denominated_sort
+from deepfolio.utils.tools import deduplicate_names
 
 pd.options.plotting.backend = "plotly"
 
@@ -26,15 +26,15 @@ pd.options.plotting.backend = "plotly"
 class Population(list):
     """Population Class.
 
-    A `Population` is a list of :class:`~shogunfolio.portfolio.Portfolio` or
-    :class:`~shogunfolio.portfolio.MultiPeriodPortfolio` or both.
+    A `Population` is a list of :class:`~deepfolio.portfolio.Portfolio` or
+    :class:`~deepfolio.portfolio.MultiPeriodPortfolio` or both.
 
     Parameters
     ----------
     iterable : list[BasePortfolio]
         The list of portfolios. Each item can be of type
-        :class:`~shogunfolio.portfolio.Portfolio` and/or
-        :class:`~shogunfolio.portfolio.MultiPeriodPortfolio`.
+        :class:`~deepfolio.portfolio.Portfolio` and/or
+        :class:`~deepfolio.portfolio.MultiPeriodPortfolio`.
         Empty list are accepted.
     """
 

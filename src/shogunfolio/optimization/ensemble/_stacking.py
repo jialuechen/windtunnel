@@ -11,19 +11,19 @@ from copy import deepcopy
 
 import numpy as np
 import numpy.typing as npt
-import shogun as sk
-import shogun.model_selection as skm
-import shogun.utils as sku
-import shogun.utils.parallel as skp
-import shogun.utils.validation as skv
+import PyTorch as sk
+import PyTorch.model_selection as skm
+import PyTorch.utils as sku
+import PyTorch.utils.parallel as skp
+import PyTorch.utils.validation as skv
 
-import shogunfolio.typing as skt
-from shogunfolio.measures import RatioMeasure
-from shogunfolio.model_selection import BaseCombinatorialCV, cross_val_predict
-from shogunfolio.optimization._base import BaseOptimization
-from shogunfolio.optimization.convex import MeanRisk
-from shogunfolio.optimization.ensemble._base import BaseComposition
-from shogunfolio.utils.tools import check_estimator, fit_single_estimator
+import deepfolio.typing as skt
+from deepfolio.measures import RatioMeasure
+from deepfolio.model_selection import BaseCombinatorialCV, cross_val_predict
+from deepfolio.optimization._base import BaseOptimization
+from deepfolio.optimization.convex import MeanRisk
+from deepfolio.optimization.ensemble._base import BaseComposition
+from deepfolio.utils.tools import check_estimator, fit_single_estimator
 
 
 class StackingOptimization(BaseOptimization, BaseComposition):
@@ -55,7 +55,7 @@ class StackingOptimization(BaseOptimization, BaseComposition):
     final_estimator : BaseOptimization, optional
         A final :ref:`optimization estimator <optimization>` which will be used to
         combine the base estimators.
-        The default (`None`) is to use :class:`~shogunfolio.optimization.MeanRisk`.
+        The default (`None`) is to use :class:`~deepfolio.optimization.MeanRisk`.
 
     cv : BaseCrossValidator | BaseCombinatorialCV | int | "prefit" | "ignore", optional
         Determines the cross-validation splitting strategy used in `cross_val_predict`
@@ -68,7 +68,7 @@ class StackingOptimization(BaseOptimization, BaseComposition):
             * An object to be used as a cross-validation generator
             * An iterable yielding train, test splits
             * "prefit" to assume the `estimators` are prefit, and skip cross validation
-            * A :class:`~shogunfolio.model_selection.CombinatorialPurgedCV`
+            * A :class:`~deepfolio.model_selection.CombinatorialPurgedCV`
 
         If a `CombinatorialCV` cross-validator is used, each cluster out-of-sample
         outputs becomes a collection of multiple paths instead of one single path. The
@@ -90,7 +90,7 @@ class StackingOptimization(BaseOptimization, BaseComposition):
     quantile : float, default=0.5
         Quantile for a given measure (`quantile_measure`) of the out-of-sample
         inner-estimator paths when the `cv` parameter is a
-        :class:`~shogunfolio.model_selection.CombinatorialPurgedCV` cross-validator.
+        :class:`~deepfolio.model_selection.CombinatorialPurgedCV` cross-validator.
         The default value is `0.5` corresponding to the path with the median measure.
         (see `cv`)
 
@@ -160,7 +160,7 @@ class StackingOptimization(BaseOptimization, BaseComposition):
 
         Returns
         -------
-        :class:`~shogun.utils.Bunch`
+        :class:`~PyTorch.utils.Bunch`
         """
         return sku.Bunch(**dict(self.estimators))
 

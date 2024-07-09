@@ -8,8 +8,8 @@ import numpy as np
 import numpy.typing as npt
 import pandas as pd
 import pytest
-import shogunfolio.measures as mt
-from shogunfolio import (
+import deepfolio.measures as mt
+from deepfolio import (
     ExtraRiskMeasure,
     MultiPeriodPortfolio,
     PerfMeasure,
@@ -17,11 +17,11 @@ from shogunfolio import (
     RatioMeasure,
     RiskMeasure,
 )
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.portfolio._base import _MEASURES
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.utils.stats import rand_weights
-from shogunfolio.utils.tools import args_names
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.portfolio._base import _MEASURES
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.utils.stats import rand_weights
+from deepfolio.utils.tools import args_names
 
 
 @pytest.fixture(scope="module")

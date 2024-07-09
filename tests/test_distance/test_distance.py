@@ -2,8 +2,8 @@ import datetime as dt
 
 import numpy as np
 import pytest
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.distance import (
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.distance import (
     CovarianceDistance,
     DistanceCorrelation,
     KendallDistance,
@@ -12,8 +12,8 @@ from shogunfolio.distance import (
     PearsonDistance,
     SpearmanDistance,
 )
-from shogunfolio.moments import GerberCovariance
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio.moments import GerberCovariance
+from deepfolio.preprocessing import prices_to_returns
 
 
 @pytest.fixture(scope="module")

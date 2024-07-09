@@ -3,7 +3,7 @@
 Hierarchical Risk Parity - CVaR
 ===============================
 
-This tutorial introduces the :class:`~shogunfolio.optimization.HierarchicalRiskParity`
+This tutorial introduces the :class:`~deepfolio.optimization.HierarchicalRiskParity`
 optimization.
 
 Hierarchical Risk Parity (HRP) is a portfolio optimization method developed by Marcos
@@ -37,15 +37,15 @@ In this example, we will use the CVaR risk measure.
 # assets from the SPX Index composition and the Factors dataset composed of the daily
 # prices of 5 ETF representing common factors:
 from plotly.io import show
-from shogun.model_selection import train_test_split
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import Population, RiskMeasure
-from shogunfolio.cluster import HierarchicalClustering, LinkageMethod
-from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
-from shogunfolio.distance import KendallDistance
-from shogunfolio.optimization import EqualWeighted, HierarchicalRiskParity
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import FactorModel
+from deepfolio import Population, RiskMeasure
+from deepfolio.cluster import HierarchicalClustering, LinkageMethod
+from deepfolio.datasets import load_factors_dataset, load_sp500_dataset
+from deepfolio.distance import KendallDistance
+from deepfolio.optimization import EqualWeighted, HierarchicalRiskParity
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import FactorModel
 
 prices = load_sp500_dataset()
 factor_prices = load_factors_dataset()
@@ -99,7 +99,7 @@ show(fig)
 # The clustering can be greatly affected by the choice of the linkage method.
 # The original HRP is based on the single-linkage (equivalent to the minimum spanning
 # tree), which suffers from the chaining effect.
-# In the :class:`~shogunfolio.optimization.HierarchicalRiskParity` estimator, the default
+# In the :class:`~deepfolio.optimization.HierarchicalRiskParity` estimator, the default
 # linkage method is set to the Ward variance minimization algorithm, which is more
 # stable and has better properties than the single-linkage method.
 #
@@ -146,12 +146,12 @@ model3.hierarchical_clustering_estimator_.plot_dendrogram(heatmap=True)
 # Prior Estimator
 # ===============
 # Finally, HRP like the other portfolio optimization, uses a
-# :ref:`prior estimator <prior>` that fits a :class:`~shogunfolio.prior.PriorModel`
+# :ref:`prior estimator <prior>` that fits a :class:`~deepfolio.prior.PriorModel`
 # containing the distribution estimate of asset returns. It represents the investor's
 # prior beliefs about the model used to estimate such distribution.
-# The default is the :class:`~shogunfolio.prior.EmpiricalPrior` estimator.
+# The default is the :class:`~deepfolio.prior.EmpiricalPrior` estimator.
 #
-# Let's create new model with the :class:`~shogunfolio.prior.FactorModel` estimator:
+# Let's create new model with the :class:`~deepfolio.prior.FactorModel` estimator:
 model4 = HierarchicalRiskParity(
     risk_measure=RiskMeasure.CVAR,
     prior_estimator=FactorModel(),
@@ -164,7 +164,7 @@ model4.hierarchical_clustering_estimator_.plot_dendrogram(heatmap=True)
 
 # %%
 # To compare the models, we use an equal weighted benchmark using
-# the :class:`~shogunfolio.optimization.EqualWeighted` estimator:
+# the :class:`~deepfolio.optimization.EqualWeighted` estimator:
 bench = EqualWeighted()
 bench.fit(X_train)
 bench.weights_

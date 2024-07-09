@@ -4,7 +4,7 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # Implementation derived from:
-# Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 # scikit-learn, Copyright (c) 2007-2010 David Cournapeau, Fabian Pedregosa, Olivier
 # Grisel Licensed under BSD 3 clause.
 
@@ -14,9 +14,9 @@ import numpy as np
 import numpy.typing as npt
 import pandas as pd
 
-from shogunfolio.moments.covariance import BaseCovariance, EmpiricalCovariance
-from shogunfolio.moments.expected_returns._base import BaseMu
-from shogunfolio.utils.tools import AutoEnum, check_estimator
+from deepfolio.moments.covariance import BaseCovariance, EmpiricalCovariance
+from deepfolio.moments.expected_returns._base import BaseMu
+from deepfolio.utils.tools import AutoEnum, check_estimator
 
 
 class EmpiricalMu(BaseMu):
@@ -149,7 +149,7 @@ class EquilibriumMu(BaseMu):
     covariance_estimator : BaseCovariance, optional
         :ref:`Covariance estimator <covariance_estimator>` used to estimate the
         covariance in the equilibrium formula.
-        The default (`None`) is to use :class:`~shogunfolio.moments.EmpiricalCovariance`.
+        The default (`None`) is to use :class:`~deepfolio.moments.EmpiricalCovariance`.
 
     Attributes
     ----------
@@ -267,7 +267,7 @@ class ShrunkMu(BaseMu):
     covariance_estimator : BaseCovariance, optional
         :ref:`Covariance estimator <covariance_estimator>` used to estimate the
         covariance in the shrinkage formulae.
-        The default (`None`) is to use :class:`~shogunfolio.moments.EmpiricalCovariance`.
+        The default (`None`) is to use :class:`~deepfolio.moments.EmpiricalCovariance`.
 
     vol_weighted_target : bool, default=False
         If this is set to True, the target vector :math:`\mu_{target}` is the

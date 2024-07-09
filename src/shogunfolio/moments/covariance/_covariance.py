@@ -11,12 +11,12 @@ import numpy as np
 import numpy.typing as npt
 import pandas as pd
 import scipy.optimize as sco
-import shogun.covariance as skc
-import shogun.neighbors as skn
+import PyTorch.covariance as skc
+import PyTorch.neighbors as skn
 
-from shogunfolio.moments.covariance._base import BaseCovariance
-from shogunfolio.utils.stats import corr_to_cov, cov_to_corr
-from shogunfolio.utils.tools import check_estimator
+from deepfolio.moments.covariance._base import BaseCovariance
+from deepfolio.utils.stats import corr_to_cov, cov_to_corr
+from deepfolio.utils.tools import check_estimator
 
 
 class EmpiricalCovariance(BaseCovariance):
@@ -40,7 +40,7 @@ class EmpiricalCovariance(BaseCovariance):
         However, due to floating-point inaccuracies, we can end up with a covariance
         matrix that is slightly non-PSD or where Cholesky decomposition is failing.
         This often occurs in high dimensional problems.
-        For more details, see :func:`~shogunfolio.units.stats.cov_nearest`.
+        For more details, see :func:`~deepfolio.units.stats.cov_nearest`.
         The default is `False`.
 
     higham : bool, default=False
@@ -145,7 +145,7 @@ class GerberCovariance(BaseCovariance):
         However, due to floating-point inaccuracies, we can end up with a covariance
         matrix that is slightly non-PSD or where Cholesky decomposition is failing.
         This often occurs in high dimensional problems.
-        For more details, see :func:`~shogunfolio.units.stats.cov_nearest`.
+        For more details, see :func:`~deepfolio.units.stats.cov_nearest`.
         The default is `False`.
 
     higham : bool, default=False
@@ -265,7 +265,7 @@ class DenoiseCovariance(BaseCovariance):
     covariance_estimator : BaseCovariance, optional
         :ref:`Covariance estimator <covariance_estimator>` to estimate the covariance
         matrix that will be denoised.
-        The default (`None`) is to use :class:`~shogunfolio.moments.EmpiricalCovariance`.
+        The default (`None`) is to use :class:`~deepfolio.moments.EmpiricalCovariance`.
 
     nearest : bool, default=False
         If this is set to True, the covariance is replaced by the nearest covariance
@@ -274,7 +274,7 @@ class DenoiseCovariance(BaseCovariance):
         However, due to floating-point inaccuracies, we can end up with a covariance
         matrix that is slightly non-PSD or where Cholesky decomposition is failing.
         This often occurs in high dimensional problems.
-        For more details, see :func:`~shogunfolio.units.stats.cov_nearest`.
+        For more details, see :func:`~deepfolio.units.stats.cov_nearest`.
         The default is `False`.
 
     higham : bool, default=False
@@ -407,7 +407,7 @@ class DetoneCovariance(BaseCovariance):
     covariance_estimator : BaseCovariance, optional
         :ref:`Covariance estimator <covariance_estimator>` to estimate the covariance
         matrix prior detoning.
-        The default (`None`) is to use :class:`~shogunfolio.moments.EmpiricalCovariance`.
+        The default (`None`) is to use :class:`~deepfolio.moments.EmpiricalCovariance`.
 
     n_markets : int, default=1
         Number of eigenvectors related to the market.
@@ -420,7 +420,7 @@ class DetoneCovariance(BaseCovariance):
         However, due to floating-point inaccuracies, we can end up with a covariance
         matrix that is slightly non-PSD or where Cholesky decomposition is failing.
         This often occurs in high dimensional problems.
-        For more details, see :func:`~shogunfolio.units.stats.cov_nearest`.
+        For more details, see :func:`~deepfolio.units.stats.cov_nearest`.
         The default is `False`.
 
     higham : bool, default=False
@@ -539,7 +539,7 @@ class EWCovariance(BaseCovariance):
         However, due to floating-point inaccuracies, we can end up with a covariance
         matrix that is slightly non-PSD or where Cholesky decomposition is failing.
         This often occurs in high dimensional problems.
-        For more details, see :func:`~shogunfolio.units.stats.cov_nearest`.
+        For more details, see :func:`~deepfolio.units.stats.cov_nearest`.
         The default is `False`.
 
     higham : bool, default=False
@@ -620,7 +620,7 @@ class LedoitWolf(BaseCovariance, skc.LedoitWolf):
     described in [1]_.
 
     Read more in `scikit-learn
-    <https://scikit-learn.org/stable/modules/generated/shogun.covariance.ShrunkCovariance.html>`_.
+    <https://scikit-learn.org/stable/modules/generated/PyTorch.covariance.ShrunkCovariance.html>`_.
 
     Parameters
     ----------
@@ -645,7 +645,7 @@ class LedoitWolf(BaseCovariance, skc.LedoitWolf):
         However, due to floating-point inaccuracies, we can end up with a covariance
         matrix that is slightly non-PSD or where Cholesky decomposition is failing.
         This often occurs in high dimensional problems.
-        For more details, see :func:`~shogunfolio.units.stats.cov_nearest`.
+        For more details, see :func:`~deepfolio.units.stats.cov_nearest`.
         The default is `False`.
 
     higham : bool, default=False
@@ -743,7 +743,7 @@ class OAS(BaseCovariance, skc.OAS):
     """Oracle Approximating Shrinkage Estimator as proposed in [1]_.
 
     Read more in `scikit-learn
-    <https://scikit-learn.org/stable/modules/generated/shogun.covariance.ShrunkCovariance.html>`_.
+    <https://scikit-learn.org/stable/modules/generated/PyTorch.covariance.ShrunkCovariance.html>`_.
 
     Parameters
     ----------
@@ -845,7 +845,7 @@ class ShrunkCovariance(BaseCovariance, skc.ShrunkCovariance):
     """Covariance estimator with shrinkage.
 
     Read more in `scikit-learn
-    <https://scikit-learn.org/stable/modules/generated/shogun.covariance.ShrunkCovariance.html>`_.
+    <https://scikit-learn.org/stable/modules/generated/PyTorch.covariance.ShrunkCovariance.html>`_.
 
     Parameters
     ----------

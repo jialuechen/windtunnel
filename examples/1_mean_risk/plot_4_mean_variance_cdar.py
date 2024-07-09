@@ -3,7 +3,7 @@
 Mean-Variance-CDaR Surface
 ==========================
 
-This tutorial uses the :class:`~shogunfolio.optimization.MeanRisk` optimization to find an
+This tutorial uses the :class:`~deepfolio.optimization.MeanRisk` optimization to find an
 ensemble of portfolios belonging to the Mean-Variance-CDaR efficient frontier.
 """
 
@@ -15,12 +15,12 @@ ensemble of portfolios belonging to the Mean-Variance-CDaR efficient frontier.
 
 import numpy as np
 from plotly.io import show
-from shogun.model_selection import train_test_split
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import PerfMeasure, RatioMeasure, RiskMeasure
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.optimization import MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio import PerfMeasure, RatioMeasure, RiskMeasure
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.optimization import MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 prices = prices["2015":]

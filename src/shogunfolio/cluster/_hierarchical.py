@@ -11,12 +11,12 @@ import numpy.typing as npt
 import plotly.graph_objects as go
 import scipy.cluster.hierarchy as sch
 import scipy.spatial.distance as scd
-import shogun.base as skb
-import shogun.utils.validation as skv
+import PyTorch.base as skb
+import PyTorch.utils.validation as skv
 
-from shogunfolio.utils.fixes import create_dendrogram
-from shogunfolio.utils.stats import assert_is_distance, compute_optimal_n_clusters
-from shogunfolio.utils.tools import AutoEnum, default_asset_names
+from deepfolio.utils.fixes import create_dendrogram
+from deepfolio.utils.stats import assert_is_distance, compute_optimal_n_clusters
+from deepfolio.utils.tools import AutoEnum, default_asset_names
 
 
 class LinkageMethod(AutoEnum):

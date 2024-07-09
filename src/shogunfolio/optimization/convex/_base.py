@@ -4,7 +4,7 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # The optimization features are derived
-# from Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# from Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 
 import warnings
 from abc import ABC, abstractmethod
@@ -18,17 +18,17 @@ import numpy.typing as npt
 import scipy as sc
 import scipy.sparse.linalg as scl
 
-import shogunfolio.typing as skt
-from shogunfolio.measures import RiskMeasure, owa_gmd_weights
-from shogunfolio.optimization._base import BaseOptimization
-from shogunfolio.prior import BasePrior, PriorModel
-from shogunfolio.uncertainty_set import (
+import deepfolio.typing as skt
+from deepfolio.measures import RiskMeasure, owa_gmd_weights
+from deepfolio.optimization._base import BaseOptimization
+from deepfolio.prior import BasePrior, PriorModel
+from deepfolio.uncertainty_set import (
     BaseCovarianceUncertaintySet,
     BaseMuUncertaintySet,
     UncertaintySet,
 )
-from shogunfolio.utils.equations import equations_to_matrix
-from shogunfolio.utils.tools import AutoEnum, cache_method, input_to_array
+from deepfolio.utils.equations import equations_to_matrix
+from deepfolio.utils.tools import AutoEnum, cache_method, input_to_array
 
 INSTALLED_SOLVERS = cp.installed_solvers()
 
@@ -58,7 +58,7 @@ class ObjectiveFunction(AutoEnum):
 
 
 class ConvexOptimization(BaseOptimization, ABC):
-    r"""Base class for all convex optimization estimators in shogunfolio.
+    r"""Base class for all convex optimization estimators in deepfolio.
 
     All risk measures that have a convex formulation are defined in class methods with
     naming convention: `_{risk_measure}_risk`. That naming convention is used for
@@ -71,7 +71,7 @@ class ConvexOptimization(BaseOptimization, ABC):
     Parameters
     ----------
     risk_measure : RiskMeasure, default=RiskMeasure.VARIANCE
-        :class:`~shogunfolio.meta.RiskMeasure` of the optimization.
+        :class:`~deepfolio.meta.RiskMeasure` of the optimization.
         Can be any of:
 
             * VARIANCE
@@ -94,10 +94,10 @@ class ConvexOptimization(BaseOptimization, ABC):
 
     prior_estimator : BasePrior, optional
         :ref:`Prior estimator <prior>`.
-        The prior estimator is used to estimate the :class:`~shogunfolio.prior.PriorModel`
+        The prior estimator is used to estimate the :class:`~deepfolio.prior.PriorModel`
         containing the estimation of assets expected returns, covariance matrix,
         returns and Cholesky decomposition of the covariance.
-        The default (`None`) is to use :class:`~shogunfolio.prior.EmpiricalPrior`.
+        The default (`None`) is to use :class:`~deepfolio.prior.EmpiricalPrior`.
 
     min_weights : float | dict[str, float] | array-like of shape (n_assets, ) | None, default=0.0
         Minimum assets weights (weights lower bounds).

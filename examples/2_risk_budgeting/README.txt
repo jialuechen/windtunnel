@@ -3,5 +3,5 @@
 Risk Budgeting
 --------------
 
-Examples concerning the :class:`~shogunfolio.optimization.RiskBudgeting` optimization.
+Examples concerning the :class:`~deepfolio.optimization.RiskBudgeting` optimization.
 

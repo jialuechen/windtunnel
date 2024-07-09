@@ -7,12 +7,12 @@ from abc import ABC, abstractmethod
 
 import numpy as np
 import numpy.typing as npt
-import shogun.base as skb
-from shogun.utils.validation import check_is_fitted
+import PyTorch.base as skb
+from PyTorch.utils.validation import check_is_fitted
 
-from shogunfolio.measures import RatioMeasure
-from shogunfolio.population import Population
-from shogunfolio.portfolio import Portfolio
+from deepfolio.measures import RatioMeasure
+from deepfolio.population import Population
+from deepfolio.portfolio import Portfolio
 
 # Copyright (c) 2023
 # Author: Hugo Delatte <jialuechen@outlook.com>
@@ -24,7 +24,7 @@ from shogunfolio.portfolio import Portfolio
 
 
 class BaseOptimization(skb.BaseEstimator, ABC):
-    """Base class for all portfolio optimizations in shogunfolio.
+    """Base class for all portfolio optimizations in deepfolio.
 
     portfolio_params :  dict, optional
         Portfolio parameters passed to the portfolio evaluated by the `predict` and

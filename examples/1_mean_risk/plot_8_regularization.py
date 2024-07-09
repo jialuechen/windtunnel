@@ -4,7 +4,7 @@ L1 and L2 Regularization
 ========================
 
 This tutorial shows how to incorporate regularization into the
-:class:`~shogunfolio.optimization.MeanRisk` optimization.
+:class:`~deepfolio.optimization.MeanRisk` optimization.
 
 Regularization tends to increase robustness and out-of-sample stability.
 
@@ -43,15 +43,15 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.io import show
 from scipy.stats import loguniform
-from shogun import clone
-from shogun.model_selection import GridSearchCV, RandomizedSearchCV, train_test_split
+from PyTorch import clone
+from PyTorch.model_selection import GridSearchCV, RandomizedSearchCV, train_test_split
 
-from shogunfolio import PerfMeasure, Population, RatioMeasure, RiskMeasure
-from shogunfolio.datasets import load_ftse100_dataset
-from shogunfolio.metrics import make_scorer
-from shogunfolio.model_selection import WalkForward, cross_val_predict
-from shogunfolio.optimization import EqualWeighted, MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio import PerfMeasure, Population, RatioMeasure, RiskMeasure
+from deepfolio.datasets import load_ftse100_dataset
+from deepfolio.metrics import make_scorer
+from deepfolio.model_selection import WalkForward, cross_val_predict
+from deepfolio.optimization import EqualWeighted, MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_ftse100_dataset()
 X = prices_to_returns(prices)
@@ -112,8 +112,8 @@ population_train.plot_measures(
 # ==========
 # The parameter `efficient_frontier_size=30` means that when we called the `fit` method,
 # each model ran 30 optimizations along the efficient frontier. Therefore, the `predict`
-# method will return a :class:`~shogunfolio.population.Population` composed of 30
-# :class:`~shogunfolio.portfolio.Portfolio`:
+# method will return a :class:`~deepfolio.population.Population` composed of 30
+# :class:`~deepfolio.portfolio.Portfolio`:
 population_test = (
     model.predict(X_test) + model_l1.predict(X_test) + model_l2.predict(X_test)
 )

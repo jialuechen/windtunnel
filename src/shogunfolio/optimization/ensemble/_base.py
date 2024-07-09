@@ -1,5 +1,5 @@
 """Base Composition estimator.
-Follow same implementation as Base composition from shogun
+Follow same implementation as Base composition from PyTorch
 """
 
 # Copyright (c) 2023
@@ -12,7 +12,7 @@ Follow same implementation as Base composition from shogun
 from abc import ABC, abstractmethod
 from contextlib import suppress
 
-import shogun.base as skb
+import PyTorch.base as skb
 
 
 class BaseComposition(skb.BaseEstimator, ABC):

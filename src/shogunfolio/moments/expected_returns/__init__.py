@@ -1,9 +1,9 @@
 """Expected returns module."""
 
-from shogunfolio.moments.expected_returns._base import (
+from deepfolio.moments.expected_returns._base import (
     BaseMu,
 )
-from shogunfolio.moments.expected_returns._expected_returns import (
+from deepfolio.moments.expected_returns._expected_returns import (
     EWMu,
     EmpiricalMu,
     EquilibriumMu,

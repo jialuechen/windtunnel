@@ -2,13 +2,13 @@ import datetime as dt
 
 import numpy as np
 import pytest
-import shogun.model_selection as skm
-from shogunfolio import RiskMeasure
-from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
-from shogunfolio.model_selection import CombinatorialPurgedCV
-from shogunfolio.optimization import MeanRisk, StackingOptimization
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import FactorModel
+import PyTorch.model_selection as skm
+from deepfolio import RiskMeasure
+from deepfolio.datasets import load_factors_dataset, load_sp500_dataset
+from deepfolio.model_selection import CombinatorialPurgedCV
+from deepfolio.optimization import MeanRisk, StackingOptimization
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import FactorModel
 
 
 @pytest.fixture(scope="module")

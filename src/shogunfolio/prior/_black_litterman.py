@@ -4,17 +4,17 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # Implementation derived from:
-# Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 # PyPortfolioOpt, Copyright (c) 2018 Robert Andrew Martin, Licensed under MIT Licence.
 
 import numpy as np
 import numpy.typing as npt
 
-from shogunfolio.moments import EquilibriumMu
-from shogunfolio.prior._base import BasePrior, PriorModel
-from shogunfolio.prior._empirical import EmpiricalPrior
-from shogunfolio.utils.equations import equations_to_matrix
-from shogunfolio.utils.tools import check_estimator, input_to_array
+from deepfolio.moments import EquilibriumMu
+from deepfolio.prior._base import BasePrior, PriorModel
+from deepfolio.prior._empirical import EmpiricalPrior
+from deepfolio.utils.equations import equations_to_matrix
+from deepfolio.utils.tools import check_estimator, input_to_array
 
 
 class BlackLitterman(BasePrior):
@@ -58,7 +58,7 @@ class BlackLitterman(BasePrior):
 
     prior_estimator : BasePrior, optional
         The assets' :ref:`prior model estimator <prior>`. It is used to estimate
-        the :class:`~shogunfolio.prior.PriorModel` containing the estimation of the assets
+        the :class:`~deepfolio.prior.PriorModel` containing the estimation of the assets
         expected returns, covariance matrix, returns and Cholesky decomposition.
         The default (`None`) is to use `EmpiricalPrior(mu_estimator=EquilibriumMu())`.
 
@@ -80,7 +80,7 @@ class BlackLitterman(BasePrior):
     Attributes
     ----------
     prior_model_ : PriorModel
-        The :class:`~shogunfolio.prior.PriorModel`.
+        The :class:`~deepfolio.prior.PriorModel`.
 
     groups_ : ndarray of shape(n_groups, n_assets)
         Assets names and groups converted to an 2D array.

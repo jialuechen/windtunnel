@@ -15,11 +15,11 @@ in :ref:`data preparation <data_preparation>`.
 # assets from the S&P 500 Index composition starting from 1990-01-02 up to 2022-12-28:
 from plotly.io import show
 
-from shogunfolio import PerfMeasure, Population, RiskMeasure
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.optimization import MeanRisk
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import EmpiricalPrior
+from deepfolio import PerfMeasure, Population, RiskMeasure
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.optimization import MeanRisk
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import EmpiricalPrior
 
 prices = load_sp500_dataset()
 prices.head()

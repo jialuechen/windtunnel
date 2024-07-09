@@ -3,5 +3,5 @@
 Distributionally Robust CVaR
 ----------------------------
 
-Examples concerning the :class:`~shogunfolio.optimization.DistributionallyRobustCVaR` optimization.
+Examples concerning the :class:`~deepfolio.optimization.DistributionallyRobustCVaR` optimization.
 

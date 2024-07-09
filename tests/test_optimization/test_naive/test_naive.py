@@ -3,10 +3,10 @@ import datetime as dt
 import numpy as np
 import pytest
 
-from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
-from shogunfolio.optimization.naive import EqualWeighted, InverseVolatility, Random
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import FactorModel
+from deepfolio.datasets import load_factors_dataset, load_sp500_dataset
+from deepfolio.optimization.naive import EqualWeighted, InverseVolatility, Random
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import FactorModel
 
 
 @pytest.fixture(scope="module")

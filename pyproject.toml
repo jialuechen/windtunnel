@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "shogunfolio"
+name = "deepfolio"
 version = "0.1.0"
 maintainers = [
     { name = "Hugo Delatte", email = "jialuechen@outlook.com" },
@@ -82,10 +82,10 @@ docs = [
 ]
 
 [project.urls]
-"API Reference" = "https://www.shogunfolio.org/api_reference.html"
-Documentation = "https://www.shogunfolio.org"
-Tutorials = "https://www.shogunfolio.org"
-Repository = "https://github.com/shogunfolio/shogunfolio"
+"API Reference" = "https://www.deepfolio.org/api_reference.html"
+Documentation = "https://www.deepfolio.org"
+Tutorials = "https://www.deepfolio.org"
+Repository = "https://github.com/deepfolio/deepfolio"
 
 [tool.setuptools.packages.find]
 where = ["src"]

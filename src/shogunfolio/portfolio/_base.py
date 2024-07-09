@@ -46,16 +46,16 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-import shogunfolio.typing as skt
-from shogunfolio import measures as mt
-from shogunfolio.measures import (
+import deepfolio.typing as skt
+from deepfolio import measures as mt
+from deepfolio.measures import (
     ExtraRiskMeasure,
     PerfMeasure,
     RatioMeasure,
     RiskMeasure,
 )
-from shogunfolio.utils.sorting import dominate
-from shogunfolio.utils.tools import (
+from deepfolio.utils.sorting import dominate
+from deepfolio.utils.tools import (
     args_names,
     cached_property_slots,
     format_measure,
@@ -73,7 +73,7 @@ _MEASURES_VALUES = {e.value: e for e in _MEASURES}
 
 
 class BasePortfolio:
-    r"""Base Portfolio class for all portfolios in shogunfolio.
+    r"""Base Portfolio class for all portfolios in deepfolio.
 
     Parameters
     ----------

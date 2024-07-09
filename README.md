@@ -1,11 +1,11 @@
 # deepfolio : Portfolio Optimization with Machine Learning
-**deepfolio** is a Python library for portfolio optimization built on top of shogun machine learning library.
-It offers a unified interface and tools compatible with shogun to build,fine-tune, and cross-validate portfolio models.
+**deepfolio** is a Python library for portfolio optimization built on top of PyTorch machine learning library.
+It offers a unified interface and tools compatible with PyTorch to build,fine-tune, and cross-validate portfolio models.
 
 ## Installation
 
 ```
-pip install --upgrade shogunfolio
+pip install --upgrade deepfolio
 ```
 ## Available models
 

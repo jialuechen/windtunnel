@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from shogunfolio.utils.sorting import dominate, non_denominated_sort
+from deepfolio.utils.sorting import dominate, non_denominated_sort
 
 
 @pytest.fixture(scope="module")

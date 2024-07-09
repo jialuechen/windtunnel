@@ -7,11 +7,11 @@
 import numpy as np
 import numpy.typing as npt
 
-import shogunfolio.typing as skt
-from shogunfolio.measures import RiskMeasure
-from shogunfolio.optimization.convex._base import ObjectiveFunction
-from shogunfolio.optimization.convex._mean_risk import MeanRisk
-from shogunfolio.prior import BasePrior
+import deepfolio.typing as skt
+from deepfolio.measures import RiskMeasure
+from deepfolio.optimization.convex._base import ObjectiveFunction
+from deepfolio.optimization.convex._mean_risk import MeanRisk
+from deepfolio.prior import BasePrior
 
 
 class MaximumDiversification(MeanRisk):
@@ -20,7 +20,7 @@ class MaximumDiversification(MeanRisk):
     Maximizes the diversification ratio which is the ratio of the weighted volatilities
     over the total volatility.
 
-    It is a special case of the :class:`~shogunfolio.optimization.MeanRisk` estimator where
+    It is a special case of the :class:`~deepfolio.optimization.MeanRisk` estimator where
     the expected return from the objective function is replaced by the weighted
     volatilities.
 
@@ -28,10 +28,10 @@ class MaximumDiversification(MeanRisk):
     ----------
     prior_estimator : BasePrior, optional
         :ref:`Prior estimator <prior>`.
-        The prior estimator is used to estimate the :class:`~shogunfolio.prior.PriorModel`
+        The prior estimator is used to estimate the :class:`~deepfolio.prior.PriorModel`
         containing the estimation of assets expected returns, covariance matrix,
         returns and Cholesky decomposition of the covariance.
-        The default (`None`) is to use :class:`~shogunfolio.prior.EmpiricalPrior`.
+        The default (`None`) is to use :class:`~deepfolio.prior.EmpiricalPrior`.
 
     min_weights : float | dict[str, float] | array-like of shape (n_assets, ) | None, default=0.0
         Minimum assets weights (weights lower bounds).

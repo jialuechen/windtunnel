@@ -3,9 +3,9 @@ r"""
 Black & Litterman Factor Model
 ==============================
 
-This tutorial shows how to use the :class:`~shogunfolio.prior.FactorModel` estimator coupled
-with the :class:`~shogunfolio.prior.BlackLitterman` estimator in the
-:class:`~shogunfolio.optimization.MeanRisk` optimization.
+This tutorial shows how to use the :class:`~deepfolio.prior.FactorModel` estimator coupled
+with the :class:`~deepfolio.prior.BlackLitterman` estimator in the
+:class:`~deepfolio.optimization.MeanRisk` optimization.
 
 The Black & Litterman Factor Model is a Factor Model in which we incorporate views on
 factors using the Black & Litterman Model.
@@ -22,13 +22,13 @@ Maximum Sharpe Ratio portfolio using the `FactorModel` estimator.
 # assets from the SPX Index composition and the Factors dataset composed of the daily
 # prices of 5 ETF representing common factors:
 from plotly.io import show
-from shogun.model_selection import train_test_split
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import Population, RiskMeasure
-from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
-from shogunfolio.optimization import MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import BlackLitterman, FactorModel
+from deepfolio import Population, RiskMeasure
+from deepfolio.datasets import load_factors_dataset, load_sp500_dataset
+from deepfolio.optimization import MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import BlackLitterman, FactorModel
 
 prices = load_sp500_dataset()
 factor_prices = load_factors_dataset()

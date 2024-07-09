@@ -13,10 +13,10 @@ from collections.abc import Iterator
 import numpy as np
 import pandas as pd
 
-import shogunfolio.typing as skt
-from shogunfolio.portfolio._base import BasePortfolio
-from shogunfolio.portfolio._portfolio import Portfolio
-from shogunfolio.utils.tools import deduplicate_names
+import deepfolio.typing as skt
+from deepfolio.portfolio._base import BasePortfolio
+from deepfolio.portfolio._portfolio import Portfolio
+from deepfolio.utils.tools import deduplicate_names
 
 pd.options.plotting.backend = "plotly"
 

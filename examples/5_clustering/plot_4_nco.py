@@ -3,7 +3,7 @@
 Nested Clusters Optimization
 ============================
 
-This tutorial introduces the :class:`~shogunfolio.optimization.NestedClustersOptimization`
+This tutorial introduces the :class:`~deepfolio.optimization.NestedClustersOptimization`
 optimization.
 
 Nested Clusters Optimization (NCO) is a portfolio optimization method developed by
@@ -21,7 +21,7 @@ inner-weights and outer-weights.
 
     The original paper uses KMeans as the clustering algorithm, minimum Variance for
     the inner-estimator and equal-weight for the outer-estimator. Here we generalize
-    it to all `shogun` and `shogunfolio` clustering algorithm (Hierarchical Tree
+    it to all `PyTorch` and `deepfolio` clustering algorithm (Hierarchical Tree
     Clustering, KMeans, etc.), all portfolio optimizations (Mean-Variance, HRP, etc.)
     and risk measures (variance, CVaR, etc.).
     To avoid data leakage at the outer-estimator, we use out-of-sample estimates to
@@ -34,21 +34,21 @@ inner-weights and outer-weights.
 # We load the S&P 500 :ref:`dataset <datasets>` composed of the daily prices of 20
 # assets from the S&P 500 Index composition starting from 1990-01-02 up to 2022-12-28:
 from plotly.io import show
-from shogun.cluster import KMeans
-from shogun.model_selection import train_test_split
+from PyTorch.cluster import KMeans
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import Population, RiskMeasure
-from shogunfolio.cluster import HierarchicalClustering, LinkageMethod
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.distance import KendallDistance
-from shogunfolio.optimization import (
+from deepfolio import Population, RiskMeasure
+from deepfolio.cluster import HierarchicalClustering, LinkageMethod
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.distance import KendallDistance
+from deepfolio.optimization import (
     EqualWeighted,
     MeanRisk,
     NestedClustersOptimization,
     ObjectiveFunction,
     RiskBudgeting,
 )
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 
@@ -61,7 +61,7 @@ X_train, X_test = train_test_split(X, test_size=0.33, shuffle=False)
 # We create a NCO model that maximizes the Sharpe Ratio intra-cluster and uses a CVaR
 # Risk Parity inter-cluster. By default, the inter-cluster optimization
 # uses `KFolds` out-of-sample estimates of the inner-estimator to avoid data leakage.
-# and the :class:`~shogunfolio.cluster.HierarchicalClustering` estimator
+# and the :class:`~deepfolio.cluster.HierarchicalClustering` estimator
 # to form the clusters:
 inner_estimator = MeanRisk(
     objective_function=ObjectiveFunction.MAXIMIZE_RATIO,
@@ -101,7 +101,7 @@ model1.clustering_estimator_.plot_dendrogram()
 # Linkage Methods
 # ===============
 # The hierarchical clustering can be greatly affected by the choice of the linkage
-# method. In the :class:`~shogunfolio.cluster.HierarchicalClustering` estimator, the default
+# method. In the :class:`~deepfolio.cluster.HierarchicalClustering` estimator, the default
 # linkage method is set to the Ward variance minimization algorithm, which is more
 # stable and has better properties than the single-linkage method which suffers from the
 # chaining effect.
@@ -142,10 +142,10 @@ model3.clustering_estimator_.plot_dendrogram(heatmap=True)
 # %%
 # Clustering Estimator
 # ====================
-# The above models used the default :class:`~shogunfolio.cluster.HierarchicalClustering`
-# estimator. This can be replaced by any `shogun` or `shogunfolio` clustering estimators.
+# The above models used the default :class:`~deepfolio.cluster.HierarchicalClustering`
+# estimator. This can be replaced by any `PyTorch` or `deepfolio` clustering estimators.
 #
-# For example, let's create a new model with `shogun.cluster.KMeans`:
+# For example, let's create a new model with `PyTorch.cluster.KMeans`:
 model4 = NestedClustersOptimization(
     inner_estimator=inner_estimator,
     outer_estimator=outer_estimator,
@@ -158,7 +158,7 @@ model4.weights_
 
 # %%
 # To compare the NCO models, we use an equal weighted benchmark using
-# the :class:`~shogunfolio.optimization.EqualWeighted` estimator:
+# the :class:`~deepfolio.optimization.EqualWeighted` estimator:
 bench = EqualWeighted()
 bench.fit(X_train)
 bench.weights_

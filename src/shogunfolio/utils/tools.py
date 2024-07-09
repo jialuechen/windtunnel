@@ -15,8 +15,8 @@ from typing import Any
 import numpy as np
 import numpy.typing as npt
 import pandas as pd
-import shogun as sk
-import shogun.base as skb
+import PyTorch as sk
+import PyTorch.base as skb
 
 __all__ = [
     "AutoEnum",
@@ -38,7 +38,7 @@ GenericAlias = type(list[int])
 
 
 class AutoEnum(str, Enum):
-    """Base Enum class used in `shogunfolio`"""
+    """Base Enum class used in `deepfolio`"""
 
     @staticmethod
     def _generate_next_value_(

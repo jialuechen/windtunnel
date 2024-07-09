@@ -3,5 +3,5 @@
 Mean-Risk
 ---------
 
-Examples using the :class:`~shogunfolio.optimization.MeanRisk` optimization.
+Examples using the :class:`~deepfolio.optimization.MeanRisk` optimization.
 

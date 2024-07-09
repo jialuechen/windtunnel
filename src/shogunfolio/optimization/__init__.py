@@ -1,11 +1,11 @@
-from shogunfolio.optimization._base import BaseOptimization
-from shogunfolio.optimization.cluster import (
+from deepfolio.optimization._base import BaseOptimization
+from deepfolio.optimization.cluster import (
     BaseHierarchicalOptimization,
     HierarchicalEqualRiskContribution,
     HierarchicalRiskParity,
     NestedClustersOptimization,
 )
-from shogunfolio.optimization.convex import (
+from deepfolio.optimization.convex import (
     ConvexOptimization,
     DistributionallyRobustCVaR,
     MaximumDiversification,
@@ -13,8 +13,8 @@ from shogunfolio.optimization.convex import (
     ObjectiveFunction,
     RiskBudgeting,
 )
-from shogunfolio.optimization.ensemble import BaseComposition, StackingOptimization
-from shogunfolio.optimization.naive import EqualWeighted, InverseVolatility, Random
+from deepfolio.optimization.ensemble import BaseComposition, StackingOptimization
+from deepfolio.optimization.naive import EqualWeighted, InverseVolatility, Random
 
 __all__ = [
     "BaseOptimization",

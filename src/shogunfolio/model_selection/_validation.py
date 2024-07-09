@@ -10,16 +10,16 @@
 
 import numpy as np
 import numpy.typing as npt
-import shogun as sk
-import shogun.base as skb
-import shogun.model_selection as skm
-import shogun.utils as sku
-import shogun.utils.parallel as skp
+import PyTorch as sk
+import PyTorch.base as skb
+import PyTorch.model_selection as skm
+import PyTorch.utils as sku
+import PyTorch.utils.parallel as skp
 
-from shogunfolio.model_selection._combinatorial import BaseCombinatorialCV
-from shogunfolio.population import Population
-from shogunfolio.portfolio import MultiPeriodPortfolio
-from shogunfolio.utils.tools import fit_and_predict, safe_split
+from deepfolio.model_selection._combinatorial import BaseCombinatorialCV
+from deepfolio.population import Population
+from deepfolio.portfolio import MultiPeriodPortfolio
+from deepfolio.utils.tools import fit_and_predict, safe_split
 
 
 def cross_val_predict(
@@ -43,14 +43,14 @@ def cross_val_predict(
     predicted on the corresponding test set.
 
     For non-combinatorial cross-validation like `Kfold`, the output is the predicted
-    :class:`~shogunfolio.portfolio.MultiPeriodPortfolio` where
-    each :class:`~shogunfolio.portfolio.Portfolio` corresponds to the prediction on each
+    :class:`~deepfolio.portfolio.MultiPeriodPortfolio` where
+    each :class:`~deepfolio.portfolio.Portfolio` corresponds to the prediction on each
     train/test pair (`k` portfolios for `Kfold`).
 
     For combinatorial cross-validation
-    like :class:`~shogunfolio.model_selection.CombinatorialPurgedCV`, the output is the
-    predicted :class:`~shogunfolio.population.Population` of multiple
-    :class:`~shogunfolio.portfolio.MultiPeriodPortfolio` (each test outputs are a
+    like :class:`~deepfolio.model_selection.CombinatorialPurgedCV`, the output is the
+    predicted :class:`~deepfolio.population.Population` of multiple
+    :class:`~deepfolio.portfolio.MultiPeriodPortfolio` (each test outputs are a
     collection of multiple paths instead of one single path).
 
     Parameters

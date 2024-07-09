@@ -1,10 +1,10 @@
-"""Module that includes all Measures functions used across `shogunfolio`."""
+"""Module that includes all Measures functions used across `deepfolio`."""
 
 # Copyright (c) 2023
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # Gini mean difference and OWA GMD weights features are derived
-# from Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# from Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 
 import numpy as np
 import scipy.optimize as sco

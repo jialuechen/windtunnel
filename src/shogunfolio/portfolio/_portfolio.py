@@ -16,10 +16,10 @@ import numpy.typing as npt
 import pandas as pd
 import plotly.express as px
 
-import shogunfolio.typing as skt
-from shogunfolio.measures import RiskMeasure, effective_number_assets
-from shogunfolio.portfolio._base import _ZERO_THRESHOLD, BasePortfolio
-from shogunfolio.utils.tools import (
+import deepfolio.typing as skt
+from deepfolio.measures import RiskMeasure, effective_number_assets
+from deepfolio.portfolio._base import _ZERO_THRESHOLD, BasePortfolio
+from deepfolio.utils.tools import (
     args_names,
     cached_property_slots,
     default_asset_names,

@@ -1,16 +1,16 @@
-"""Module that includes all Measures functions used across `shogunfolio`."""
+"""Module that includes all Measures functions used across `deepfolio`."""
 
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 
-from shogunfolio.measures._enums import (
+from deepfolio.measures._enums import (
     BaseMeasure,
     ExtraRiskMeasure,
     PerfMeasure,
     RatioMeasure,
     RiskMeasure,
 )
-from shogunfolio.measures._measures import (
+from deepfolio.measures._measures import (
     average_drawdown,
     cdar,
     cvar,

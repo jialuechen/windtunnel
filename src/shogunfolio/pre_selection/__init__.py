@@ -1,4 +1,4 @@
-from shogunfolio.pre_selection._pre_selection import (
+from deepfolio.pre_selection._pre_selection import (
     DropCorrelated,
     SelectKExtremes,
     SelectNonDominated,

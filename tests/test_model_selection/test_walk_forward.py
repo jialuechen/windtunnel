@@ -1,6 +1,6 @@
 import numpy as np
 
-from shogunfolio.model_selection import WalkForward
+from deepfolio.model_selection import WalkForward
 
 
 def assert_split_equal(split, res):

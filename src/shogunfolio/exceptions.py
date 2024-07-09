@@ -1,6 +1,6 @@
 """
-The :mod:`shogunfolio.exceptions` module includes all custom warnings and error
-classes used across shogunfolio.
+The :mod:`deepfolio.exceptions` module includes all custom warnings and error
+classes used across deepfolio.
 """
 
 # Copyright (c) 2023

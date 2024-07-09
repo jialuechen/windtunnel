@@ -1,4 +1,4 @@
-"""Module that includes all Measures enums used across `shogunfolio`."""
+"""Module that includes all Measures enums used across `deepfolio`."""
 
 # Copyright (c) 2023
 # Author: Hugo Delatte <jialuechen@outlook.com>
@@ -7,7 +7,7 @@
 from abc import abstractmethod
 from enum import auto
 
-from shogunfolio.utils.tools import AutoEnum
+from deepfolio.utils.tools import AutoEnum
 
 
 class BaseMeasure(AutoEnum):

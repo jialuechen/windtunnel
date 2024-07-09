@@ -1,10 +1,10 @@
-from shogunfolio.optimization.cluster.hierarchical._base import (
+from deepfolio.optimization.cluster.hierarchical._base import (
     BaseHierarchicalOptimization,
 )
-from shogunfolio.optimization.cluster.hierarchical._herc import (
+from deepfolio.optimization.cluster.hierarchical._herc import (
     HierarchicalEqualRiskContribution,
 )
-from shogunfolio.optimization.cluster.hierarchical._hrp import HierarchicalRiskParity
+from deepfolio.optimization.cluster.hierarchical._hrp import HierarchicalRiskParity
 
 __all__ = [
     "BaseHierarchicalOptimization",

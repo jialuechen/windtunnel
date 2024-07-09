@@ -3,7 +3,7 @@
 Efficient Frontier
 ==================
 
-This tutorial uses the :class:`~shogunfolio.optimization.MeanRisk` optimization to find an
+This tutorial uses the :class:`~deepfolio.optimization.MeanRisk` optimization to find an
 ensemble of portfolios belonging to the Mean-Variance efficient frontier (pareto font).
 """
 
@@ -15,12 +15,12 @@ ensemble of portfolios belonging to the Mean-Variance efficient frontier (pareto
 
 import numpy as np
 from plotly.io import show
-from shogun.model_selection import train_test_split
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import PerfMeasure, RatioMeasure, RiskMeasure
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.optimization import MeanRisk
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio import PerfMeasure, RatioMeasure, RiskMeasure
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.optimization import MeanRisk
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 
@@ -45,8 +45,8 @@ print(model.weights_.shape)
 # Prediction
 # ==========
 # We predict this model on both the training set and the test set.
-# The `predict` method returns the :class:`~shogunfolio.population.Population` of
-# 30 :class:`~shogunfolio.portfolio.Portfolio`:
+# The `predict` method returns the :class:`~deepfolio.population.Population` of
+# 30 :class:`~deepfolio.portfolio.Portfolio`:
 population_train = model.predict(X_train)
 population_test = model.predict(X_test)
 

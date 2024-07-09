@@ -1,6 +1,6 @@
 """Moments module."""
 
-from shogunfolio.moments.covariance import (
+from deepfolio.moments.covariance import (
     OAS,
     BaseCovariance,
     DenoiseCovariance,
@@ -12,7 +12,7 @@ from shogunfolio.moments.covariance import (
     LedoitWolf,
     ShrunkCovariance,
 )
-from shogunfolio.moments.expected_returns import (
+from deepfolio.moments.expected_returns import (
     BaseMu,
     EWMu,
     EmpiricalMu,

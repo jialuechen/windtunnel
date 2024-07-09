@@ -18,10 +18,10 @@ import numpy as np
 import numpy.typing as npt
 import pandas as pd
 import plotly.graph_objects as go
-import shogun.model_selection as skm
-import shogun.utils as sku
+import PyTorch.model_selection as skm
+import PyTorch.utils as sku
 
-import shogunfolio.typing as skt
+import deepfolio.typing as skt
 
 
 class BaseCombinatorialCV(ABC):
@@ -72,7 +72,7 @@ class CombinatorialPurgedCV(BaseCombinatorialCV):
 
     n_test_folds : int, default=8
         Number of test folds. Must be at least 2.
-        For only one test fold, use `shogun.model_validation.KFold`.
+        For only one test fold, use `PyTorch.model_validation.KFold`.
 
     purged_size : int, default=0
         Number of observations to exclude from the start of each train set that are
@@ -90,7 +90,7 @@ class CombinatorialPurgedCV(BaseCombinatorialCV):
     Examples
     --------
     >>> import numpy as np
-    >>> from shogunfolio.model_selection import CombinatorialPurgedCV
+    >>> from deepfolio.model_selection import CombinatorialPurgedCV
     >>> X = np.random.randn(12, 2)
     >>> cv = CombinatorialPurgedCV(n_folds=3, n_test_folds=2)
     >>> for i, (train_index, tests) in enumerate(cv.split(X)):

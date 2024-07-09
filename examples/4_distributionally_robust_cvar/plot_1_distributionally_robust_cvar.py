@@ -3,7 +3,7 @@
 Distributionally Robust CVaR
 ============================
 
-This tutorial introduces the :class:`~shogunfolio.optimization.DistributionallyRobustCVaR`
+This tutorial introduces the :class:`~deepfolio.optimization.DistributionallyRobustCVaR`
 model.
 
 The Distributionally Robust CVaR model constructs a Wasserstein ball in the space of
@@ -31,12 +31,12 @@ distribution, bringing the weights closer to the equal weighted portfolio.
 # We load the S&P 500 :ref:`dataset <datasets>` composed of the daily prices of 20
 # assets from the S&P 500 Index composition starting from 2020-01-02 up to 2022-12-28:
 from plotly.io import show
-from shogun.model_selection import train_test_split
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import Population
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.optimization import DistributionallyRobustCVaR, EqualWeighted
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio import Population
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.optimization import DistributionallyRobustCVaR, EqualWeighted
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 prices = prices["2020":]
@@ -76,7 +76,7 @@ model4.weights_
 
 # %%
 # To compare the models, we use an equal weighted benchmark using
-# the :class:`~shogunfolio.optimization.EqualWeighted` estimator:
+# the :class:`~deepfolio.optimization.EqualWeighted` estimator:
 bench = EqualWeighted()
 bench.fit(X_train)
 bench.weights_
@@ -94,7 +94,7 @@ ptf_bench_test = bench.predict(X_test)
 # %%
 # Analysis
 # ========
-# We load all predicted portfolios into a :class:`~shogunfolio.population.Population` and
+# We load all predicted portfolios into a :class:`~deepfolio.population.Population` and
 # plot their compositions:
 population = Population(
     [ptf_model1_test, ptf_model2_test, ptf_model3_test, ptf_model4_test, ptf_bench_test]

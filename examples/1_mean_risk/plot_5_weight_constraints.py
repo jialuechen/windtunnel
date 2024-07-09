@@ -4,7 +4,7 @@ Weight Constraints
 ==================
 
 This tutorial shows how to incorporate weight constraints into the
-:class:`~shogunfolio.optimization.MeanRisk` optimization.
+:class:`~deepfolio.optimization.MeanRisk` optimization.
 
 We will show how to use the below parameters:
     * min_weights
@@ -31,9 +31,9 @@ We will show how to use the below parameters:
 import numpy as np
 from plotly.io import show
 
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.optimization import MeanRisk
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.optimization import MeanRisk
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 prices = prices[["AAPL", "GE", "JPM"]]
@@ -44,7 +44,7 @@ X = prices_to_returns(prices)
 # Model
 # =====
 # In this tutorial, we will use a Minimum Variance model.
-# By default,  :class:`~shogunfolio.optimization.MeanRisk` is long only (`min_weights=0`)
+# By default,  :class:`~deepfolio.optimization.MeanRisk` is long only (`min_weights=0`)
 # and fully invested (`budget=1`). In other terms, all weights are positive and sum to
 # one.
 model = MeanRisk()

@@ -4,7 +4,7 @@ Select Best Performers
 ======================
 
 This tutorial introduces the :ref:`pre-selection transformers <pre_selection>`
-:class:`~shogunfolio.pre_selection.SelectKExtremes` to select the `k` best or the `k` worst
+:class:`~deepfolio.pre_selection.SelectKExtremes` to select the `k` best or the `k` worst
 assets according to a given measure before the optimization.
 
 In this example, we will use a `Pipeline` to assemble the pre-selection step with a
@@ -19,22 +19,22 @@ number of pre-selected assets to maximize the mean out-of-sample Sharpe Ratio.
 # assets from the FTSE 100 Index starting from 2000-01-04 up to 2023-05-31:
 import plotly.graph_objs as go
 from plotly.io import show
-from shogun import set_config
-from shogun.model_selection import GridSearchCV, train_test_split
-from shogun.pipeline import Pipeline
+from PyTorch import set_config
+from PyTorch.model_selection import GridSearchCV, train_test_split
+from PyTorch.pipeline import Pipeline
 
-from shogunfolio import Population, RatioMeasure
-from shogunfolio.datasets import load_ftse100_dataset
-from shogunfolio.metrics import make_scorer
-from shogunfolio.model_selection import (
+from deepfolio import Population, RatioMeasure
+from deepfolio.datasets import load_ftse100_dataset
+from deepfolio.metrics import make_scorer
+from deepfolio.model_selection import (
     WalkForward,
     cross_val_predict,
 )
-from shogunfolio.moments import EmpiricalCovariance
-from shogunfolio.optimization import MeanRisk
-from shogunfolio.pre_selection import SelectKExtremes
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import EmpiricalPrior
+from deepfolio.moments import EmpiricalCovariance
+from deepfolio.optimization import MeanRisk
+from deepfolio.pre_selection import SelectKExtremes
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import EmpiricalPrior
 
 prices = load_ftse100_dataset()
 X = prices_to_returns(prices)

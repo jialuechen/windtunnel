@@ -10,7 +10,7 @@ import os
 import warnings
 
 import plotly.io as pio
-import shogunfolio
+import deepfolio
 from plotly.io._sg_scraper import plotly_sg_scraper
 from sphinx_gallery.sorting import FileNameSortKey
 
@@ -30,8 +30,8 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 # -- Project information -----------------------------------------------------
 
-project = "shogunfolio"
-copyright = "2023, shogunfolio developers (BSD License)"
+project = "deepfolio"
+copyright = "2023, deepfolio developers (BSD License)"
 author = "Hugo Delatte"
 
 # -- General configuration ---------------------------------------------------
@@ -102,9 +102,9 @@ add_function_parentheses = False
 
 # -- sphinxext-opengraph ----------------------------------------------------
 
-ogp_site_url = "https://shogunfolio.org/"
-ogp_site_name = "shogunfolio"
-ogp_image = "https://shogunfolio.org/_images/expo.jpg"
+ogp_site_url = "https://deepfolio.org/"
+ogp_site_name = "deepfolio"
+ogp_image = "https://deepfolio.org/_images/expo.jpg"
 ogp_enable_meta_description = True
 
 # -- autosummary -------------------------------------------------------------
@@ -112,7 +112,7 @@ ogp_enable_meta_description = True
 autosummary_generate = True
 
 # -- sphinx_sitemap -------------------------------------------------------------
-html_baseurl = "https://shogunfolio.org/"
+html_baseurl = "https://deepfolio.org/"
 sitemap_url_scheme = "{link}"
 
 # -- Internationalization ----------------------------------------------------
@@ -156,7 +156,7 @@ html_sourcelink_suffix = ""
 
 # Define the version we use for matching in the version switcher.
 # For local development, infer the version to match from the package.
-release = shogunfolio.__version__
+release = deepfolio.__version__
 version_match = "v" + release
 
 html_theme_options = {
@@ -166,13 +166,13 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/shogunfolio/shogunfolio",
+            "url": "https://github.com/deepfolio/deepfolio",
             "icon": "fa-brands fa-github",
         },
     ],
     "logo": {
-        "text": "shogunfolio",
-        "alt_text": "shogunfolio documentation - Home",
+        "text": "deepfolio",
+        "alt_text": "deepfolio documentation - Home",
         "image_light": "_static/favicon.svg",
         "image_dark": "_static/favicon.svg",
     },
@@ -183,7 +183,7 @@ html_theme_options = {
     ),  # [left, content, right] For testing that the navbar items align properly
     "announcement": """<div class="sidebar-message">
     If you'd like to contribute,
-    <a href="https://github.com/shogunfolio/shogunfolio">check out our GitHub repository.</a>
+    <a href="https://github.com/deepfolio/deepfolio">check out our GitHub repository.</a>
     Your contributions are welcome!</div>""",
     "secondary_sidebar_items": [],  # No secondary sidebar due to bug with plotly
 }
@@ -197,8 +197,8 @@ html_sidebars = {
 html_show_sourcelink = False
 
 html_context = {
-    "github_user": "shogunfolio",
-    "github_repo": "shogunfolio",
+    "github_user": "deepfolio",
+    "github_repo": "deepfolio",
     "github_version": "main",
     "doc_path": "docs",
     "default_mode": "dark",
@@ -235,11 +235,11 @@ class FileNameNumberSortKey(FileNameSortKey):
 
 
 sphinx_gallery_conf = {
-    "doc_module": "shogunfolio",
+    "doc_module": "deepfolio",
     "backreferences_dir": os.path.join("modules", "generated"),
     "show_memory": False,
     "reference_url": {
-        "shogunfolio": None,
+        "deepfolio": None,
     },
     "examples_dirs": ["../examples"],
     "gallery_dirs": ["auto_examples"],
@@ -250,8 +250,8 @@ sphinx_gallery_conf = {
     "remove_config_comments": True,
     "plot_gallery": "True",
     "binder": {
-        "org": "shogunfolio",
-        "repo": "shogunfolio",
+        "org": "deepfolio",
+        "repo": "deepfolio",
         "branch": "gh-pages",
         "binderhub_url": "https://mybinder.org",
         "dependencies": "./binder/requirements.txt",

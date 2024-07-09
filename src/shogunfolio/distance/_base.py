@@ -8,11 +8,11 @@ from abc import ABC, abstractmethod
 
 import numpy as np
 import numpy.typing as npt
-import shogun.base as skb
+import PyTorch.base as skb
 
 
 class BaseDistance(skb.BaseEstimator, ABC):
-    """Base class for all distance estimators in shogunfolio.
+    """Base class for all distance estimators in deepfolio.
 
     Notes
     -----

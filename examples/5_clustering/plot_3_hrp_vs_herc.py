@@ -4,8 +4,8 @@ HRP vs HERC
 ===========
 
 In this tutorial, we will compare the
-:class:`~shogunfolio.optimization.HierarchicalRiskParity` (HRP) optimization with the
-:class:`~shogunfolio.optimization.HierarchicalEqualRiskContribution` (HERC) optimization.
+:class:`~deepfolio.optimization.HierarchicalRiskParity` (HRP) optimization with the
+:class:`~deepfolio.optimization.HierarchicalEqualRiskContribution` (HERC) optimization.
 
 For that comparison, we consider a 3 months rolling (60 business days) allocation fitted
 on the preceding year of data (252 business days) that minimizes the CVaR.
@@ -17,7 +17,7 @@ Mean-CVaR ratio.
 Then, we will evaluate the models on the test set and compare them with the
 equal-weighted benchmark.
 
-Finally, we will use the :class:`~shogunfolio.model_selection.CombinatorialPurgedCV` to
+Finally, we will use the :class:`~deepfolio.model_selection.CombinatorialPurgedCV` to
 analyze the stability and distribution of both models.
 """
 
@@ -27,24 +27,24 @@ analyze the stability and distribution of both models.
 # We load the FTSE 100 :ref:`dataset <datasets>` composed of the daily prices of 64
 # assets from the FTSE 100 Index composition starting from 2000-01-04 up to 2023-05-31:
 from plotly.io import show
-from shogun.model_selection import GridSearchCV, train_test_split
+from PyTorch.model_selection import GridSearchCV, train_test_split
 
-from shogunfolio import Population, RatioMeasure, RiskMeasure
-from shogunfolio.cluster import HierarchicalClustering, LinkageMethod
-from shogunfolio.datasets import load_ftse100_dataset
-from shogunfolio.distance import KendallDistance, PearsonDistance
-from shogunfolio.metrics import make_scorer
-from shogunfolio.model_selection import (
+from deepfolio import Population, RatioMeasure, RiskMeasure
+from deepfolio.cluster import HierarchicalClustering, LinkageMethod
+from deepfolio.datasets import load_ftse100_dataset
+from deepfolio.distance import KendallDistance, PearsonDistance
+from deepfolio.metrics import make_scorer
+from deepfolio.model_selection import (
     CombinatorialPurgedCV,
     WalkForward,
     cross_val_predict,
     optimal_folds_number,
 )
-from shogunfolio.optimization import (
+from deepfolio.optimization import (
     HierarchicalEqualRiskContribution,
     HierarchicalRiskParity,
 )
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_ftse100_dataset()
 
@@ -149,7 +149,7 @@ for ptf in population:
 # =====================================
 # Only using one testing path (the historical path) may not be enough to compare
 # models. For a more robust analysis, we can use the
-# :class:`~shogunfolio.model_selection.CombinatorialPurgedCV` to create multiple testing
+# :class:`~deepfolio.model_selection.CombinatorialPurgedCV` to create multiple testing
 # paths from different training folds combinations.
 #
 # We choose `n_folds` and `n_test_folds` to obtain around 100 test paths and an average

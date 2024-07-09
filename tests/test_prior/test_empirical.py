@@ -2,9 +2,9 @@ import datetime as dt
 import numpy as np
 import pytest
 
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import EmpiricalPrior
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import EmpiricalPrior
 
 
 @pytest.fixture(scope="module")

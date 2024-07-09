@@ -3,10 +3,10 @@ r"""
 Black & Litterman
 =================
 
-This tutorial shows how to use the :class:`~shogunfolio.prior.BlackLitterman` estimator in
-the :class:`~shogunfolio.optimization.MeanRisk` optimization.
+This tutorial shows how to use the :class:`~deepfolio.prior.BlackLitterman` estimator in
+the :class:`~deepfolio.optimization.MeanRisk` optimization.
 
-A :ref:`prior estimator <prior>` fits a :class:`~shogunfolio.prior.PriorModel` containing
+A :ref:`prior estimator <prior>` fits a :class:`~deepfolio.prior.PriorModel` containing
 the distribution estimate of asset returns. It represents the investor's prior beliefs
 about the model used to estimate such distribution.
 
@@ -32,13 +32,13 @@ In this tutorial we will build a Maximum Sharpe Ratio portfolio using the
 # We load the S&P 500 :ref:`dataset <datasets>` composed of the daily prices of 20
 # assets from the SPX Index composition starting from 1990-01-02 up to 2022-12-28:
 from plotly.io import show
-from shogun.model_selection import train_test_split
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import Population, RiskMeasure
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.optimization import MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import BlackLitterman
+from deepfolio import Population, RiskMeasure
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.optimization import MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import BlackLitterman
 
 prices = load_sp500_dataset()
 X = prices_to_returns(prices)

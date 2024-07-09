@@ -12,9 +12,9 @@ from collections.abc import Callable
 
 import numpy.typing as npt
 
-import shogunfolio.typing as skt
-from shogunfolio.optimization import BaseOptimization
-from shogunfolio.portfolio import Portfolio
+import deepfolio.typing as skt
+from deepfolio.optimization import BaseOptimization
+from deepfolio.portfolio import Portfolio
 
 
 class _PortfolioScorer:
@@ -66,19 +66,19 @@ def make_scorer(
     functionalities with `Portfolio` objects.
 
     This factory function wraps scoring functions for use in
-    `shogun.model_selection.GridSearchCV` and
-    `shogun.model_selection.cross_val_score`.
+    `PyTorch.model_selection.GridSearchCV` and
+    `PyTorch.model_selection.cross_val_score`.
 
     Parameters
     ----------
     score_func : Measure | callable
         If `score_func` is a :ref:`measure <measures_ref>`, we return the measure of
-        the predicted :class:`~shogunfolio.portfolio.Portfolio` times `1` or `-1`
+        the predicted :class:`~deepfolio.portfolio.Portfolio` times `1` or `-1`
         depending on the `greater_is_better` parameter.
 
         Otherwise, `score_func` must be a score function (or loss function) with
         signature `score_func(pred, **kwargs)`. The argument `pred` is the predicted
-        :class:`~shogunfolio.portfolio.Portfolio`.
+        :class:`~deepfolio.portfolio.Portfolio`.
 
         Note that you can convert this portfolio object into a numpy array of price
         returns with `np.asarray(pred)`.

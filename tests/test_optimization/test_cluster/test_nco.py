@@ -2,16 +2,16 @@ import datetime as dt
 
 import numpy as np
 import pytest
-import shogun.cluster as skc
-import shogun.model_selection as skm
-from shogunfolio import RiskMeasure
-from shogunfolio.cluster import HierarchicalClustering, LinkageMethod
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.model_selection import CombinatorialPurgedCV
-from shogunfolio.optimization.cluster import NestedClustersOptimization
-from shogunfolio.optimization.convex import MeanRisk, ObjectiveFunction
-from shogunfolio.population import Population
-from shogunfolio.preprocessing import prices_to_returns
+import PyTorch.cluster as skc
+import PyTorch.model_selection as skm
+from deepfolio import RiskMeasure
+from deepfolio.cluster import HierarchicalClustering, LinkageMethod
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.model_selection import CombinatorialPurgedCV
+from deepfolio.optimization.cluster import NestedClustersOptimization
+from deepfolio.optimization.convex import MeanRisk, ObjectiveFunction
+from deepfolio.population import Population
+from deepfolio.preprocessing import prices_to_returns
 
 
 @pytest.fixture(scope="module")

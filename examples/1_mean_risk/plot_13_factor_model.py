@@ -3,10 +3,10 @@ r"""
 Factor Model
 ============
 
-This tutorial shows how to use the :class:`~shogunfolio.prior.FactorModel` estimator in
-the :class:`~shogunfolio.optimization.MeanRisk` optimization.
+This tutorial shows how to use the :class:`~deepfolio.prior.FactorModel` estimator in
+the :class:`~deepfolio.optimization.MeanRisk` optimization.
 
-A :ref:`prior estimator <prior>` fits a :class:`~shogunfolio.prior.PriorModel` containing
+A :ref:`prior estimator <prior>` fits a :class:`~deepfolio.prior.PriorModel` containing
 the distribution estimate of asset returns. It represents the investor's prior beliefs
 about the model used to estimate such distribution.
 
@@ -41,15 +41,15 @@ estimator.
 # assets from the SPX Index composition and the Factors dataset composed of the daily
 # prices of 5 ETF representing common factors:
 from plotly.io import show
-from shogun.linear_model import RidgeCV
-from shogun.model_selection import train_test_split
+from PyTorch.linear_model import RidgeCV
+from PyTorch.model_selection import train_test_split
 
-from shogunfolio import Population, RiskMeasure
-from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
-from shogunfolio.moments import GerberCovariance, ShrunkMu
-from shogunfolio.optimization import MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import EmpiricalPrior, FactorModel, LoadingMatrixRegression
+from deepfolio import Population, RiskMeasure
+from deepfolio.datasets import load_factors_dataset, load_sp500_dataset
+from deepfolio.moments import GerberCovariance, ShrunkMu
+from deepfolio.optimization import MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import EmpiricalPrior, FactorModel, LoadingMatrixRegression
 
 prices = load_sp500_dataset()
 factor_prices = load_factors_dataset()
@@ -75,7 +75,7 @@ model_factor_1.fit(X_train, y_train)
 model_factor_1.weights_
 
 # %%
-# We can change the :class:`~shogunfolio.prior.BaseLoadingMatrix` that estimates the loading
+# We can change the :class:`~deepfolio.prior.BaseLoadingMatrix` that estimates the loading
 # matrix (betas) of the factors.
 #
 # The default is the :class:`LoadingMatrixRegression`, which fit the factors using a
@@ -98,7 +98,7 @@ model_factor_2.weights_
 
 # %%
 # We can also change the :ref:`prior estimator <prior>` of the factors.
-# It is used to estimate the :class:`~shogunfolio.prior.PriorModel` containing the factors
+# It is used to estimate the :class:`~deepfolio.prior.PriorModel` containing the factors
 # expected returns and covariance matrix.
 #
 # For example, let's estimate the factors expected returns with James-Stein shrinkage

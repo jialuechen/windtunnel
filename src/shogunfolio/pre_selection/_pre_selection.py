@@ -6,14 +6,14 @@
 
 import numpy as np
 import numpy.typing as npt
-import shogun.base as skb
-import shogun.feature_selection as skf
-import shogun.utils.validation as skv
+import PyTorch.base as skb
+import PyTorch.feature_selection as skf
+import PyTorch.utils.validation as skv
 
-import shogunfolio.typing as skt
-from shogunfolio.measures import RatioMeasure
-from shogunfolio.population import Population
-from shogunfolio.portfolio import Portfolio
+import deepfolio.typing as skt
+from deepfolio.measures import RatioMeasure
+from deepfolio.population import Population
+from deepfolio.portfolio import Portfolio
 
 
 class DropCorrelated(skf.SelectorMixin, skb.BaseEstimator):

@@ -3,7 +3,7 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 
-from shogunfolio.datasets._base import (
+from deepfolio.datasets._base import (
     load_factors_dataset,
     load_ftse100_dataset,
     load_nasdaq_dataset,

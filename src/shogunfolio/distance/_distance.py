@@ -9,17 +9,17 @@ import numpy.typing as npt
 import pandas as pd
 import scipy.spatial.distance as scd
 import scipy.stats as sct
-import shogun.metrics as skm
+import PyTorch.metrics as skm
 
-from shogunfolio.distance._base import BaseDistance
-from shogunfolio.moments import BaseCovariance, GerberCovariance
-from shogunfolio.utils.stats import (
+from deepfolio.distance._base import BaseDistance
+from deepfolio.moments import BaseCovariance, GerberCovariance
+from deepfolio.utils.stats import (
     NBinsMethod,
     cov_to_corr,
     n_bins_freedman,
     n_bins_knuth,
 )
-from shogunfolio.utils.tools import check_estimator
+from deepfolio.utils.tools import check_estimator
 
 
 class PearsonDistance(BaseDistance):
@@ -253,7 +253,7 @@ class CovarianceDistance(BaseDistance):
     ----------
     covariance_estimator : BaseCovariance, optional
        :ref:`Covariance estimator <covariance_estimator>`.
-       The default (`None`) is to use :class:`~shogunfolio.moments.GerberCovariance`.
+       The default (`None`) is to use :class:`~deepfolio.moments.GerberCovariance`.
 
     absolute : bool, default=False
         If this is set to True, the absolute transformation is applied to the

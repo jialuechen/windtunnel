@@ -1,13 +1,13 @@
 import numpy as np
 import pytest
 
-from shogunfolio import ExtraRiskMeasure, RiskMeasure
-from shogunfolio.cluster import HierarchicalClustering, LinkageMethod
-from shogunfolio.datasets import load_factors_dataset, load_sp500_dataset
-from shogunfolio.moments import EWCovariance
-from shogunfolio.optimization import HierarchicalEqualRiskContribution
-from shogunfolio.preprocessing import prices_to_returns
-from shogunfolio.prior import EmpiricalPrior, FactorModel
+from deepfolio import ExtraRiskMeasure, RiskMeasure
+from deepfolio.cluster import HierarchicalClustering, LinkageMethod
+from deepfolio.datasets import load_factors_dataset, load_sp500_dataset
+from deepfolio.moments import EWCovariance
+from deepfolio.optimization import HierarchicalEqualRiskContribution
+from deepfolio.preprocessing import prices_to_returns
+from deepfolio.prior import EmpiricalPrior, FactorModel
 
 
 @pytest.fixture(scope="module")

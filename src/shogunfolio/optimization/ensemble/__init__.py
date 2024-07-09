@@ -1,4 +1,4 @@
-from shogunfolio.optimization.ensemble._stacking import (
+from deepfolio.optimization.ensemble._stacking import (
     BaseComposition,
     StackingOptimization,
 )

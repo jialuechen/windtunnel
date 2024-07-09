@@ -4,7 +4,7 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # Implementation derived from:
-# Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 # Statsmodels, Copyright (C) 2006, Jonathan E. Taylor, Licensed under BSD 3 clause.
 
 from enum import auto
@@ -16,7 +16,7 @@ import scipy.spatial.distance as scd
 import scipy.special as scs
 from scipy.sparse import csr_matrix
 
-from shogunfolio.utils.tools import AutoEnum
+from deepfolio.utils.tools import AutoEnum
 
 __all__ = [
     "NBinsMethod",

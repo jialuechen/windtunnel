@@ -4,7 +4,7 @@ Drop Highly Correlated Assets
 =============================
 
 This tutorial introduces the  :ref:`pre-selection transformers <pre_selection>`
-:class:`~shogunfolio.pre_selection.DropCorrelated` to remove highly correlated assets before
+:class:`~deepfolio.pre_selection.DropCorrelated` to remove highly correlated assets before
 the optimization.
 
 Highly correlated assets tend to increase the instability of mean-variance optimization.
@@ -19,20 +19,20 @@ pre-selection.
 # We load the FTSE 100 :ref:`dataset <datasets>` composed of the daily prices of 64
 # assets from the FTSE 100 Index composition starting from 2000-01-04 up to 2023-05-31:
 from plotly.io import show
-from shogun import set_config
-from shogun.model_selection import train_test_split
-from shogun.pipeline import Pipeline
+from PyTorch import set_config
+from PyTorch.model_selection import train_test_split
+from PyTorch.pipeline import Pipeline
 
-from shogunfolio import Population, RatioMeasure
-from shogunfolio.datasets import load_ftse100_dataset
-from shogunfolio.model_selection import (
+from deepfolio import Population, RatioMeasure
+from deepfolio.datasets import load_ftse100_dataset
+from deepfolio.model_selection import (
     CombinatorialPurgedCV,
     cross_val_predict,
     optimal_folds_number
 )
-from shogunfolio.optimization import MeanRisk, ObjectiveFunction
-from shogunfolio.pre_selection import DropCorrelated
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio.optimization import MeanRisk, ObjectiveFunction
+from deepfolio.pre_selection import DropCorrelated
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_ftse100_dataset()
 
@@ -88,7 +88,7 @@ population.plot_cumulative_returns()
 # =====================================
 # Only using one testing path (the historical path) may not be enough for comparing both
 # models. For a more robust analysis, we can use the
-# :class:`~shogunfolio.model_selection.CombinatorialPurgedCV` to create multiple testing
+# :class:`~deepfolio.model_selection.CombinatorialPurgedCV` to create multiple testing
 # paths from different training folds combinations.
 #
 # We choose `n_folds` and `n_test_folds` to obtain around 100 test paths and an average

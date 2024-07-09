@@ -6,10 +6,10 @@
 import numpy as np
 import numpy.typing as npt
 
-from shogunfolio.optimization._base import BaseOptimization
-from shogunfolio.prior import BasePrior, EmpiricalPrior
-from shogunfolio.utils.stats import rand_weights_dirichlet
-from shogunfolio.utils.tools import check_estimator
+from deepfolio.optimization._base import BaseOptimization
+from deepfolio.prior import BasePrior, EmpiricalPrior
+from deepfolio.utils.stats import rand_weights_dirichlet
+from deepfolio.utils.tools import check_estimator
 
 
 class InverseVolatility(BaseOptimization):
@@ -23,10 +23,10 @@ class InverseVolatility(BaseOptimization):
     ----------
     prior_estimator : BasePrior, optional
         :ref:`Prior estimator <prior>`.
-        The prior estimator is used to estimate the :class:`~shogunfolio.prior.PriorModel`
+        The prior estimator is used to estimate the :class:`~deepfolio.prior.PriorModel`
         containing the estimation of assets expected returns, covariance matrix,
         returns and Cholesky decomposition of the covariance.
-        The default (`None`) is to use :class:`~shogunfolio.prior.EmpiricalPrior`.
+        The default (`None`) is to use :class:`~deepfolio.prior.EmpiricalPrior`.
 
     portfolio_params :  dict, optional
         Portfolio parameters passed to the portfolio evaluated by the `predict` and

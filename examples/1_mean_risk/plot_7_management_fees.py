@@ -4,7 +4,7 @@ Management Fees
 ===============
 
 This tutorial shows how to incorporate management fees (MF) into the 
-:class:`~shogunfolio.optimization.MeanRisk` optimization.
+:class:`~deepfolio.optimization.MeanRisk` optimization.
 
 By using The `management_fees` parameter, you can add linear MF to the optimization 
 problem:
@@ -44,11 +44,11 @@ columns. The default is 0.0 (no management fees).
 import numpy as np
 from plotly.io import show
 
-from shogunfolio import Population
-from shogunfolio.datasets import load_sp500_dataset
-from shogunfolio.model_selection import WalkForward, cross_val_predict
-from shogunfolio.optimization import MeanRisk, ObjectiveFunction
-from shogunfolio.preprocessing import prices_to_returns
+from deepfolio import Population
+from deepfolio.datasets import load_sp500_dataset
+from deepfolio.model_selection import WalkForward, cross_val_predict
+from deepfolio.optimization import MeanRisk, ObjectiveFunction
+from deepfolio.preprocessing import prices_to_returns
 
 prices = load_sp500_dataset()
 prices = prices[["AAPL", "GE", "JPM"]]

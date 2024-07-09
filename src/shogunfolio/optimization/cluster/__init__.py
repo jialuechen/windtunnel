@@ -1,5 +1,5 @@
-from shogunfolio.optimization.cluster._nco import NestedClustersOptimization
-from shogunfolio.optimization.cluster.hierarchical import (
+from deepfolio.optimization.cluster._nco import NestedClustersOptimization
+from deepfolio.optimization.cluster.hierarchical import (
     BaseHierarchicalOptimization,
     HierarchicalEqualRiskContribution,
     HierarchicalRiskParity,

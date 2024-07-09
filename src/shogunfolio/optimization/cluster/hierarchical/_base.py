@@ -4,7 +4,7 @@
 # Author: Hugo Delatte <jialuechen@outlook.com>
 # License: BSD 3 clause
 # Implementation derived from:
-# Rishogunfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
+# Rideepfolio-Lib, Copyright (c) 2020-2023, Dany Cajas, Licensed under BSD 3 clause.
 # scikit-learn, Copyright (c) 2007-2010 David Cournapeau, Fabian Pedregosa, Olivier
 
 from abc import ABC, abstractmethod
@@ -13,14 +13,14 @@ from typing import Any
 import numpy as np
 import numpy.typing as npt
 
-import shogunfolio.typing as skt
-from shogunfolio.cluster import HierarchicalClustering
-from shogunfolio.distance import BaseDistance
-from shogunfolio.measures import ExtraRiskMeasure, RiskMeasure
-from shogunfolio.optimization._base import BaseOptimization
-from shogunfolio.portfolio import Portfolio
-from shogunfolio.prior import BasePrior, PriorModel
-from shogunfolio.utils.tools import input_to_array
+import deepfolio.typing as skt
+from deepfolio.cluster import HierarchicalClustering
+from deepfolio.distance import BaseDistance
+from deepfolio.measures import ExtraRiskMeasure, RiskMeasure
+from deepfolio.optimization._base import BaseOptimization
+from deepfolio.portfolio import Portfolio
+from deepfolio.prior import BasePrior, PriorModel
+from deepfolio.utils.tools import input_to_array
 
 
 class BaseHierarchicalOptimization(BaseOptimization, ABC):
@@ -29,7 +29,7 @@ class BaseHierarchicalOptimization(BaseOptimization, ABC):
     Parameters
     ----------
     risk_measure : RiskMeasure or ExtraRiskMeasure, default=RiskMeasure.VARIANCE
-        :class:`~shogunfolio.meta.RiskMeasure` or :class:`~shogunfolio.meta.ExtraRiskMeasure`
+        :class:`~deepfolio.meta.RiskMeasure` or :class:`~deepfolio.meta.ExtraRiskMeasure`
         of the optimization.
         Can be any of:
 
@@ -58,24 +58,24 @@ class BaseHierarchicalOptimization(BaseOptimization, ABC):
 
     prior_estimator : BasePrior, optional
         :ref:`Prior estimator <prior>`.
-        The prior estimator is used to estimate the :class:`~shogunfolio.prior.PriorModel`
+        The prior estimator is used to estimate the :class:`~deepfolio.prior.PriorModel`
         containing the estimation of assets expected returns, covariance matrix and
         returns. The moments and returns estimations are used for the risk computation
         and the returns estimation are used by the distance matrix estimator.
-        The default (`None`) is to use :class:`~shogunfolio.prior.EmpiricalPrior`.
+        The default (`None`) is to use :class:`~deepfolio.prior.EmpiricalPrior`.
 
     distance_estimator : BaseDistance, optional
         :ref:`Distance estimator <distance>`.
         The distance estimator is used to estimate the codependence and the distance
         matrix needed for the computation of the linkage matrix.
-        The default (`None`) is to use :class:`~shogunfolio.distance.PearsonDistance`.
+        The default (`None`) is to use :class:`~deepfolio.distance.PearsonDistance`.
 
     hierarchical_clustering_estimator : HierarchicalClustering, optional
         :ref:`Hierarchical Clustering estimator <hierarchical_clustering>`.
         The hierarchical clustering estimator is used to compute the linkage matrix
         and the hierarchical clustering of the assets based on the distance matrix.
         The default (`None`) is to use
-        :class:`~shogunfolio.cluster.HierarchicalClustering`.
+        :class:`~deepfolio.cluster.HierarchicalClustering`.
 
     min_weights : float | dict[str, float] | array-like of shape (n_assets, ), default=0.0
         Minimum assets weights (weights lower bounds). Negative weights are not allowed.

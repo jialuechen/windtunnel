@@ -9,7 +9,7 @@ from dataclasses import dataclass
 
 import numpy as np
 import numpy.typing as npt
-import shogun.base as skb
+import PyTorch.base as skb
 
 
 # frozen=True with eq=False will lead to an id-based hashing which is needed for
@@ -44,7 +44,7 @@ class UncertaintySet:
 
 
 class BaseMuUncertaintySet(skb.BaseEstimator, ABC):
-    """Base class for all Mu Uncertainty Set estimators in `shogunfolio`.
+    """Base class for all Mu Uncertainty Set estimators in `deepfolio`.
 
     Notes
     -----
@@ -65,7 +65,7 @@ class BaseMuUncertaintySet(skb.BaseEstimator, ABC):
 
 
 class BaseCovarianceUncertaintySet(skb.BaseEstimator, ABC):
-    """Base class for all Covariance Uncertainty Set estimators in `shogunfolio`.
+    """Base class for all Covariance Uncertainty Set estimators in `deepfolio`.
 
     Notes
     -----

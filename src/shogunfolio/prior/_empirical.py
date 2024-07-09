@@ -7,26 +7,26 @@
 import numpy as np
 import numpy.typing as npt
 
-from shogunfolio.moments import BaseCovariance, BaseMu, EmpiricalCovariance, EmpiricalMu
-from shogunfolio.prior._base import BasePrior, PriorModel
-from shogunfolio.utils.tools import check_estimator
+from deepfolio.moments import BaseCovariance, BaseMu, EmpiricalCovariance, EmpiricalMu
+from deepfolio.prior._base import BasePrior, PriorModel
+from deepfolio.utils.tools import check_estimator
 
 
 class EmpiricalPrior(BasePrior):
     """Empirical Prior estimator.
 
-    The Empirical Prior estimates the :class:`~shogunfolio.prior.PriorModel` by fitting a
+    The Empirical Prior estimates the :class:`~deepfolio.prior.PriorModel` by fitting a
     `mu_estimator` and a `covariance_estimator` separately.
 
     Parameters
     ----------
     mu_estimator : BaseMu, optional
         The assets :ref:`expected returns estimator <mu_estimator>`.
-        The default (`None`) is to use :class:`~shogunfolio.moments.EmpiricalMu`.
+        The default (`None`) is to use :class:`~deepfolio.moments.EmpiricalMu`.
 
     covariance_estimator : BaseCovariance , optional
         The assets :ref:`covariance matrix estimator <covariance_estimator>`.
-        The default (`None`) is to use  :class:`~shogunfolio.moments.EmpiricalCovariance`.
+        The default (`None`) is to use  :class:`~deepfolio.moments.EmpiricalCovariance`.
 
     is_log_normal : bool, default=False
         If this is set to True, the moments are estimated on the logarithmic returns
@@ -49,7 +49,7 @@ class EmpiricalPrior(BasePrior):
     Attributes
     ----------
     prior_model_ : PriorModel
-        The assets :class:`~shogunfolio.prior.PriorModel`.
+        The assets :class:`~deepfolio.prior.PriorModel`.
 
     mu_estimator_ : BaseMu
         Fitted `mu_estimator`.

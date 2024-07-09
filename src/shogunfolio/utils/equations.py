@@ -10,7 +10,7 @@ import warnings
 import numpy as np
 import numpy.typing as npt
 
-from shogunfolio.exceptions import EquationToMatrixError, GroupNotFoundError
+from deepfolio.exceptions import EquationToMatrixError, GroupNotFoundError
 
 __all__ = ["equations_to_matrix"]
 

@@ -1,7 +1,7 @@
 from collections.abc import Iterator
 
 import numpy as np
-from shogunfolio.utils.tools import (
+from deepfolio.utils.tools import (
     args_names,
     bisection,
     deduplicate_names,

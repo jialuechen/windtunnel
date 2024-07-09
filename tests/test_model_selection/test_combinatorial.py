@@ -3,8 +3,8 @@ import math
 import numpy as np
 import pytest
 
-from shogunfolio.model_selection import CombinatorialPurgedCV, optimal_folds_number
-from shogunfolio.model_selection._combinatorial import _avg_train_size, _n_test_paths
+from deepfolio.model_selection import CombinatorialPurgedCV, optimal_folds_number
+from deepfolio.model_selection._combinatorial import _avg_train_size, _n_test_paths
 
 
 def assert_split_equal(split, res):
