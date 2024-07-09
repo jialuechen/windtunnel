@@ -5,7 +5,7 @@ setuptools.setup(
     version='0.1.0',
     packages=setuptools.find_packages(),
     install_requires=[
-        "PyTorch==6.1.4",
+        "PyTorch==2.3.1",
         "pandas==2.0.3",
         "networkx==3.1"
     ],
