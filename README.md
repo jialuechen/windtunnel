@@ -5,7 +5,7 @@
 [![Python Versions](https://img.shields.io/pypi/pyversions/deepfolio.svg)](https://pypi.org/project/deepfolio/)
 [![Keras](https://img.shields.io/badge/Keras-3.x-red)](https://keras.io/)
 
-**deepfolio** is a Python library for portfolio optimization built on top of Keras 3. It offers a unified interface and tools compatible with Keras to build, fine-tune, and cross-validate portfolio models.
+**deepfolio** is a Python library for portfolio optimization built on top of Keras 3 and TensorFlow 2. It offers a unified interface and tools compatible with Keras to build, fine-tune, and cross-validate portfolio models.
 
 ## Installation
 
