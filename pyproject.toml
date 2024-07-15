@@ -13,7 +13,7 @@ authors = [
 ]
 description = "Portfolio optimization built on top of scikit-learn"
 readme = "README.rst"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
     "numpy>=1.23.4",
     "scipy>=1.8.0",
@@ -26,7 +26,6 @@ dependencies = [
 keywords = [
     "portfolio",
     "optimization",
-    "optimisation",
     "finance",
     "asset",
     "allocation",
