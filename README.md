@@ -5,8 +5,7 @@
 
 # DeepFolio: Portfolio Optimization with Deep Learning
 
-
-![PyPI - Version](https://img.shields.io/pypi/v/statsmaker)
+![PyPI - Version](https://img.shields.io/pypi/v/deepfolio)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python Versions](https://img.shields.io/pypi/pyversions/deepfolio.svg)](https://pypi.org/project/deepfolio/)
 [![Keras](https://img.shields.io/badge/Keras-3.x-red)](https://keras.io/)
