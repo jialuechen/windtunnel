@@ -2,7 +2,7 @@
 <img src="assets/deepfolio.png" width="45%" loc>
 </div>
 
-# deepfolio: Portfolio Optimization with Machine Learning
+# DeepFolio: Portfolio Optimization with Machine Learning
 
 [![PyPI version](https://badge.fury.io/py/deepfolio.svg)](https://badge.fury.io/py/deepfolio)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
