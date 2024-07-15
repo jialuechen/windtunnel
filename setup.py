@@ -5,7 +5,8 @@ setuptools.setup(
     version='0.1.0',
     packages=setuptools.find_packages(),
     install_requires=[
-        "PyTorch==2.3.1",
+        "tensorflow==2.0.0",
+        "keras>=3.0.0",
         "pandas==2.0.3",
         "networkx==3.1"
     ],
