@@ -3,13 +3,14 @@
 </div>
 <div align=center>
 
-# DeepFolio: Portfolio Optimization with Machine Learning
+# DeepFolio: Portfolio Optimization with Deep Learning
 
 </div>
 
 
 
 [![PyPI version](https://badge.fury.io/py/deepfolio.svg)](https://badge.fury.io/py/deepfolio)
+[![Python Versions](https://img.shields.io/badge/python-3.12%2B-green)](https://pypi.org/project/pytca/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python Versions](https://img.shields.io/pypi/pyversions/deepfolio.svg)](https://pypi.org/project/deepfolio/)
 [![Keras](https://img.shields.io/badge/Keras-3.x-red)](https://keras.io/)
