@@ -1,3 +1,6 @@
+<div align=center>
+<img src="assets/deepfolio.png" width="45%" loc>
+</div>
 # deepfolio: Portfolio Optimization with Machine Learning
 
 [![PyPI version](https://badge.fury.io/py/deepfolio.svg)](https://badge.fury.io/py/deepfolio)
