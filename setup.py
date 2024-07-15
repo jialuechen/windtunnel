@@ -14,5 +14,5 @@ setuptools.setup(
     license='BSD-2',
     author='Jialue Chen',
     author_email='jialuechen@outlook.com',
-    description='Portfolio Optimization Python Library Built on top of PyTorch'
+    description='Portfolio Optimization Python Library Built on top of Keras and Tensorflow'
 )
