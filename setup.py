@@ -5,7 +5,7 @@ setuptools.setup(
     version='0.1.0',
     packages=setuptools.find_packages(),
     install_requires=[
-        "tensorflow==2.0.0",
+        "tensorflow>=2.11.1",
         "keras>=3.0.0",
         "pandas==2.0.3",
         "networkx==3.1"
