@@ -20,7 +20,7 @@
 Install the package using pip:
 
 ```bash
-pip install --upgrade deepfolio
+pip install deepfolio
 ```
 
 ## Quick Start
