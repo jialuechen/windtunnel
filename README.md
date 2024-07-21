@@ -49,7 +49,42 @@ optimal_weights = model.predict(returns)
 print("Optimal portfolio weights:", optimal_weights)
 ```
 
+
 ## Available Models and Features
+
+### Automated Trading
+
+DeepFolio now supports automated trading through integration with the Alpaca API. This feature allows users to:
+
+Place Trades: Automatically place buy/sell orders based on portfolio optimization results.
+Execution Logic: Execute trades with customizable order parameters.
+Example usage:
+```python
+from deepfolio.models.automated_trading import AutomatedTrading
+
+api_key = 'APCA-API-KEY-ID'
+secret_key = 'APCA-API-SECRET-KEY'
+base_url = 'https://paper-api.alpaca.markets'
+
+trader = AutomatedTrading(api_key, secret_key, base_url)
+trader.place_trade('AAPL', 10, 'buy')
+```
+
+### Real-Time Data Integration
+DeepFolio now includes real-time data integration using WebSocket. This feature enables:
+
+Real-Time Market Data: Receive and process streaming market data for dynamic portfolio adjustments.
+Data Feeds: Integration with IEX Cloud for real-time data streaming.
+Example usage:
+
+```python
+from deepfolio.data.real_time_data import RealTimeData
+
+socket_url = "wss://cloud-sse.iexapis.com/stable/stocksUSNoUTP?token=YOUR_IEX_CLOUD_TOKEN"
+real_time_data = RealTimeData(socket_url)
+real_time_data.run()
+
+```
 
 ### Portfolio Optimization
 - Naive: Equal-Weighted, Random (Dirichlet)
