@@ -3,7 +3,7 @@
 </div>
 <div align=center>
 
-# DeepFolio: Portfolio Optimization with Deep Learning
+# DeepFolio: Real-time Portfolio Optimization with Deep Learning
 
 ![PyPI - Version](https://img.shields.io/pypi/v/deepfolio)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
