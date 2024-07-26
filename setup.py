@@ -1,8 +1,8 @@
 import setuptools
-from deepfolio import __version__ as version
+
 setuptools.setup(
     name='deepfolio',
-    version=version,
+    version='1.0.1',
     packages=setuptools.find_packages(),
     install_requires=[
         "tensorflow>=2.11.1",
