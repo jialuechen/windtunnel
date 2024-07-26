@@ -125,6 +125,9 @@ real_time_data.run()
 - Tracking Error Constraints
 - Turnover Constraints
 
+### Deep Learning Models
+- transformer
+
 ## Examples
 
 ### Using Hierarchical Risk Parity
