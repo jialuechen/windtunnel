@@ -126,7 +126,8 @@ real_time_data.run()
 - Turnover Constraints
 
 ### Deep Learning Models
-- transformer
+- Transformer
+- RNN
 
 ## Examples
 
