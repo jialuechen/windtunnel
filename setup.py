@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='deepfolio',
-    version='1.0.2',
+    version='1.0.3',
     packages=setuptools.find_packages(),
     install_requires=setuptools.find_packages(),
     url='https://github.com/jialuechen/deepfolio',
