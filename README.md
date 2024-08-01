@@ -1,6 +1,6 @@
 <div align=center>
 <img src="assets/deepfolio.png" width="45%" loc>
-<font size='200'>
+<font size='400'>
 
 DeepFolio: Real-time Portfolio Optimization with Deep Learning  
 </font>
