@@ -47,7 +47,9 @@ pip install deepfolio
 ## Quick Start
 
 ```python
-from deepfolio import DiffOptPortfolio, CustomOptimizer, Backtester
+from deepfolio.models import DiffOptPortfolio
+from deepfolio.optimizers import CustomOptimizer
+from deepfolio import Backtester
 
 # Initialize the model
 model = DiffOptPortfolio(input_dim=50, n_assets=10, hidden_dim=64)
@@ -75,7 +77,8 @@ print(f"Max Drawdown: {results['max_drawdown']}")
 ### Real-time Optimization
 
 ```python
-from deepfolio import RealtimeOptimizer, DataSource
+from deepfolio.models import RealtimeOptimizer
+from deepfolio.data import DataSource
 
 data_source = DataSource(api_key="your_api_key")
 optimizer = RealtimeOptimizer(model, data_source)
@@ -85,7 +88,7 @@ optimizer.start()
 ### Multi-Asset Optimization
 
 ```python
-from deepfolio import MultiAssetDiffOptPortfolio
+from deepfolio.models import MultiAssetDiffOptPortfolio
 
 asset_classes = ['stocks', 'bonds', 'commodities']
 input_dims = {'stocks': 50, 'bonds': 30, 'commodities': 20}
@@ -96,7 +99,7 @@ model = MultiAssetDiffOptPortfolio(asset_classes, input_dims, hidden_dims)
 ### Tax-Aware Optimization
 
 ```python
-from deepfolio import TaxOptimizer
+from deepfolio.optimizers import TaxOptimizer
 
 tax_optimizer = TaxOptimizer()
 optimal_trades = tax_optimizer.optimize(current_portfolio, target_weights, prices, cost_basis, holding_period)
@@ -105,7 +108,7 @@ optimal_trades = tax_optimizer.optimize(current_portfolio, target_weights, price
 ### Interactive Dashboard
 
 ```python
-from deepfolio import PortfolioDashboard
+from deepfolio.utils import PortfolioDashboard
 
 dashboard = PortfolioDashboard(portfolio_data, benchmark_data)
 dashboard.run()
