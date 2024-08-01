@@ -3,9 +3,9 @@
 </div>
 
 <div align=center>
-<font size='100'>
-DeepFolio: Real-time Portfolio Optimization with Deep Learning 
-</font>
+
+** DeepFolio: Real-time Portfolio Optimization with Deep Learning **
+
 
   
 [![Keras](https://img.shields.io/badge/Keras-3.x-red)](https://keras.io/)
