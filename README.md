@@ -1,6 +1,6 @@
 <div align=center>
 <img src="assets/deepfolio.png" width="45%" loc>
-</div>
+
 
 
 <font size='70'>
