@@ -1,9 +1,5 @@
 <div align=center>
 <img src="assets/deepfolio.png" width="45%" loc>
-<font size='400'>
-
-DeepFolio: Real-time Portfolio Optimization with Deep Learning  
-</font>
 
 [![Keras](https://img.shields.io/badge/Keras-3.x-red)](https://keras.io/)
 ![PyPI - Version](https://img.shields.io/pypi/v/deepfolio)
@@ -13,7 +9,7 @@ DeepFolio: Real-time Portfolio Optimization with Deep Learning
 
 </div>
 
-**DeepFolio** is a Python library for portfolio optimization built on top of Google's TensorFlow platform. It combines traditional optimization techniques with deep learning approaches to provide a powerful toolkit for investment professionals and researchers.
+**DeepFolio** is a Python library for real-time portfolio optimization built on top of Google's TensorFlow platform. It combines optimization techniques (both convex and non-convex) with deep learning approaches to provide a powerful toolkit for investment professionals and researchers.
 
 ## Installation
 
