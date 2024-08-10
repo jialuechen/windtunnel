@@ -1,7 +1,7 @@
 <div align=center>
 <img src="assets/deepfolio.png" width="45%" loc>
 
-[![Keras](https://img.shields.io/badge/Keras-3.x-red)](https://keras.io/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-red)](https://tensorflow.org/)
 ![PyPI - Version](https://img.shields.io/pypi/v/deepfolio)
 [![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 ![Python versions](https://img.shields.io/badge/python-3.6%2B-green)
