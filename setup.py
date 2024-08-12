@@ -9,5 +9,5 @@ setuptools.setup(
     license='BSD-2',
     author='Jialue Chen',
     author_email='jialuechen@outlook.com',
-    description='Python Library for Portfolio Optimization Built on top of Deep Learning'
+    description='Python Deep Learning Library for Real-time Portfolio Optimization'
 )
