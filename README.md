@@ -38,7 +38,7 @@ pip install deepfolio
 ## Installation
 
 ```bash
-pip install deepfolio
+pip install -U deepfolio
 ```
 
 ## Quick Start
