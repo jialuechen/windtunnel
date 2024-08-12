@@ -16,7 +16,7 @@
 Install the package using pip:
 
 ```bash
-pip install deepfolio
+pip install --upgrade deepfolio
 ```
 
 ## Features
@@ -27,7 +27,7 @@ pip install deepfolio
 - Backtesting system
 - Risk management tools
 - Factor model integration
-- Automated hyperparameter tuning
+- Automated hyperparameter tuning (Backed by Optuna)
 - Trade execution simulation
 - Event-driven rebalancing
 - Comprehensive reporting
