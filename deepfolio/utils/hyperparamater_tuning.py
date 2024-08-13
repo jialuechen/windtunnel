@@ -1,6 +1,7 @@
 import tensorflow as tf
 from kerastuner import RandomSearch
 from models.diffopt_portfolio import DiffOptPortfolio
+
 def build_model(hp):
     model = DiffOptPortfolio(
         input_dim=hp.Int('input_dim', 10, 100),

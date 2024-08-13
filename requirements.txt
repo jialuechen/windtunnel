@@ -14,4 +14,7 @@ matplotlib
 osqp
 scs
 keras-tuner
-optuna
+seaborn
+transformers
+networkx
+nltk
