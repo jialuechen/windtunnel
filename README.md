@@ -23,6 +23,7 @@ pip install --upgrade deepfolio
 
 - Differentiable portfolio optimization
 - Real-time optimization
+- Robust and multi-period optimization
 - Multi-asset class support
 - Backtesting system
 - Risk management tools
