@@ -1,9 +1,9 @@
-import setuptools
+from setuptools import setup,find_packages
 
-setuptools.setup(
+setup(
     name='deepfolio',
-    version='1.2.2',
-    packages=setuptools.find_packages(),
+    version='1.3.0',
+    packages=find_packages(),
     install_requires=[],
     url='https://github.com/jialuechen/deepfolio',
     license='BSD-2',
