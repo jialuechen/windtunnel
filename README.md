@@ -11,13 +11,6 @@
 
 **DeepFolio** is a Python library for real-time portfolio optimization built on top of Google's TensorFlow platform. It combines optimization techniques (both convex and non-convex) with deep learning approaches to provide a powerful toolkit for investment professionals and researchers.
 
-## Installation
-
-Install the package using pip:
-
-```bash
-pip install --upgrade deepfolio
-```
 
 ## Features
 
