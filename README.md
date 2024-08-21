@@ -136,6 +136,12 @@ We welcome contributions! Please see our [contributing guidelines](CONTRIBUTING.
 
 This project is licensed under the BSD-2-Clause License- see the [LICENSE](LICENSE) file for details.
 
+## Reference
+<a id="1">[1]</a> 
+Damian Kisiel, Denise Gorse (2022). 
+Portfolio Transformer for Attention-Based Asset Allocation
+arXiv:2206.03246 [q-fin.PM]
+
 ## Acknowledgments
 
 - This package leverages the power of TensorFlow for efficient portfolio optimization.
