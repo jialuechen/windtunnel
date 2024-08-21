@@ -71,7 +71,7 @@ print(f"Max Drawdown: {results['max_drawdown']}")
 ### Portfolio Transformer : Attention-Based Asset Allocation
 
 ```python
-from deepfolio.optimizer import portfolio_transformer
+from deepfolio.optimizers import portfolio_transformer
 input_shape = (30, 10)  # 30 time steps, 10 assets
 d_model = 64
 num_heads = 4
