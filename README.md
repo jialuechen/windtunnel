@@ -17,6 +17,7 @@ Deepfolio combines optimization techniques (both convex and non-convex) with dee
 
 ## Features
 - Portfolio Transformer: Attention-Based Asset Allocation
+<img src="assets/Portfolio Transformer Architecture.png" width="45%" loc>
 - Differentiable portfolio optimization
 - Real-time optimization
 - Robust and multi-period optimization
