@@ -18,3 +18,4 @@ seaborn
 transformers
 networkx
 nltk
+oputna

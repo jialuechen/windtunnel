@@ -9,15 +9,15 @@
 
 </div>
 
-**DeepFolio** is a Python library for real-time portfolio optimization built on top of Google's TensorFlow platform. Its design and development is based on the Portfolio Transformer (PT), a novel end-to-end portfolio optimization framework, inspired by the numerous successes of attention mechanisms in natural language processing. With PT's full encoder-decoder architecture,specialized time encoding layers, and gating components, it
+**DeepFolio** is a Python library for real-time portfolio optimization built on top of Google's TensorFlow platform. Its design and development is based on the Portfolio Transformer (PT), a novel end-to-end portfolio asset allocation framework, inspired by the numerous successes of attention mechanisms in natural language processing. With PT's full encoder-decoder architecture,specialized time encoding layers, and gating components, it
 has a high capacity to learn long-term dependencies among portfolio assets
 and hence can adapt more quickly to changing market conditions.
 Deepfolio combines optimization techniques (both convex and non-convex) with deep learning approaches to provide a powerful toolkit for investment professionals and researchers.
 
 
 ## Features
-- Portfolio Transformer: Attention-Based Asset Allocation
-<img src="assets/Portfolio Transformer Architecture.png" width="45%" loc>
+- Portfolio Transformer: Attention-Based Asset Allocation Framework
+<img src="assets/Portfolio Transformer Architecture.png" width="55%" loc>
 
 - Differentiable portfolio optimization
 - Real-time optimization
