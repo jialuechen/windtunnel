@@ -37,7 +37,7 @@ Deepfolio combines optimization techniques (both convex and non-convex) with dee
 ## Installation
 
 ```bash
-pip install -U deepfolio
+pip install --upgrade deepfolio
 ```
 
 ## Quick Start
