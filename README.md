@@ -1,12 +1,6 @@
 <div align=center>
 <img src="assets/deepfolio.png" width="45%" loc>
 
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-red)](https://tensorflow.org/)
-![PyPI - Version](https://img.shields.io/pypi/v/deepfolio)
-[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
-![Python versions](https://img.shields.io/badge/python-3.6%2B-green)
-![PyPI downloads](https://img.shields.io/pypi/dm/deepfolio)  
-
 </div>
 
 **DeepFolio** is a Python library for real-time portfolio optimization built on top of Google's TensorFlow platform. Its design and development is based on the Portfolio Transformer (PT), a novel end-to-end portfolio asset allocation framework, inspired by the numerous successes of attention mechanisms in natural language processing. With PT's full encoder-decoder architecture,specialized time encoding layers, and gating components, it
