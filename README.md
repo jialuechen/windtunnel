@@ -9,121 +9,37 @@
 
 </div>
 
-**DeepFolio** is a Python library for real-time portfolio optimization built on top of Google's TensorFlow platform. Its design and development is based on the Portfolio Transformer (PT), a novel end-to-end portfolio asset allocation framework, inspired by the numerous successes of attention mechanisms in natural language processing. With PT's full encoder-decoder architecture,specialized time encoding layers, and gating components, it
-has a high capacity to learn long-term dependencies among portfolio assets
-and hence can adapt more quickly to changing market conditions.
-Deepfolio combines optimization techniques (both convex and non-convex) with deep learning approaches to provide a powerful toolkit for investment professionals and researchers.
+# **DeepFolio | Diffusion-Transformer (DiT) for Portfolio & Execution Optimization**  
 
+DeepFolio is an **OpenAI Sora-inspired Diffusion-Transformer (DiT) framework** for **joint portfolio optimization and best execution**, designed to **maximize Sharpe ratio without explicit return forecasts**. It leverages:  
+- **Transformer** to capture asset dependencies and encode market conditions.  
+- **Diffusion Models** to filter market noise and generate both **robust allocation weights** and **optimized trading trajectories**.  
+- **End-to-End Strategy Execution** to reduce information loss between **strategy design and execution implementation**, ensuring optimal real-world performance.  
 
-## Features
-- Portfolio Transformer: Attention-Based Asset Allocation Framework
-<img src="assets/Portfolio Transformer Architecture.png" width="55%" loc>
+---
 
-- Differentiable portfolio optimization
-- Real-time optimization
-- Robust and multi-period optimization
-- Multi-asset class support
-- Backtesting system
-- Risk management tools
-- Factor model integration
-- Automated hyperparameter tuning (Backed by Optuna)
-- Trade execution simulation
-- Event-driven rebalancing
-- Comprehensive reporting
-- Sentiment analysis integration
-- Tax-aware optimization
-- Interactive visualization dashboard
+## **🚀 Key Features**
+✅ **Unified Portfolio & Execution Optimization** – Bridges the gap between portfolio construction and trade execution.  
+✅ **Diffusion-Based Portfolio Generation** – Generates **adaptive, robust asset allocations** without relying on explicit return forecasts.  
+✅ **Market-Aware Execution Path Modeling** – Uses **Diffusion Models** to optimize **execution trajectories**, reducing slippage and market impact.  
+✅ **Scenario-Based Adaptation** – Dynamically adjusts strategies for **high/low volatility regimes, liquidity shifts, and market anomalies**.  
+✅ **Transaction Cost-Aware Optimization** – Integrates **TCA (Transaction Cost Analysis)** into optimization, minimizing execution costs.  
 
-## Installation
+---
 
-```bash
-pip install --upgrade deepfolio
-```
+## **📜 Architecture**
+DeepFolio consists of **two core modules**:  
 
-## Quick Start
+### **1️⃣ Portfolio Optimization** (Transformer + Diffusion)  
+- **Transformer Encoder** extracts asset relationships, learning market structure.  
+- **Diffusion Model** generates optimal portfolio weights, ensuring robustness under different conditions.  
 
-```python
-from deepfolio.models import DiffOptPortfolio
-from deepfolio.optimizers import CustomOptimizer
-from deepfolio import Backtester
+### **2️⃣ Execution Optimization** (Trade Path Diffusion)  
+- **Transformer encodes market microstructure (LOB, liquidity, volatility).**  
+- **Diffusion Model optimizes execution paths** to minimize market impact and transaction costs.  
 
-# Initialize the model
-model = DiffOptPortfolio(input_dim=50, n_assets=10, hidden_dim=64)
+📌 **Pipeline Overview**:  
 
-# Create an optimizer
-optimizer = CustomOptimizer(model.parameters())
-
-# Load your data
-features, returns = load_your_data()
-
-# Create a backtester
-backtester = Backtester(model, {'features': features, 'returns': returns})
-
-# Run backtesting
-backtester.run()
-
-# Get results
-results = backtester.get_results()
-print(f"Sharpe Ratio: {results['sharpe_ratio']}")
-print(f"Max Drawdown: {results['max_drawdown']}")
-```
-
-## Advanced Usage
-
-### Portfolio Transformer : Attention-Based Asset Allocation
-
-```python
-from deepfolio.optimizers import portfolio_transformer
-input_shape = (30, 10)  # 30 time steps, 10 assets
-d_model = 64
-num_heads = 4
-dff = 128
-num_layers = 4
-
-model = portfolio_transformer(input_shape, d_model, num_heads, dff, num_layers)
-model.compile(optimizer='adam', loss='mse')  # Adjust loss as per the paper's requirements
-model.summary()
-
-```
-### Real-time Optimization
-
-```python
-from deepfolio.models import RealtimeOptimizer
-from deepfolio.data import DataSource
-
-data_source = DataSource(api_key="your_api_key")
-optimizer = RealtimeOptimizer(model, data_source)
-optimizer.start()
-```
-
-### Multi-Asset Optimization
-
-```python
-from deepfolio.models import MultiAssetDiffOptPortfolio
-
-asset_classes = ['stocks', 'bonds', 'commodities']
-input_dims = {'stocks': 50, 'bonds': 30, 'commodities': 20}
-hidden_dims = {'stocks': 64, 'bonds': 32, 'commodities': 32}
-model = MultiAssetDiffOptPortfolio(asset_classes, input_dims, hidden_dims)
-```
-
-### Tax-Aware Optimization
-
-```python
-from deepfolio.optimizers import TaxOptimizer
-
-tax_optimizer = TaxOptimizer()
-optimal_trades = tax_optimizer.optimize(current_portfolio, target_weights, prices, cost_basis, holding_period)
-```
-
-### Interactive Dashboard
-
-```python
-from deepfolio.utils import PortfolioDashboard
-
-dashboard = PortfolioDashboard(portfolio_data, benchmark_data)
-dashboard.run()
-```
 
 ## Documentation
 
