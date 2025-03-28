@@ -98,12 +98,6 @@ You can create your own strategies and add them under `genmarket/strategy_plugin
 
 ---
 
-## 📊 Visualization Example
-
-![Execution Chart Placeholder](https://via.placeholder.com/600x300.png?text=Execution+Price+and+Size+Over+Time)
-
----
-
 ## 🔬 Applications
 
 - Strategy benchmarking under stress scenarios  
