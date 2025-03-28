@@ -1,70 +1,140 @@
-<div align=center>
-<img src="assets/deepfolio.png" width="45%" loc>
+# GenMarket
 
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-red)](https://tensorflow.org/)
-![PyPI - Version](https://img.shields.io/pypi/v/deepfolio)
-[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
-![Python versions](https://img.shields.io/badge/python-3.6%2B-green)
-![PyPI downloads](https://img.shields.io/pypi/dm/deepfolio)  
+**GenMarket** is a modular, multi-layer generative market simulation framework designed to evaluate trading strategies and market impact under synthetic yet realistic conditions.
 
-</div>
-
-# **DeepFolio | Diffusion-Transformer (DiT) for Portfolio & Execution Optimization**  
-
-DeepFolio is an **OpenAI Sora-inspired Diffusion-Transformer (DiT) framework** for **joint portfolio optimization and best execution**, designed to **maximize Sharpe ratio without explicit return forecasts**. It leverages:  
-- **Transformer** to capture asset dependencies and encode market conditions.  
-- **Diffusion Models** to filter market noise and generate both **robust allocation weights** and **optimized trading trajectories**.  
-- **End-to-End Strategy Execution** to reduce information loss between **strategy design and execution implementation**, ensuring optimal real-world performance.  
+It combines macro regime generation, high-frequency order flow simulation, LOB microstructure modeling, and plug-in execution strategies (e.g. VWAP, TWAP), supporting both controlled experimentation and generative scenario construction.
 
 ---
 
-## **🚀 Key Features**
-✅ **Unified Portfolio & Execution Optimization** – Bridges the gap between portfolio construction and trade execution.  
-✅ **Diffusion-Based Portfolio Generation** – Generates **adaptive, robust asset allocations** without relying on explicit return forecasts.  
-✅ **Market-Aware Execution Path Modeling** – Uses **Diffusion Models** to optimize **execution trajectories**, reducing slippage and market impact.  
-✅ **Scenario-Based Adaptation** – Dynamically adjusts strategies for **high/low volatility regimes, liquidity shifts, and market anomalies**.  
-✅ **Transaction Cost-Aware Optimization** – Integrates **TCA (Transaction Cost Analysis)** into optimization, minimizing execution costs.  
+## 🚀 Features
+
+- **Multi-layer simulation**  
+  Top-down generation from macro regimes → order flow → limit order book (LOB).
+
+- **Scenario generation**  
+  Uses VAE/Diffusion model stubs to create synthetic market conditions beyond historical replay.
+
+- **Order flow modeling**  
+  Autoregressive event-level generator simulates realistic buy/sell order streams.
+
+- **LOB simulation engine**  
+  Matches orders with queue logic and customizable liquidity depth.
+
+- **Built-in execution strategies**  
+  Plug-and-play VWAP and TWAP strategies for benchmark testing.
+
+- **Market impact evaluation**  
+  Measures execution price, slippage, and volume impact.
+
+- **Visualization**  
+  Plot order flow, execution trajectory, and size dynamics.
 
 ---
 
-## **📜 Architecture**
-DeepFolio consists of **two core modules**:  
+## 🧱 Installation
 
-### **1️⃣ Portfolio Optimization** (Transformer + Diffusion)  
-- **Transformer Encoder** extracts asset relationships, learning market structure.  
-- **Diffusion Model** generates optimal portfolio weights, ensuring robustness under different conditions.  
+```bash
+pip install --upgrade genmarket
+```
 
-### **2️⃣ Execution Optimization** (Trade Path Diffusion)  
-- **Transformer encodes market microstructure (LOB, liquidity, volatility).**  
-- **Diffusion Model optimizes execution paths** to minimize market impact and transaction costs.  
+---
 
-📌 **Pipeline Overview**:  
+## 📄 Example Config (`configs/market_crash_scenario.json`)
 
+```json
+{
+  "regime": "volatile",
+  "volatility": 0.35,
+  "liquidity": "low",
+  "lob": {
+    "levels": 5,
+    "latency_ms": 10
+  },
+  "strategy": {
+    "type": "vwap",
+    "params": {
+      "target_volume": 100,
+      "time_horizon": 10
+    }
+  }
+}
+```
 
-## Documentation
+---
 
-For detailed documentation, please visit our [documentation site](https://diffopt-portfolio.readthedocs.io).
+## 🧪 Run a Simulation
 
-## Contributing
+```bash
+python examples/run_simulation.py
+```
 
-We welcome contributions! Please see our [contributing guidelines](CONTRIBUTING.md) for more details.
+```python
+from genmarket import GenMarket
+from genmarket.plotting import plot_executions
+import json
 
+with open("configs/market_crash_scenario.json") as f:
+    config = json.load(f)
 
-## License
+gm = GenMarket(config)
+metrics = gm.run()
 
-This project is licensed under the BSD-2-Clause License- see the [LICENSE](LICENSE) file for details.
+print("Simulation Metrics:")
+for k, v in metrics.items():
+    print(f"{k}: {v}")
 
-## Reference
-<a id="1">[1]</a> 
-Damian Kisiel, Denise Gorse (2022). 
-Portfolio Transformer for Attention-Based Asset Allocation
-arXiv:2206.03246 [q-fin.PM]
+# Visualize execution result
+plot_executions(metrics.get("executions", []))
+```
 
-## Acknowledgments
+---
 
-- This package leverages the power of TensorFlow for efficient portfolio optimization.
-- Thanks to the financial machine learning community for inspiring many of the implemented methods.
+## 🧩 Strategy Plugins
 
+- `VWAPStrategy` – Volume-weighted execution across time horizon  
+- `TWAPStrategy` – Time-weighted slices across fixed intervals  
 
+You can create your own strategies and add them under `genmarket/strategy_plugins/`.
 
+---
 
+## 📊 Visualization Example
+
+![Execution Chart Placeholder](https://via.placeholder.com/600x300.png?text=Execution+Price+and+Size+Over+Time)
+
+---
+
+## 🔬 Applications
+
+- Strategy benchmarking under stress scenarios  
+- Execution cost modeling and market impact analysis  
+- Synthetic data generation for pre-trade analytics  
+- Reinforcement learning environment (future support)
+
+---
+
+## 📅 Roadmap
+
+- [ ] Integrate pretrained diffusion/VAE market generators  
+- [ ] Add LLM-driven natural language scenario parser  
+- [ ] Extend to multi-asset & cross-venue simulation  
+- [ ] Add dashboard interface for real-time simulation control
+
+---
+
+## 📜 License
+
+MIT License. See `LICENSE`.
+
+---
+
+## 📚 Citation
+
+```
+@misc{genmarket2025,
+  title   = {GenMarket: A Multi-Layer Generative Market Simulation Framework},
+  author  = {Jialue Chen},
+  year    = {2025},
+  note    = {https://github.com/jialuechen/genmarket}
+}
+```

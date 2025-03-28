@@ -1,0 +1,12 @@
+{
+    "regime": "volatile",
+    "volatility": 0.35,
+    "liquidity": "low",
+    "lob": {
+        "levels": 5,
+        "latency_ms": 10
+    },
+    "strategy": {
+        "param": "aggressive"
+    }
+}

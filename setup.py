@@ -1,13 +1,12 @@
-from setuptools import setup,find_packages
+from setuptools import setup, find_packages
 
 setup(
-    name='deepfolio',
-    version='1.3.0',
+    name='genmarket',
+    version='0.1.0',
+    description='A Multi-Layer Generative Market Simulation Framework',
+    author='Your Name',
+    author_email='you@example.com',
     packages=find_packages(),
     install_requires=[],
-    url='https://github.com/jialuechen/deepfolio',
-    license='BSD-2',
-    author='Jialue Chen',
-    author_email='jialuechen@outlook.com',
-    description='Python Deep Learning Library for Real-time Portfolio Optimization'
+    python_requires='>=3.7',
 )
