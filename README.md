@@ -1,4 +1,4 @@
-# GenMarket
+# GenMarket : Market Simulation by Generation
 
 **GenMarket** is a modular, multi-layer generative market simulation framework designed to evaluate trading strategies and market impact under synthetic yet realistic conditions.
 
