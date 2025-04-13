@@ -1,5 +1,5 @@
 from .scenario_builder import ScenarioBuilder
-from .regime_generator import RegimeGenerator
+from .genmarket.regime_generator import RegimeGenerator
 from .flow_gen import OrderFlowGenerator
 from .lob_sim import LOBSimulator
 from .strategy_executor import StrategyExecutor
