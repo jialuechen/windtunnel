@@ -1,4 +1,5 @@
 import importlib
+from genmarket.impact_evaluator import ImpactEvaluator
 
 class StrategyExecutor:
     def __init__(self, config):
@@ -14,7 +15,13 @@ class StrategyExecutor:
             strategy = StrategyClass(**self.config.get("params", {}))
             executions = strategy.generate_orders(lob_result)
 
+        # Example evaluation (replace with actual data as needed)
+        expected_price = 100.0  # Example expected price
+        executed_price = 102.0  # Example executed price
+        slippage = ImpactEvaluator.calculate_slippage(expected_price, executed_price)
+
         return {
             "executions": executions,
-            "strategy_param": self.config.get("param", "default")
+            "strategy_param": self.config.get("param", "default"),
+            "slippage": slippage
         }
