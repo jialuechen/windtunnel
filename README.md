@@ -1,12 +1,19 @@
 # GenMarket : Market Simulation by Generation
 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/genmarket)
+![PyPI](https://img.shields.io/pypi/v/genmarket)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/jialuechen/genmarket/tests.yml?branch=main)
+![License](https://img.shields.io/github/license/jialuechen/genmarket)
+![GitHub last commit](https://img.shields.io/github/last-commit/jialuechen/genmarket)
+![GitHub issues](https://img.shields.io/github/issues/jialuechen/genmarket)
+
 **GenMarket** is a modular, multi-layer generative market simulation framework designed to evaluate trading strategies and market impact under synthetic yet realistic conditions.
 
 It combines macro regime generation, high-frequency order flow simulation, LOB microstructure modeling, and plug-in execution strategies (e.g. VWAP, TWAP, Dynamic Stop Loss), supporting both controlled experimentation and generative scenario construction.
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Multi-layer simulation**  
   Top-down generation from macro regimes → order flow → limit order book (LOB).
@@ -37,7 +44,7 @@ It combines macro regime generation, high-frequency order flow simulation, LOB m
 
 ---
 
-## 🧱 Installation
+## Installation
 
 ```bash
 pip install --upgrade genmarket
@@ -45,7 +52,7 @@ pip install --upgrade genmarket
 
 ---
 
-## 📄 Example Config (`configs/market_crash_scenario.json`)
+## Example Config (`configs/market_crash_scenario.json`)
 
 ```json
 {
@@ -68,7 +75,7 @@ pip install --upgrade genmarket
 
 ---
 
-## 🧪 Run a Simulation
+## Run a Simulation
 
 ```bash
 python examples/run_simulation.py
@@ -95,7 +102,7 @@ plot_executions(metrics.get("executions", []))
 
 ---
 
-## 🧩 Strategy Plugins
+## Strategy Plugins
 
 - `VWAPStrategy` – Volume-weighted execution across time horizon  
 - `TWAPStrategy` – Time-weighted slices across fixed intervals  
@@ -105,7 +112,7 @@ You can create your own strategies and add them under `genmarket/strategy_plugin
 
 ---
 
-## 🌟 New Features
+## New Features
 
 ### **Natural Language Scenario Configuration**
 Generate simulation configurations from plain English descriptions using OpenAI's GPT API. Example:
@@ -187,7 +194,7 @@ print("LOBs:", lobs)
 
 ---
 
-## 🔬 Applications
+## Applications
 
 - Strategy benchmarking under stress scenarios  
 - Execution cost modeling and market impact analysis  
@@ -196,7 +203,7 @@ print("LOBs:", lobs)
 
 ---
 
-## 📅 Roadmap
+## Roadmap
 
 - [x] Integrate pretrained diffusion/VAE market generators  
 - [x] Add LLM-driven natural language scenario parser  
@@ -205,13 +212,13 @@ print("LOBs:", lobs)
 
 ---
 
-## 📜 License
+## License
 
 MIT License. See `LICENSE`.
 
 ---
 
-## 📚 Citation
+## Citation
 
 ```
 @misc{genmarket2025,
