@@ -1,21 +1,32 @@
-from .scenario_builder import ScenarioBuilder
-from .regime_generator import RegimeGenerator
-from .flow_gen import OrderFlowGenerator
-from .lob_sim import LOBSimulator
-from .strategy_executor import StrategyExecutor
-from .impact_evaluator import ImpactEvaluator
+
+from genmarket.regime_generator import RegimeGenerator
+from genmarket.order_flow_generator import OrderFlowGenerator
+from genmarket.lob_simulator import LOBSimulator  # Corrected module name
+from genmarket.strategy_executor import StrategyExecutor
+from genmarket.impact_evaluator import ImpactEvaluator
 
 class GenMarket:
     def __init__(self, config):
-        self.config = config
-        self.scenario = ScenarioBuilder(config).build()
-        self.regime_gen = RegimeGenerator(self.scenario)
+        """
+        Initialize the GenMarket simulation framework.
+
+        Args:
+            config (dict): Configuration dictionary for the simulation.
+        """
+        self.config = config or {}
+        self.regime_gen = RegimeGenerator(self.config.get('regime', {}))
         self.flow_gen = OrderFlowGenerator()
-        self.lob_sim = LOBSimulator(config.get('lob'))
-        self.strategy_executor = StrategyExecutor(config.get('strategy'))
+        self.lob_sim = LOBSimulator(self.config.get('lob', {}))
+        self.strategy_executor = StrategyExecutor(self.config.get('strategy', {}))
         self.impact_evaluator = ImpactEvaluator()
 
     def run(self):
+        """
+        Run the market simulation.
+
+        Returns:
+            dict: Impact metrics from the simulation.
+        """
         print("Generating market regime...")
         regime = self.regime_gen.generate()
 
