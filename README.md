@@ -13,7 +13,7 @@ It combines macro regime generation, high-frequency order flow simulation, LOB m
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Multi-layer simulation**  
   Top-down generation from macro regimes → order flow → limit order book (LOB).
@@ -44,7 +44,7 @@ It combines macro regime generation, high-frequency order flow simulation, LOB m
 
 ---
 
-## 🧱 Installation
+## Installation
 
 ```bash
 pip install --upgrade genmarket
@@ -52,7 +52,7 @@ pip install --upgrade genmarket
 
 ---
 
-## 📄 Example Config (`configs/market_crash_scenario.json`)
+## Example Config (`configs/market_crash_scenario.json`)
 
 ```json
 {
@@ -75,7 +75,7 @@ pip install --upgrade genmarket
 
 ---
 
-## 🧪 Run a Simulation
+## Run a Simulation
 
 ```bash
 python examples/run_simulation.py
@@ -102,7 +102,7 @@ plot_executions(metrics.get("executions", []))
 
 ---
 
-## 🧩 Strategy Plugins
+## Strategy Plugins
 
 - `VWAPStrategy` – Volume-weighted execution across time horizon  
 - `TWAPStrategy` – Time-weighted slices across fixed intervals  
@@ -112,7 +112,7 @@ You can create your own strategies and add them under `genmarket/strategy_plugin
 
 ---
 
-## 🌟 New Features
+## New Features
 
 ### **Natural Language Scenario Configuration**
 Generate simulation configurations from plain English descriptions using OpenAI's GPT API. Example:
@@ -194,7 +194,7 @@ print("LOBs:", lobs)
 
 ---
 
-## 🔬 Applications
+## Applications
 
 - Strategy benchmarking under stress scenarios  
 - Execution cost modeling and market impact analysis  
@@ -203,7 +203,7 @@ print("LOBs:", lobs)
 
 ---
 
-## 📅 Roadmap
+## Roadmap
 
 - [x] Integrate pretrained diffusion/VAE market generators  
 - [x] Add LLM-driven natural language scenario parser  
@@ -212,13 +212,13 @@ print("LOBs:", lobs)
 
 ---
 
-## 📜 License
+## License
 
 MIT License. See `LICENSE`.
 
 ---
 
-## 📚 Citation
+## Citation
 
 ```
 @misc{genmarket2025,
