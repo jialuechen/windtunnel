@@ -6,9 +6,11 @@ class StrategyExecutor:
 
     def run(self, lob_result):
         executions = lob_result
-        if self.config.get("type") in ("vwap", "twap"):
-            module = importlib.import_module(f"genmarket.strategy_plugins.{self.config['type']}")
-            StrategyClass = getattr(module, f"{self.config['type'].upper()}Strategy")
+        strategy_type = self.config.get("type")
+        if strategy_type in ("vwap", "twap", "dynamic_stop_loss"):
+            # Dynamically import the strategy module
+            module = importlib.import_module(f"genmarket.strategy_plugins.{strategy_type}")
+            StrategyClass = getattr(module, f"{strategy_type.replace('_', '').capitalize()}Strategy")
             strategy = StrategyClass(**self.config.get("params", {}))
             executions = strategy.generate_orders(lob_result)
 
