@@ -1,5 +1,12 @@
 # GenMarket : Market Simulation by Generation
 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/genmarket)
+![PyPI](https://img.shields.io/pypi/v/genmarket)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/jialuechen/genmarket/tests.yml?branch=main)
+![License](https://img.shields.io/github/license/jialuechen/genmarket)
+![GitHub last commit](https://img.shields.io/github/last-commit/jialuechen/genmarket)
+![GitHub issues](https://img.shields.io/github/issues/jialuechen/genmarket)
+
 **GenMarket** is a modular, multi-layer generative market simulation framework designed to evaluate trading strategies and market impact under synthetic yet realistic conditions.
 
 It combines macro regime generation, high-frequency order flow simulation, LOB microstructure modeling, and plug-in execution strategies (e.g. VWAP, TWAP, Dynamic Stop Loss), supporting both controlled experimentation and generative scenario construction.
