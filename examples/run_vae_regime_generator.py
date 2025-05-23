@@ -1,6 +1,6 @@
 import numpy as np
 from models.train_vae import train_vae
-from genmarket.regime_generator import RegimeGenerator
+from windtunnel.regime_generator import RegimeGenerator
 
 # Step 1: Generate synthetic data for training
 synthetic_data = np.random.rand(1000, 10)  # 1000 samples, 10 features

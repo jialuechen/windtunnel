@@ -1,4 +1,4 @@
-from genmarket.nlp_config_generator import NLPConfigGenerator
+from windtunnel.nlp_config_generator import NLPConfigGenerator
 
 # Initialize the NLP Config Generator with your OpenAI API key
 api_key = "your_openai_api_key"  # Replace with your actual API key

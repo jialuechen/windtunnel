@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='genmarket',
+    name='windtunnel',
     version='1.0.0',  # Incremented version to reflect new features
     description='A Multi-Layer Generative Market Simulation Framework',
     author='Jialue Chen',

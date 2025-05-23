@@ -1,5 +1,5 @@
-from genmarket.order_flow_generator import OrderFlowGenerator
-from genmarket.lob_simulator import LOBSimulator
+from windtunnel.order_flow_generator import OrderFlowGenerator
+from windtunnel.lob_simulator import LOBSimulator
 
 # Example parameters for order flow generation
 order_flow_params = [

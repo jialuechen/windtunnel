@@ -1,6 +1,6 @@
-# GenMarket : Market Simulation by Generation
+# WindTunnel : Market Simulation by Generation
 
-**GenMarket** is a modular, multi-layer generative market simulation framework designed to evaluate trading strategies and market impact under synthetic yet realistic conditions.
+**WindTunnel** is a modular, multi-layer generative market simulation framework designed to evaluate trading strategies and market impact under synthetic yet realistic conditions.
 
 It combines macro regime generation, high-frequency order flow simulation, LOB microstructure modeling, and plug-in execution strategies (e.g. VWAP, TWAP, Dynamic Stop Loss), supporting both controlled experimentation and generative scenario construction.
 
@@ -40,7 +40,7 @@ It combines macro regime generation, high-frequency order flow simulation, LOB m
 ## Installation
 
 ```bash
-pip install --upgrade genmarket
+pip install --upgrade windtunnel
 ```
 
 ---
@@ -75,14 +75,14 @@ python examples/run_simulation.py
 ```
 
 ```python
-from genmarket import GenMarket
-from genmarket.plotting import plot_executions
+from windtunnel import WindTunnel
+from windtunnel.plotting import plot_executions
 import json
 
 with open("configs/market_crash_scenario.json") as f:
     config = json.load(f)
 
-gm = GenMarket(config)
+gm = WindTunnel(config)
 metrics = gm.run()
 
 print("Simulation Metrics:")
@@ -101,7 +101,7 @@ plot_executions(metrics.get("executions", []))
 - `TWAPStrategy` – Time-weighted slices across fixed intervals  
 - `DynamicStopLossStrategy` – Trailing or fixed stop loss based on market conditions  
 
-You can create your own strategies and add them under `genmarket/strategy_plugins/`.
+You can create your own strategies and add them under `windtunnel/strategy_plugins/`.
 
 ---
 
@@ -111,7 +111,7 @@ You can create your own strategies and add them under `genmarket/strategy_plugin
 Generate simulation configurations from plain English descriptions using OpenAI's GPT API. Example:
 
 ```python
-from genmarket.nlp_config_generator import NLPConfigGenerator
+from windtunnel.nlp_config_generator import NLPConfigGenerator
 
 api_key = "your_openai_api_key"
 generator = NLPConfigGenerator(api_key=api_key)
@@ -133,7 +133,7 @@ with open("generated_config.json", "w") as f:
 Visualize execution prices, order flow, and order book depth interactively using Plotly.
 
 ```python
-from genmarket.interactive_plotting import InteractivePlotting
+from windtunnel.interactive_plotting import InteractivePlotting
 
 # Example data for execution prices
 timestamps = ['2025-04-13 10:00', '2025-04-13 10:01', '2025-04-13 10:02']
@@ -155,8 +155,8 @@ InteractivePlotting.plot_order_book_depth(bid_depth=bid_depth, ask_depth=ask_dep
 Accelerate order flow generation and LOB simulation using multi-threading.
 
 ```python
-from genmarket.order_flow_generator import OrderFlowGenerator
-from genmarket.lob_simulator import LOBSimulator
+from windtunnel.order_flow_generator import OrderFlowGenerator
+from windtunnel.lob_simulator import LOBSimulator
 
 # Example parameters for order flow generation
 order_flow_params = [
@@ -214,10 +214,10 @@ MIT License. See `LICENSE`.
 ## Citation
 
 ```
-@misc{genmarket2025,
-  title   = {GenMarket: A Multi-Layer Generative Market Simulation Framework},
+@misc{windtunnel2025,
+  title   = {WindTunnel: A Multi-Layer Generative Market Simulation Framework},
   author  = {Jialue Chen},
   year    = {2025},
-  note    = {https://github.com/jialuechen/genmarket}
+  note    = {https://github.com/jialuechen/windtunnel}
 }
 ```

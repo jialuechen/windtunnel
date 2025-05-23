@@ -7,5 +7,5 @@
 ## Installation Steps
 1. Clone the project repository:
    ```bash
-   git clone https://github.com/jialuechen/genmarket.git
-   cd genmarket
+   git clone https://github.com/jialuechen/windtunnel.git
+   cd windtunnel

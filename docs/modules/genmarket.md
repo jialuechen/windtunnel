@@ -1,7 +1,7 @@
 
-#### **`docs/modules/genmarket.md`**
+#### **`docs/modules/windtunnel.md`**
 ```md
-# Module Description: `genmarket`
+# Module Description: `windtunnel`
 
 ## Core Modules
 - **`RegimeGenerator`**: Generates market regimes.
@@ -12,13 +12,13 @@
 
 ## Example
 ```python
-from genmarket import GenMarket
+from windtunnel import WindTunnel
 import json
 
 with open("configs/market_crash_scenario.json") as f:
     config = json.load(f)
 
-gm = GenMarket(config)
+gm = WindTunnel(config)
 metrics = gm.run()
 
 print("Simulation Metrics:", metrics)

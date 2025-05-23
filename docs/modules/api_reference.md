@@ -2,7 +2,7 @@
 ```md
 # API Reference
 
-## `genmarket.RegimeGenerator`
+## `windtunnel.RegimeGenerator`
 ```python
 class RegimeGenerator:
     def __init__(self, vae_model_path, latent_dim):

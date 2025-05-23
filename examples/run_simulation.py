@@ -1,4 +1,4 @@
-from genmarket import GenMarket
+from windtunnel import WindTunnel
 import json
 
 # Load config
@@ -6,7 +6,7 @@ with open("configs/market_crash_scenario.json") as f:
     config = json.load(f)
 
 # Run simulation
-gm = GenMarket(config)
+gm = WindTunnel(config)
 metrics = gm.run()
 
 # Output results

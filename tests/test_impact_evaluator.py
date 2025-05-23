@@ -1,5 +1,5 @@
 import unittest
-from genmarket.impact_evaluator import ImpactEvaluator
+from windtunnel.impact_evaluator import ImpactEvaluator
 
 class TestImpactEvaluator(unittest.TestCase):
     def test_calculate_slippage(self):

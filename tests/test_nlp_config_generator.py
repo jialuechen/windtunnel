@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from genmarket.nlp_config_generator import NLPConfigGenerator
+from windtunnel.nlp_config_generator import NLPConfigGenerator
 
 class TestNLPConfigGenerator(unittest.TestCase):
     @patch("openai.Completion.create")

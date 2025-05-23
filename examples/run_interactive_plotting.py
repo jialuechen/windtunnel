@@ -1,4 +1,4 @@
-from genmarket.interactive_plotting import InteractivePlotting
+from windtunnel.interactive_plotting import InteractivePlotting
 
 # Example data for execution prices
 timestamps = ['2025-04-13 10:00', '2025-04-13 10:01', '2025-04-13 10:02', '2025-04-13 10:03']

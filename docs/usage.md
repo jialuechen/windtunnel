@@ -3,7 +3,7 @@
 ```md
 # Quick Start
 
-Here is a simple example of how to use GenMarket.
+Here is a simple example of how to use WindTunnel.
 
 ## Run Simulation
 1. Create a configuration file (e.g., `configs/market_crash_scenario.json`).

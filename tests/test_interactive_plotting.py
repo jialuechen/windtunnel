@@ -1,5 +1,5 @@
 import unittest
-from genmarket.interactive_plotting import InteractivePlotting
+from windtunnel.interactive_plotting import InteractivePlotting
 
 class TestInteractivePlotting(unittest.TestCase):
     def test_plot_execution_prices(self):

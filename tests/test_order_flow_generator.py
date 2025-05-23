@@ -1,6 +1,6 @@
 import unittest
-from genmarket.order_flow_generator import OrderFlowGenerator
-from genmarket.lob_simulator import LOBSimulator
+from windtunnel.order_flow_generator import OrderFlowGenerator
+from windtunnel.lob_simulator import LOBSimulator
 
 class TestParallelSimulation(unittest.TestCase):
     def test_order_flow_parallel(self):

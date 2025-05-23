@@ -1,5 +1,5 @@
 import unittest
-from genmarket.strategy_plugins.dynamic_stop_loss import DynamicStopLossStrategy
+from windtunnel.strategy_plugins.dynamic_stop_loss import DynamicStopLossStrategy
 
 class TestDynamicStopLossStrategy(unittest.TestCase):
     def test_trailing_stop_loss(self):

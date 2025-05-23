@@ -1,4 +1,4 @@
-from genmarket.impact_evaluator import ImpactEvaluator
+from windtunnel.impact_evaluator import ImpactEvaluator
 
 # Example data
 expected_price = 100.0

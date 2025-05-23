@@ -9,7 +9,7 @@
 - **DynamicStopLossStrategy**: Dynamic stop-loss strategy.
 
 ## Custom Strategies
-You can implement custom strategies by adding new files to the `genmarket/strategy_plugins/` directory. For example:
+You can implement custom strategies by adding new files to the `windtunnel/strategy_plugins/` directory. For example:
 ```python
 class CustomStrategy:
     def __init__(self, param1, param2):

@@ -1,14 +1,14 @@
 
-from genmarket.regime_generator import RegimeGenerator
-from genmarket.order_flow_generator import OrderFlowGenerator
-from genmarket.lob_simulator import LOBSimulator  # Corrected module name
-from genmarket.strategy_executor import StrategyExecutor
-from genmarket.impact_evaluator import ImpactEvaluator
+from windtunnel.regime_generator import RegimeGenerator
+from windtunnel.order_flow_generator import OrderFlowGenerator
+from windtunnel.lob_simulator import LOBSimulator  # Corrected module name
+from windtunnel.strategy_executor import StrategyExecutor
+from windtunnel.impact_evaluator import ImpactEvaluator
 
-class GenMarket:
+class WindTunnel:
     def __init__(self, config):
         """
-        Initialize the GenMarket simulation framework.
+        Initialize the WindTunnel simulation framework.
 
         Args:
             config (dict): Configuration dictionary for the simulation.
