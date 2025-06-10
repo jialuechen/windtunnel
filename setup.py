@@ -2,14 +2,28 @@ from setuptools import setup, find_packages
 
 setup(
     name='windtunnel',
-    version='1.0.0',  # Incremented version to reflect new features
-    description='A Multi-Layer Generative Market Simulation Framework',
-    author='Jialue Chen',
+    version='0.1.0',
+    description='Retrieval-augmented conditional diffusion market simulator',
+    author='Your Name',
     author_email='jialuechen@outlook.com',
-    packages=find_packages(),
+    url='https://github.com/jialuechen/windtunnel',
+    license='MIT',
+    packages=find_packages(exclude=('tests', 'scripts')), 
     install_requires=[
-        'openai>=0.27.0',  # For NLP-based configuration generation
-        'plotly>=5.0.0',   # For interactive visualization
+        'torch>=1.10',
+        'numpy',
+        'pandas',
+        'scipy',
+        'fastdtw',
+        'scikit-learn'
     ],
-    python_requires='>=3.7',
+    extras_require={
+        'dev': ['pytest', 'black', 'flake8']
+    },
+    classifiers=[
+        'Programming Language :: Python :: 3.8',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+    ],
+    python_requires='>=3.8',
 )

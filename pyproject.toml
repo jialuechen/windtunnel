@@ -1,0 +1,30 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "windtunnel"
+version = "0.1.0"
+description = "Retrieval-augmented conditional diffusion market simulator"
+authors = ["Jialue Chen <jialuechen@outlook.com>"]
+license = "MIT"
+homepage = "https://github.com/jialuechen/windtunnel"
+repository = "https://github.com/jialuechen/windtunnel"
+keywords = ["finance", "simulation", "diffusion", "market-data", "python"]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+torch = ">=1.10"
+numpy = "*"
+pandas = "*"
+scipy = "*"
+fastdtw = "*"
+scikit-learn = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+black = "*"
+flake8 = "*"
+
+[tool.poetry.scripts]
+windtunnel = "windtunnel.api:main"

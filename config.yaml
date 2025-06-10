@@ -1,0 +1,8 @@
+# windtunnel default configuration
+data:
+  path: "data/market.parquet"
+history_len: 250
+pred_len: 20
+batch_size: 32
+epochs: 10
+learning_rate: 0.0001
