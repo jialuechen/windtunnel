@@ -4,7 +4,7 @@ setup(
     name='windtunnel',
     version='0.1.0',
     description='Retrieval-augmented conditional diffusion market simulator',
-    author='Your Name',
+    author='Jialue Chen',
     author_email='jialuechen@outlook.com',
     url='https://github.com/jialuechen/windtunnel',
     license='MIT',
