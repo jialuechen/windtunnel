@@ -1,6 +1,4 @@
 include config.yaml
 include README.md
 include LICENSE
-include setup.py
-include setup.cfg
 include pyproject.toml
