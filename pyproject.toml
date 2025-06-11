@@ -23,7 +23,7 @@ scikit-learn = "*"
 plotly = "*"
 openai = "*"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "*"
 black = "*"
 flake8 = "*"
