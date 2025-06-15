@@ -8,38 +8,23 @@ version = "1.5.1"
 description = "Retrieval-augmented conditional diffusion market simulator"
 authors = ["Jialue Chen <jialuechen@outlook.com>"]
 license = "MIT"
+readme = "README.md"
 homepage = "https://github.com/jialuechen/windtunnel"
 repository = "https://github.com/jialuechen/windtunnel"
-keywords = ["finance", "simulation", "diffusion", "market-data", "python"]
 
 [tool.poetry.dependencies]
 python = ">=3.8"
 torch = ">=1.10"
-numpy = "*"  
+numpy = "*"
 pandas = "*"
 scipy = "*"
-fastdtw = "*"
 scikit-learn = "*"
 plotly = "*"
 openai = "*"
+fastdtw = "*"
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.dev-dependencies]
 pytest = "*"
-black = "*"
-flake8 = "*"
-build = "*"
-twine = "*"
 
 [tool.poetry.scripts]
 windtunnel = "windtunnel.api:main"
-
-[tool.black]
-line-length = 88
-target-version = ['py38']
-
-[tool.flake8]
-max-line-length = 88
-exclude = ".git,__pycache__,docs"
-
-[tool.pytest.ini_options]
-addopts = "--maxfail=1 --disable-warnings -q"

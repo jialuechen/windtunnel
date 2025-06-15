@@ -1,0 +1,53 @@
+{% set name = "windtunnel" %}
+{% set version = "1.5.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  path: .
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python >=3.8
+    - pip
+    - poetry-core >=1.0.0
+  run:
+    - python >=3.8
+    - pytorch >=1.10
+    - numpy
+    - pandas
+    - scipy
+    - scikit-learn
+    - plotly
+    - openai
+    - fastdtw
+
+test:
+  imports:
+    - windtunnel
+  requires:
+    - pytest
+
+about:
+  home: https://github.com/jialuechen/windtunnel
+  license: MIT
+  license_family: MIT
+  license_file: license
+  summary: Retrieval-augmented conditional diffusion market simulator
+  description: |
+    WindTunnel is a modular, multi-layer generative market simulation framework 
+    designed to evaluate trading strategies and market impact under synthetic 
+    yet realistic conditions.
+  doc_url: https://github.com/jialuechen/windtunnel
+  dev_url: https://github.com/jialuechen/windtunnel
+
+extra:
+  recipe-maintainers:
+    - jialuechen
