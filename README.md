@@ -1,5 +1,7 @@
 # WindTunnel : Market Simulation by Generation
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **WindTunnel** is a modular, multi-layer generative market simulation framework designed to evaluate trading strategies and market impact under synthetic yet realistic conditions.
 
 It combines macro regime generation, high-frequency order flow simulation, LOB microstructure modeling, and plug-in execution strategies (e.g. VWAP, TWAP, Dynamic Stop Loss), supporting both controlled experimentation and generative scenario construction.
