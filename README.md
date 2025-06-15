@@ -1,6 +1,9 @@
 # WindTunnel : Market Simulation by Generation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://anaconda.org/jialuechen/windtunnel/badges/version.svg)](https://anaconda.org/jialuechen/windtunnel)
+[![Platforms](https://anaconda.org/jialuechen/windtunnel/badges/platforms.svg)](https://anaconda.org/jialuechen/windtunnel)
+[![Downloads](https://anaconda.org/jialuechen/windtunnel/badges/downloads.svg)](https://anaconda.org/jialuechen/windtunnel)
 
 **WindTunnel** is a modular, multi-layer generative market simulation framework designed to evaluate trading strategies and market impact under synthetic yet realistic conditions.
 
@@ -8,41 +11,16 @@ It combines macro regime generation, high-frequency order flow simulation, LOB m
 
 ---
 
-## Features
-
-- **Multi-layer simulation**  
-  Top-down generation from macro regimes → order flow → limit order book (LOB).
-
-- **Scenario generation**  
-  Uses VAE/Diffusion model stubs to create synthetic market conditions beyond historical replay.
-
-- **Order flow modeling**  
-  Autoregressive event-level generator simulates realistic buy/sell order streams.
-
-- **LOB simulation engine**  
-  Matches orders with queue logic and customizable liquidity depth.
-
-- **Built-in execution strategies**  
-  Plug-and-play VWAP, TWAP, and Dynamic Stop Loss strategies for benchmark testing.
-
-- **Market impact evaluation**  
-  Measures execution price, slippage, impact cost, and profit/loss (PnL).
-
-- **Visualization**  
-  Interactive plotting of order flow, execution trajectory, and order book depth using Plotly.
-
-- **Natural language scenario configuration**  
-  Generate simulation configurations from plain English descriptions using OpenAI's GPT API.
-
-- **Parallelized simulation**  
-  Accelerated order flow generation and LOB simulation using multi-threading.
-
----
-
 ## Installation
 
+You can install WindTunnel via pip or conda:
+
 ```bash
+# Install via pip
 pip install --upgrade windtunnel
+
+# Install via conda
+conda install -c jialuechen windtunnel
 ```
 
 ---
