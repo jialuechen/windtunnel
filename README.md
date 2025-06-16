@@ -21,8 +21,6 @@ It combines macro regime generation, high-frequency order flow simulation, LOB m
 You can install WindTunnel via pip or conda:
 
 ```bash
-# Install via pip
-pip install --upgrade windtunnel
 
 # Install via conda
 conda install -c jialuechen windtunnel
