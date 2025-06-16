@@ -1,5 +1,5 @@
 <div align=center>
-# WindTunnel : Market Simulation by Generation
+#WindTunnel : Market Simulation by Generation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://anaconda.org/jialuechen/windtunnel/badges/version.svg)](https://anaconda.org/jialuechen/windtunnel)
