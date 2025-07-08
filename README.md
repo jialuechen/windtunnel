@@ -22,7 +22,7 @@ You can install WindTunnel via pip or conda:
 ```bash
 
 # Install via conda
-conda install -c jialuechen windtunnel
+conda install -c jialuechen::windtunnel
 ```
 
 ---
